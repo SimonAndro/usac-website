@@ -1,2 +1,2 @@
-# unialumni.github.io
-This is template for we alumni
+# USAC web platform
+Main site section
