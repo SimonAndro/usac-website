@@ -134,7 +134,7 @@
                     <div class="col-lg-12">
                         <nav class="main-menu navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="index.html">
-                                <img src="assets/img/logo.png" alt="Logo">
+                                <img src="assets/img/usac-logo.png" alt="Logo">
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#menucontent" aria-controls="menucontent" aria-expanded="false">
