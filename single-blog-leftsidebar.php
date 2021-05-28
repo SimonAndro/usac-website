@@ -11,7 +11,7 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">Blog Details</h1>
-                    <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
+                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
                         need</p>
                     <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
                 </div>
@@ -47,7 +47,7 @@
                             <div class="sidebar-body">
                                 <ul class="brand-unorderlist">
                                     <li><a href="#">Scholership</a></li>
-                                    <li><a href="#">Alumni</a></li>
+                                    <li><a href="#">Usac</a></li>
                                     <li><a href="#">Events</a></li>
                                     <li><a href="#">Member</a></li>
                                     <li><a href="#">Tour</a></li>

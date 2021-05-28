@@ -11,7 +11,7 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">About Us</h1>
-                    <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
+                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
                         need</p>
                     <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
                 </div>
@@ -31,7 +31,7 @@
                     <div class="single-about-text">
                         <span class="year">1834</span>
                         <img src="http://placehold.it/1920x1281" alt="About" class="img-fluid img-left">
-                        <h2 class="h3">ESTD of This Alumni Assotitation</h2>
+                        <h2 class="h3">ESTD of This Usac Assotitation</h2>
                         <p>Aenean viverra rhoncus sspede. Phasellssus leo dolor, tempus non, auctor endrerit
                             quis, nisi. Fusce neque. Donec vitae orci sed dolor rutrum ausssctor. Sed
                             fringilla mauris sit amet nibh.</p>
@@ -265,7 +265,7 @@
                         <!-- Single People Testimonial -->
                         <div class="single-testimonial-wrap">
                             <div class="people-thumb">
-                                <img src="http://placehold.it/500x500" alt="Alumni" class="img-fluid">
+                                <img src="http://placehold.it/500x500" alt="Usac" class="img-fluid">
                             </div>
                             <i class="quote-icon"></i>
                             <p>Exxcellent Lorem ipsum dolor sit amet, ectetur adipisicing elit, sed do eimod tempor

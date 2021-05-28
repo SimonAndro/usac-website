@@ -15,7 +15,7 @@
                         <div class="slider-content">
                             <h2>We Are Proud</h2>
                             <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
+                            <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be
                                 the need (academic, relocation, career, projects, mentorship, etc. you can ask the
                                 community and get responses in three.</p>
                             <div class="slider-btn">
@@ -37,7 +37,7 @@
                         <div class="slider-content">
                             <h2>We Are Not Proud</h2>
                             <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
+                            <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be
                                 the need (academic, relocation, career, projects, mentorship, etc. you can ask the
                                 community and get responses in three.</p>
                             <div class="slider-btn">
@@ -59,7 +59,7 @@
                         <div class="slider-content">
                             <h2>Why Proud for u</h2>
                             <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be
+                            <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be
                                 the need (academic, relocation, career, projects, mentorship, etc. you can ask the
                                 community and get responses in three.</p>
                             <div class="slider-btn">
@@ -677,7 +677,7 @@
             <div class="col-lg-12 text-center">
                 <div class="scholership-promo-text">
                     <h2>Demo University Provide <span>Scholarship</span> For Talented Student!</h2>
-                    <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
+                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
                         need academic, relocation, career, projects, mentorship, etc you can ask the community and
                         get </p>
                     <a href="#" class="btn btn-brand">Apply Now</a>

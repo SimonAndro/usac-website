@@ -11,7 +11,7 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">Membership Form</h1>
-                    <p>Alumni Needs enables you to harness the power of your alumni network. Whatever may be the
+                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
                         need</p>
                     <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
                 </div>
@@ -55,7 +55,7 @@
                                         <div class="register-form-wrap">
                                             <h3>registration Form</h3>
                                             <div class="register-form">
-                                                <form action="index.html">
+                                                <form action="registration.php" class="general-form">
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
@@ -84,26 +84,9 @@
 
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="register_stuid">Student Id</label>
+                                                                <label for="register_stuid">University</label>
                                                                 <input type="text" class="form-control"
                                                                     id="register_stuid" name="register_stuid">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="register_year">Passing Year</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="register_year" name="register_year">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-12 col-sm-6">
-                                                            <div class="form-group">
-                                                                <label for="register_deptno">Depertment No</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="register_deptno" name="register_deptno">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -111,7 +94,7 @@
                                                         <input type="file" name="register_file" id="customfile"
                                                             class="d-none">
                                                         <label class="custom-file" for="customfile"><i
-                                                                class="fa fa-upload"></i>Upload Your Photo</label>
+                                                                class="fa fa-upload"></i>Upload Your Student ID Card</label>
                                                     </div>
 
                                                     <div class="gender form-group">
@@ -137,7 +120,7 @@
                                                             <input type="checkbox" class="custom-control-input"
                                                                 id="customCheck1">
                                                             <label class="custom-control-label" for="customCheck1">
-                                                                I have read and agree to the <a href="#">Alumni</a>
+                                                                I have read and agree to the <a href="#">USAC</a>
                                                                 Terms of Service</label>
                                                         </div>
                                                         <input type="submit" class="btn btn-reg" value="Registration">
