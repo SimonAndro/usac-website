@@ -36,11 +36,14 @@
                                         <div class="display-table">
                                             <div class="display-table-cell">
                                                 <div class="signin-area-wrap">
+                                                    <div class="error-msg-list-login invisible">
+                                                    </div>
                                                     <h4>Already a Member?</h4>
                                                     <div class="sign-form">
-                                                        <form action="index.html">
-                                                            <input type="text" placeholder="Enter your ID">
-                                                            <input type="password" placeholder="Password">
+                                                        <form action="./dashboard/index.php" onsubmit="event.preventDefault(); loginUser(this);">
+                                                            <input type="hidden" value="register" name="val[action]"/>
+                                                            <input id="login-email" type="text" name="val[email]" placeholder="Enter your email">
+                                                            <input id="login-password" type="password" name="val[password]" placeholder="Password">
                                                             <button type="submit" class="btn btn-reg">Login</button>
                                                         </form>
                                                     </div>
@@ -55,7 +58,7 @@
                                         <div class="register-form-wrap">
                                             <h3>registration Form</h3>
                                             <div class="register-form">
-                                                <form action="registration.php" class="general-form">
+                                                <form onsubmit="event.preventDefault(); registerUser(this);">
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">

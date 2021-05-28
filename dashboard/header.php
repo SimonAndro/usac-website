@@ -1,17 +1,67 @@
-<!--
-=========================================================
-* Paper Dashboard 2 - v2.0.1
-=========================================================
+<?php
+try {
+	include __DIR__ . '/../includes/autoload.php';
+	include __DIR__ . '/../includes/utils.php';
+    include __DIR__ . '/../includes/DatabaseConnection.php';
+    include __DIR__ . '/../includes/User.php';;
 
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+    $usersTable = new \Ninja\DatabaseTable($pdo, 'students', 'id', 'User');
+    $authentication = new \Ninja\Authentication($usersTable, 'email', 'password');
 
-Coded by www.creative-tim.com
+    if(!$authentication->isLoggedIn())
+    {
+        // check if user is login
+        if(isset($_POST['val']))
+        {
+            $val = $_POST['val'];
+            $action = $val['action'];
 
- =========================================================
+            $output["msg"] = "";
+            $error = [];
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
+            switch($action)
+            {
+                case "register":
+                   $email = isset($val['email'])?$val['email']:null;
+                   $password = isset($val['password'])?$val['password']:null;
+
+                   if($authentication->login(trim($email),trim($password)))
+                   {
+                        $output["msg"] = "success";
+                        $output["action"] = "url";
+                        $output["value"] = "dashboard/index.php";
+                   }else{
+                        $error[] = "Invalid Login Credentials";
+                        $output["error"] = $error;
+                        $output["msg"] = "fail";
+                   }
+                break;
+            }
+
+            dump_to_file($_POST);
+            dump_to_file($output);
+        
+            $output = json_encode($output);
+            header('Content-Type: application/json');
+            echo $output;
+
+            die();
+        }
+        header("Location: ../register.php");
+        die();
+    }
+}
+catch (PDOException $e) {
+
+	$title = 'An error has occurred';
+
+	$output = 'Database error: ' . $e->getMessage() . ' in ' .
+	$e->getFile() . ':' . $e->getLine();
+
+    echo $title."->".$output;
+    die();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

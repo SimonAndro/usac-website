@@ -1,0 +1,69 @@
+05:24:30->Array
+(
+    [val] => Array
+        (
+            [email] => white2@man.com
+            [password] => 12345678
+        )
+
+)
+
+05:24:30->{"msg":"fail","error":["Invalid Login Credentials"]}
+05:26:33->Array
+(
+    [val] => Array
+        (
+            [email] => white2@man.com
+            [password] => 12345678
+        )
+
+)
+
+05:26:33->{"msg":"fail","error":["Invalid Login Credentials"]}
+05:31:10->Array
+(
+    [val] => Array
+        (
+            [email] => white2@man.com
+            [password] => 12345678
+        )
+
+)
+
+05:31:10->{"msg":"fail","error":["Invalid Login Credentials"]}
+05:46:03->Array
+(
+    [val] => Array
+        (
+            [email] => white2@man.com
+            [password] => 12345678
+        )
+
+)
+
+05:46:03->Array
+(
+    [msg] => 
+)
+
+05:56:50->Array
+(
+    [val] => Array
+        (
+            [action] => register
+            [email] => white3@man.com
+            [password] => 12345678
+        )
+
+)
+
+05:56:50->Array
+(
+    [msg] => fail
+    [error] => Array
+        (
+            [0] => Invalid Login Credentials
+        )
+
+)
+
