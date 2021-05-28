@@ -1,64 +1,47 @@
 <?php
-try {
-	include __DIR__ . '/../includes/autoload.php';
-	include __DIR__ . '/../includes/utils.php';
-    include __DIR__ . '/../includes/DatabaseConnection.php';
-    include __DIR__ . '/../includes/User.php';;
 
-    $usersTable = new \Ninja\DatabaseTable($pdo, 'students', 'id', 'User');
-    $authentication = new \Ninja\Authentication($usersTable, 'email', 'password');
+require_once "./../global_auth.php";
 
-    if(!$authentication->isLoggedIn())
+if(!$authentication->isLoggedIn())
+{
+    // check if user is login
+    if(isset($_POST['val']))
     {
-        // check if user is login
-        if(isset($_POST['val']))
+        $val = $_POST['val'];
+        $action = $val['action'];
+
+        $output["msg"] = "";
+        $error = [];
+
+        switch($action)
         {
-            $val = $_POST['val'];
-            $action = $val['action'];
+            case "register":
+               $email = isset($val['email'])?$val['email']:null;
+               $password = isset($val['password'])?$val['password']:null;
 
-            $output["msg"] = "";
-            $error = [];
-
-            switch($action)
-            {
-                case "register":
-                   $email = isset($val['email'])?$val['email']:null;
-                   $password = isset($val['password'])?$val['password']:null;
-
-                   if($authentication->login(trim($email),trim($password)))
-                   {
-                        $output["msg"] = "success";
-                        $output["action"] = "url";
-                        $output["value"] = "dashboard/index.php";
-                   }else{
-                        $error[] = "Invalid Login Credentials";
-                        $output["error"] = $error;
-                        $output["msg"] = "fail";
-                   }
-                break;
-            }
-
-            dump_to_file($_POST);
-            dump_to_file($output);
-        
-            $output = json_encode($output);
-            header('Content-Type: application/json');
-            echo $output;
-
-            die();
+               if($authentication->login(trim($email),trim($password)))
+               {
+                    $output["msg"] = "success";
+                    $output["action"] = "url";
+                    $output["value"] = "dashboard/index.php";
+               }else{
+                    $error[] = "Invalid Login Credentials";
+                    $output["error"] = $error;
+                    $output["msg"] = "fail";
+               }
+            break;
         }
-        header("Location: ../register.php");
+
+        dump_to_file($_POST);
+        dump_to_file($output);
+    
+        $output = json_encode($output);
+        header('Content-Type: application/json');
+        echo $output;
+
         die();
     }
-}
-catch (PDOException $e) {
-
-	$title = 'An error has occurred';
-
-	$output = 'Database error: ' . $e->getMessage() . ' in ' .
-	$e->getFile() . ':' . $e->getLine();
-
-    echo $title."->".$output;
+    header("Location: ../register.php");
     die();
 }
 ?>

@@ -1,7 +1,7 @@
 <?php require_once( 'admin/cms.php' ); ?>
 
 <!--== Header Area Start ==-->
-<cms:embed 'header.html' />
+<cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
 <!--== Page Title Area End ==-->

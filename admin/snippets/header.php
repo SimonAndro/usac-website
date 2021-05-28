@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -120,6 +121,12 @@
 
                     <div class="col-lg-6 col-sm-5 col-5 text-right">
                         <div class="preheader-right">
+                            <cms:php> 
+                                require_once __DIR__ ."/../global_auth.php";
+                                if($authentication->isLoggedIn()){
+                                    echo '<a title="Dashboard" class="btn-auth btn-auth-rev" href="./dashboard">Dashboard</a>';
+                                } 
+                            </cms:php>    
                             <a title="Register or Login" class="btn-auth btn-auth" href="register.php">Login or Signup</a>
                         </div>
                     </div>
