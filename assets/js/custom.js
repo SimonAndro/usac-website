@@ -10,7 +10,7 @@ function registerUser(t) {
 
     $("#page-title-area").remove();
     $("#footer-area").remove();
-    $(".register-page-inner").html('<div class="alert alert-success" style="margin:10px;">A verification email has been sent to your inbox. Please open it now and follow the instructions.</div>');
+    $(".register-page-inner").html('<div class="alert alert-success" style="margin:10px;">A verification email has been sent to your inbox. Please open it now and follow the instructions.(if not in the inbox, it could be in the spam folder)</div>');
     return false;
 }
 
