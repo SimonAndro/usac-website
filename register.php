@@ -40,11 +40,17 @@
                                                     </div>
                                                     <h4>Already a Member?</h4>
                                                     <div class="sign-form">
-                                                        <form action="./dashboard/index.php" onsubmit="event.preventDefault(); loginUser(this);">
-                                                            <input type="hidden" value="register" name="val[action]"/>
-                                                            <input id="login-email" type="text" name="val[email]" placeholder="Enter your email">
-                                                            <input id="login-password" type="password" name="val[password]" placeholder="Password">
+                                                        <form action="./dashboard/index.php"
+                                                            onsubmit="event.preventDefault(); loginUser(this);">
+                                                            <input type="hidden" value="register" name="val[action]" />
+                                                            <input id="login-email" type="text" name="val[email]"
+                                                                placeholder="Enter your email">
+                                                            <input id="login-password" type="password"
+                                                                name="val[password]" placeholder="Password">
                                                             <button type="submit" class="btn btn-reg">Login</button>
+                                                            <div class="text-center" style="margin-top:10px;">
+                                                                <a href="account-recover.php">Forgotten password?</a>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -97,7 +103,8 @@
                                                         <input type="file" name="register_file" id="customfile"
                                                             class="d-none">
                                                         <label class="custom-file" for="customfile"><i
-                                                                class="fa fa-upload"></i>Upload Your Student ID Card</label>
+                                                                class="fa fa-upload"></i>Upload Your Student ID
+                                                            Card</label>
                                                     </div>
 
                                                     <div class="gender form-group">

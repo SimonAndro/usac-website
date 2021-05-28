@@ -8,6 +8,9 @@ jQuery(document).ready(function ($) {
 function registerUser(t) {
     var o = $(t);
 
+    $("#page-title-area").remove();
+    $("#footer-area").remove();
+    $(".register-page-inner").html('<div class="alert alert-success" style="margin:10px;">A verification email has been sent to your inbox. Please open it now and follow the instructions.</div>');
     return false;
 }
 
