@@ -172,9 +172,9 @@
                                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
                                             role="button">Member Area</a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="nav-link" href="">News Portal</a>
+                                            <li class="nav-item"><a class="nav-link" href="newsportal">News Portal</a>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="">Social Community</a>
+                                            <li class="nav-item"><a class="nav-link" href="community">Social Community</a>
                                             </li>
                                             <li class="nav-item"><a class="nav-link" href="committee.php">Committee</a>
                                             </li>
