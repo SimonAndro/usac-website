@@ -76,6 +76,9 @@
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/navbar/bootstrap-4-navbar.css">
 
+    <!-- Jquery Ui css -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
     <!--Animate css -->
     <link rel="stylesheet" href="assets/vendor/animate/animate.css" media="all">
 

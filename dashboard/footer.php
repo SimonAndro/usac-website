@@ -32,6 +32,13 @@
         demo.initChartsPages();
     });
 </script>
+
+<!-- Jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<!-- custom js: custom js file is added for easy custom js code  -->
+<script src="../assets/js/custom.js"></script>
+
 </body>
 
 </html>

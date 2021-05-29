@@ -64,6 +64,7 @@
                                         <div class="register-form-wrap">
                                             <h3>registration Form</h3>
                                             <div class="register-form">
+                                          
                                                 <form onsubmit="event.preventDefault(); registerUser(this);">
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
@@ -97,6 +98,16 @@
                                                                 <input type="text" class="form-control"
                                                                     id="register_stuid" name="register_stuid">
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                       
+                                                        <div class="col-12 col-sm-12">
+                                      
+                                                        
+                                                            <input style="height: 39px !important; font-size:16px;" class="form-control" type="text" name="val[birthdate]" placeholder="Birthdate" readonly="readonly" id="quiDatepicker">
+                                                    
+                                                   
                                                         </div>
                                                     </div>
                                                     <div class="form-group file-input">

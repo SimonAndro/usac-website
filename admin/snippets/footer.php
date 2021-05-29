@@ -159,6 +159,9 @@
 <script src="assets/vendor/validation/jquery.validate.min.js"></script>
 <script src="assets/vendor/validation/additional-methods.min.js"></script>
 
+<!-- Jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <!--off-canvas js -->
 <script src="assets/vendor/js-offcanvas/js/js-offcanvas.pkgd.min.js"></script>
 
@@ -166,6 +169,11 @@
 <script src="assets/vendor/jquery.countdown/jquery.countdown.min.js"></script>
 
 <!-- custom js: main custom theme js file  -->
+<script>
+$("#owl-demo").owlCarousel({
+    navigation : true
+  });
+</script>
 <script src="assets/js/theme.min.js"></script>
 
 <!-- custom js: custom js file is added for easy custom js code  -->

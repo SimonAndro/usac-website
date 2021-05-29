@@ -26,21 +26,21 @@ include "header.php";
           <h5 class="card-title">Edit Profile</h5>
         </div>
         <div class="card-body">
-          <form>
+          <form class="pr-1 pl-1">
             <div class="row">
-              <div class="col-md-5 pr-1">
+              <div class="col-md-5 pr-1 pl-1">
                 <div class="form-group">
                   <label>Association (disabled)</label>
                   <input type="text" class="form-control" disabled="" placeholder="Company" value="USAC">
                 </div>
               </div>
-              <div class="col-md-3 px-1">
+              <div class="col-md-3 px-1 ">
                 <div class="form-group">
                   <label>Username</label>
                   <input type="text" class="form-control" placeholder="Username" value="michael23">
                 </div>
               </div>
-              <div class="col-md-4 pl-1">
+              <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
                   <input type="email" class="form-control" placeholder="Email">
@@ -48,19 +48,33 @@ include "header.php";
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6 pr-1">
+              <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
                   <label>First Name</label>
                   <input type="text" class="form-control" placeholder="Company" value="Chet">
                 </div>
               </div>
-              <div class="col-md-6 pl-1">
+              <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
                   <label>Last Name</label>
                   <input type="text" class="form-control" placeholder="Last Name" value="Faker">
                 </div>
               </div>
+              <div class="col-md-4 pr-1 pl-1"> 
+              <label>Date of Birth</label>
+              <input style="height: 39px !important; font-size:16px;" class="form-control" type="text" name="val[birthdate]" placeholder="Birthdate" readonly="readonly" id="quiDatepicker">
+              </div>
             </div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>University</label>
+                  <input type="text" class="form-control" placeholder="University name" value="">
+                </div>
+              </div>
+            </div>
+
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -70,7 +84,7 @@ include "header.php";
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4 pr-1">
+              <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
                   <label>City</label>
                   <input type="text" class="form-control" placeholder="City" value="Melbourne">
@@ -82,7 +96,7 @@ include "header.php";
                   <input type="text" class="form-control" placeholder="Country" value="Australia">
                 </div>
               </div>
-              <div class="col-md-4 pl-1">
+              <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
                   <label>Postal Code</label>
                   <input type="number" class="form-control" placeholder="ZIP Code">

@@ -26,7 +26,7 @@
         <div class="card-footer ">
           <hr>
           <a href="user.php">
-          <div class="stats">
+          <div class="stats" style="color:blue;">
             <i class="fa fa-refresh"></i>
             Update Now
           </div>
@@ -53,8 +53,8 @@
         </div>
         <div class="card-footer ">
           <hr>
-          <a href="community">
-          <div class="stats">
+          <a href="../community" >
+          <div class="stats" style="color:blue;">
             <i class="fa fa-calendar-o"></i>
             Go to Community
           </div>
@@ -81,8 +81,8 @@
         </div>
         <div class="card-footer ">
           <hr>
-          <a href="news-portal">
-          <div class="stats">
+          <a href="../newsportal" >
+          <div class="stats" style="color:blue;">
             <i class="fa fa-clock-o"></i>
             Go to News Portal
           </div>

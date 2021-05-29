@@ -2,7 +2,7 @@
 
 require_once "./../global_auth.php";
 
-if(!$authentication->isLoggedIn())
+if($authentication->isLoggedIn())
 {
     // check if user is login
     if(isset($_POST['val']))
@@ -143,7 +143,7 @@ if(!$authentication->isLoggedIn())
                                 </a>
                              
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">View Site</a>
+                                    <a class="dropdown-item" href="./../">View Site</a>
                                     <hr style="padding:0;margin:0;">
                                     <a class="dropdown-item" href="#">Logout</a>
                                 </div>

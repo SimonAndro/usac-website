@@ -1,7 +1,14 @@
 "use strict";
 
 jQuery(document).ready(function ($) {
-
+  
+    $(function() {
+        $( "#quiDatepicker" ).datepicker({
+             changeMonth: true,
+            changeYear: true,
+            yearRange: "-200:+0", // last hundred years
+        });
+    });
 
 });
 
