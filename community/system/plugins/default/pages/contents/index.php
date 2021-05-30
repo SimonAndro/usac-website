@@ -39,7 +39,7 @@
 		</ul>
 	</div>
 	<div class="col-md-6">
-			<!-- <?php 
+		<!-- <?php 
 			$contents = ossn_view_form('signup', array(
         					'id' => 'ossn-home-signup',
         				'action' => ossn_site_url('action/user/register')
@@ -56,9 +56,10 @@
 				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 				transition: 0.3s;
 			}
-			.card-container{
-				width:100%;
-				background-color:#fff;
+
+			.card-container {
+				width: 100%;
+				background-color: #fff;
 				padding: 20px;
 			}
 		</style>
@@ -69,6 +70,7 @@
 			</div>
 		</div>
 
-		<a href="./../register.php" type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:10px;">Member Registration</a>
+		<a href="./../register.php" type="button" class="btn btn-primary btn-lg btn-block"
+			style="margin-top:10px;">Member Registration</a>
 	</div>
 </div>
