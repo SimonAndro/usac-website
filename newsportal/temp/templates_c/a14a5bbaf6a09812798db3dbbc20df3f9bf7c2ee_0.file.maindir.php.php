@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2021-05-28 07:52:46
+/* Smarty version 3.1.32, created on 2021-05-29 17:32:32
   from 'E:\Ampps\www\usac-website\newsportal\themes\classic\maindir.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_60b0a14e6654a4_90616830',
+  'unifunc' => 'content_60b27ab0880603_63019846',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a14a5bbaf6a09812798db3dbbc20df3f9bf7c2ee' => 
     array (
       0 => 'E:\\Ampps\\www\\usac-website\\newsportal\\themes\\classic\\maindir.php',
-      1 => 1566755368,
+      1 => 1622309522,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60b0a14e6654a4_90616830 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60b27ab0880603_63019846 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
-?><nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+?><nav class="navbar navbar-expand-lg" style="background-color: #A51212;">
 <div class="container">
 <?php if ($_smarty_tpl->tpl_vars['logoon']->value == '2') {?>
 <a class="navbar-brand" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
-"><?php echo $_smarty_tpl->tpl_vars['logotext']->value;?>
+" ><?php echo $_smarty_tpl->tpl_vars['logotext']->value;?>
 </a>
 <?php }
 if ($_smarty_tpl->tpl_vars['logoon']->value == '1') {?>
@@ -39,28 +39,28 @@ if ($_smarty_tpl->tpl_vars['logoon']->value == '1') {?>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
-<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-<ul id="coolMenu" class="nav navbar-nav ml-auto">
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+<ul id="coolMenu" class="nav navbar-nav ml-auto" >
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categori']->value, 'caty', true);
 $_smarty_tpl->tpl_vars['caty']->index = -1;
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['caty']->value) {
 $_smarty_tpl->tpl_vars['caty']->index++;
-$__foreach_caty_7_saved = $_smarty_tpl->tpl_vars['caty'];
+$__foreach_caty_0_saved = $_smarty_tpl->tpl_vars['caty'];
 $_smarty_tpl->_assignInScope('ifavaible', $_smarty_tpl->tpl_vars['caty']->total);
 ob_start();
 echo $_smarty_tpl->tpl_vars['toplinks']->value;
 $_prefixVariable1 = ob_get_clean();
 if ($_smarty_tpl->tpl_vars['caty']->index < $_prefixVariable1) {
 if ($_smarty_tpl->tpl_vars['rewritemod']->value == 2) {?>
-<li class="nav-item"><a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
+<li class="nav-item"><a style="color:#FFF;" class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 /categories.php?id=<?php echo $_smarty_tpl->tpl_vars['caty']->value['catid'];?>
 "><?php echo stripslashes($_smarty_tpl->tpl_vars['caty']->value['name']);?>
 </a>
 <?php }
 if ($_smarty_tpl->tpl_vars['rewritemod']->value == 1) {?>
-<li class="nav-item"><a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
+<li class="nav-item"><a style="color:#FFF;" class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 /category/<?php echo $_smarty_tpl->tpl_vars['caty']->value['catid'];?>
 /<?php echo $_smarty_tpl->tpl_vars['caty']->value['seoname'];?>
 .html"><?php echo stripslashes($_smarty_tpl->tpl_vars['caty']->value['name']);?>
@@ -73,13 +73,13 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['inc']->value) {
 if ($_smarty_tpl->tpl_vars['inc']->value['cord'] != 0 && $_smarty_tpl->tpl_vars['caty']->value['catid'] == $_smarty_tpl->tpl_vars['inc']->value['parent']) {
 if ($_smarty_tpl->tpl_vars['rewritemod']->value == 2) {?>
-<li class="nav-item"><a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
+<li class="nav-item"><a style="color:#FFF;" class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 /categories.php?id=<?php echo $_smarty_tpl->tpl_vars['inc']->value['catid'];?>
 "><?php echo smarty_modifier_replace(stripslashes($_smarty_tpl->tpl_vars['inc']->value['name'])," ","&nbsp;");?>
 </a>
 <?php }
 if ($_smarty_tpl->tpl_vars['rewritemod']->value == 1) {?>
-<li class="nav-item"><a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
+<li class="nav-item"><a style="color:#FFF;" class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 /category/<?php echo $_smarty_tpl->tpl_vars['inc']->value['catid'];?>
 /<?php echo $_smarty_tpl->tpl_vars['inc']->value['seoname'];?>
 .html"><?php echo smarty_modifier_replace(stripslashes($_smarty_tpl->tpl_vars['inc']->value['name'])," ","&nbsp;");?>
@@ -92,47 +92,47 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </ul>
 </li>
 <?php }
-$_smarty_tpl->tpl_vars['caty'] = $__foreach_caty_7_saved;
+$_smarty_tpl->tpl_vars['caty'] = $__foreach_caty_0_saved;
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-<li class="nav-item">
+<li class="nav-item" >
 <?php ob_start();
 echo $_smarty_tpl->tpl_vars['toplinks']->value;
 $_prefixVariable2 = ob_get_clean();
-if ($_smarty_tpl->tpl_vars['ifavaible']->value > $_prefixVariable2) {?><a class="nav-link" href="#"><?php echo $_smarty_tpl->tpl_vars['lang']->value[114];?>
+if ($_smarty_tpl->tpl_vars['ifavaible']->value > $_prefixVariable2) {?><a style="color:#FFF;" class="nav-link" href="#"><?php echo $_smarty_tpl->tpl_vars['lang']->value[114];?>
 </a>
-<ul>
+<ul >
 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categori']->value, 'morecat');
 $_smarty_tpl->tpl_vars['morecat']->index = -1;
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['morecat']->value) {
 $_smarty_tpl->tpl_vars['morecat']->index++;
-$__foreach_morecat_9_saved = $_smarty_tpl->tpl_vars['morecat'];
+$__foreach_morecat_2_saved = $_smarty_tpl->tpl_vars['morecat'];
 ob_start();
 echo $_smarty_tpl->tpl_vars['toplinks']->value;
 $_prefixVariable3 = ob_get_clean();
 if ($_smarty_tpl->tpl_vars['morecat']->value['cord'] == 0 && $_smarty_tpl->tpl_vars['morecat']->index >= $_prefixVariable3) {
 if ($_smarty_tpl->tpl_vars['rewritemod']->value == 2) {?>
-<li class="nav-item"><a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
+<li class="nav-item"><a style="color:#FFF;" class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 /categories.php?id=<?php echo $_smarty_tpl->tpl_vars['morecat']->value['catid'];?>
 "><?php echo smarty_modifier_replace(stripslashes($_smarty_tpl->tpl_vars['morecat']->value['name'])," ","&nbsp;");?>
 </a>
 <?php }
 if ($_smarty_tpl->tpl_vars['rewritemod']->value == 1) {?>
-<li class="nav-item"><a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
+<li class="nav-item"><a style="color:#FFF;" class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 /category/<?php echo $_smarty_tpl->tpl_vars['morecat']->value['catid'];?>
 /<?php echo $_smarty_tpl->tpl_vars['morecat']->value['seoname'];?>
 .html"><?php echo smarty_modifier_replace(stripslashes($_smarty_tpl->tpl_vars['morecat']->value['name'])," ","&nbsp;");?>
 </a>
 <?php }
 }
-$_smarty_tpl->tpl_vars['morecat'] = $__foreach_morecat_9_saved;
+$_smarty_tpl->tpl_vars['morecat'] = $__foreach_morecat_2_saved;
 }
 } else {
 ?>
-<li class="nav-item"><a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
+<li class="nav-item"><a  style="color:#FFF;" class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 ">Categories</li></a>
 <?php
 }

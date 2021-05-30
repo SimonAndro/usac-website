@@ -55,7 +55,7 @@ if($id > '7') {
 if($id == '1') {
 ?>
 <div class="container minheight mt-3">
-<?php
+  <?php
  if(@$_SESSION['INC_USER_ID'] == true) {
   echo "<div class='alert alert-danger'>".$lang['142']."</div></div>";
   $smarty->display('footer.php');
@@ -150,37 +150,38 @@ if($id == '1') {
  } else {
   $random = rand(100,800);
 ?>
-<form action="auth.php?auth=1" method="post">
-<div class="row mt-5">
-<div class="col-md-12">
-<h4><?php echo $lang['151']; ?></h4>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-<?php echo $lang['150']; ?>
-</div>
-</div>
-<div class="row mt-2">
-<div class="col-md-5">
-<label><?php echo $lang['152']; ?></label>
-<input class="form-control" name="email" type="text" data-validation="email" />
-</div>
-<?php if($stopspam == 2) { ?>
-<div class="col-md-1 mt-4 text-center">
-<img src="includes/captcha.php?<?php echo $random; ?>" class="mt-3" width="75" height="28" alt="Captcha" />
-</div>
-<div class="col-md-3">
-<label><?php echo $lang['173']; ?></label>
-<input class="form-control" name="check" type="text" autocomplete="off" data-validation="length" data-validation-length="4-4" />
-</div>
-<?php } ?>
-<div class="col-md-2 mt-3">
-<div><input class="btn btn-danger mt-3" type="submit" value="<?php echo $lang['151']; ?>" name="Submit"></div>
-</div>
-</div>
-</form>
-<?php
+  <form action="auth.php?auth=1" method="post">
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h4><?php echo $lang['151']; ?></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <?php echo $lang['150']; ?>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-5">
+        <label><?php echo $lang['152']; ?></label>
+        <input class="form-control" name="email" type="text" data-validation="email" />
+      </div>
+      <?php if($stopspam == 2) { ?>
+      <div class="col-md-1 mt-4 text-center">
+        <img src="includes/captcha.php?<?php echo $random; ?>" class="mt-3" width="75" height="28" alt="Captcha" />
+      </div>
+      <div class="col-md-3">
+        <label><?php echo $lang['173']; ?></label>
+        <input class="form-control" name="check" type="text" autocomplete="off" data-validation="length"
+          data-validation-length="4-4" />
+      </div>
+      <?php } ?>
+      <div class="col-md-2 mt-3">
+        <div><input class="btn btn-danger mt-3" type="submit" value="<?php echo $lang['151']; ?>" name="Submit"></div>
+      </div>
+    </div>
+  </form>
+  <?php
 }
 ?>
 </div>
@@ -189,7 +190,7 @@ if($id == '1') {
 if($id == '2') {
 ?>
 <div class="container minheight mt-3">
-<?php
+  <?php
  if(@$_SESSION['INC_USER_ID'] == true) {
   echo "<div class='alert alert-danger'>".$lang['142']."</div></div>";
   $smarty->display('footer.php');
@@ -253,10 +254,10 @@ if($id == '2') {
   $subject = "$lang[154] $sitetitle";
   mail($email,$subject,$bodys,$headers);
 ?>
-<div class="alert alert-success">
-<?php echo $lang['155']; ?>
-</div>
-<?php
+  <div class="alert alert-success">
+    <?php echo $lang['155']; ?>
+  </div>
+  <?php
 } else {
   echo "<div class='alert alert-danger'>".$lang['139']."</div></div>";
   $smarty->display('footer.php');
@@ -269,7 +270,7 @@ if($id == '2') {
 if($id == '3') {
 ?>
 <div class="container minheight mt-3">
-<?php
+  <?php
  if(@$_SESSION['INC_USER_ID'] == true) {
   echo "<div class='alert alert-danger'>".$lang['142']."</div></div>";
   $smarty->display('footer.php');
@@ -335,7 +336,7 @@ if($id == '3') {
 if($id == '4') {
 ?>
 <div class="container minheight mt-3">
-<?php
+  <?php
  unset($_SESSION['cusid']);
  unset($_SESSION['INC_USER_ID']);
  unset($_SESSION['INC_USER_NAME']);
@@ -353,26 +354,26 @@ if($id == '4') {
  session_destroy();
  $_SESSION = array();
 ?>
-<script>
-setTimeout(function(){
-window.location.replace("<?php echo $sitepath; ?>");
-}, 500);
-</script>
-<div class="text-center">
-<div class="fa-3x">
-  <i class="fa fa-spinner fa-pulse"></i>
-</div>
-<div>
-<?php echo $lang['156']; ?>
-</div>
-</div>
+  <script>
+    setTimeout(function () {
+      window.location.replace("<?php echo $sitepath; ?>");
+    }, 500);
+  </script>
+  <div class="text-center">
+    <div class="fa-3x">
+      <i class="fa fa-spinner fa-pulse"></i>
+    </div>
+    <div>
+      <?php echo $lang['156']; ?>
+    </div>
+  </div>
 </div>
 <?php
 }
 if($id == '5') {
 ?>
 <div class="container minheight mt-3">
-<?php
+  <?php
 unset($_SESSION['cusid']);
  unset($_SESSION['INC_USER_ID']);
  unset($_SESSION['INC_USER_NAME']);
@@ -522,20 +523,22 @@ unset($_SESSION['cusid']);
     $ah->MoveNext();
    }
 ?>
-<script>
-setTimeout(function(){
-window.location.replace("<?php if($return == false) { ?><?php echo $sitepath; ?><?php } else { ?>//<?php echo $return; ?><?php } ?>");
-}, 500);
-</script>
-<div class="text-center">
-<div class="fa-3x">
-  <i class="fa fa-spinner fa-pulse"></i>
-</div>
-<div>
-<?php echo $lang['141']; ?>
-</div>
-</div>
-<?php
+  <script>
+    setTimeout(function () {
+      window.location.replace(
+        "<?php if($return == false) { ?><?php echo $sitepath; ?><?php } else { ?>//<?php echo $return; ?><?php } ?>"
+      );
+    }, 500);
+  </script>
+  <div class="text-center">
+    <div class="fa-3x">
+      <i class="fa fa-spinner fa-pulse"></i>
+    </div>
+    <div>
+      <?php echo $lang['141']; ?>
+    </div>
+  </div>
+  <?php
 }
 } else {
   $random = rand(100,800);
@@ -551,50 +554,53 @@ window.location.replace("<?php if($return == false) { ?><?php echo $sitepath; ?>
    die();
   }
 ?>
-<form action="auth.php?auth=5" name="ccform" method="post">
-<input name="return" value="<?php echo $return; ?>" type="hidden" />
-<div class="row mt-5">
-<div class="col-md-12">
-<h4><?php echo $lang['201'] ?></h4>
-</div>
-</div>
-<div class="row">
-<div class="col-md-12">
-<?php echo $lang['202'] ?>
-</div>
-</div>
-<div class="row mt-2">
-<div class="col-md-4">
-<label><?php echo $lang['152'] ?></label>
-<input name="username" class="form-control" type="email" data-validation="email" data-validation-length="5-80" />
-</div>
-<div class="col-md-4">
-<label><?php echo $lang['207'] ?></label>
-<input name="password" class="form-control" type="password" data-validation="length" data-validation-length="5-30" />
-</div>
-<?php if($stopspam == 2) { ?>
-<div class="col-md-1 mt-3 text-center">
-<img src="includes/captcha.php?<?php echo $random; ?>" class="mt-3" width="75" height="28" alt="Captcha" />
-</div>
-<div class="col-md-3">
-<label><?php echo $lang['173']; ?></label>
-<input class="form-control" name="check" type="text" autocomplete="off" data-validation="length" data-validation-length="4-4" />
-</div>
-<?php } ?>
-</div>
-<div class="row mt-5">
-<div class="col-md-2">
-<input class="btn btn-danger" type="submit" value="<?php echo $lang['130'] ?>" name="Submit" />
-</div>
-<div class="col-md-3">
-<?php echo $lang['199']; ?>
-</div>
-<div class="col-md-7">
-<?php echo $lang['200']; ?><br />
-</div> 
-</div> 
-</form>
-<?php  } ?>
+  <form action="auth.php?auth=5" name="ccform" method="post">
+    <input name="return" value="<?php echo $return; ?>" type="hidden" />
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h4><?php echo $lang['201'] ?></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <?php echo $lang['202'] ?>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-4">
+        <label><?php echo $lang['152'] ?></label>
+        <input name="username" class="form-control" type="email" data-validation="email"
+          data-validation-length="5-80" />
+      </div>
+      <div class="col-md-4">
+        <label><?php echo $lang['207'] ?></label>
+        <input name="password" class="form-control" type="password" data-validation="length"
+          data-validation-length="5-30" />
+      </div>
+      <?php if($stopspam == 2) { ?>
+      <div class="col-md-1 mt-3 text-center">
+        <img src="includes/captcha.php?<?php echo $random; ?>" class="mt-3" width="75" height="28" alt="Captcha" />
+      </div>
+      <div class="col-md-3">
+        <label><?php echo $lang['173']; ?></label>
+        <input class="form-control" name="check" type="text" autocomplete="off" data-validation="length"
+          data-validation-length="4-4" />
+      </div>
+      <?php } ?>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-2">
+        <input class="btn btn-danger" type="submit" value="<?php echo $lang['130'] ?>" name="Submit" />
+      </div>
+      <div class="col-md-3">
+        <?php echo $lang['199']; ?>
+      </div>
+      <div class="col-md-7">
+        <?php echo $lang['200']; ?><br />
+      </div>
+    </div>
+  </form>
+  <?php  } ?>
 </div>
 <?php
 }
@@ -603,7 +609,7 @@ window.location.replace("<?php if($return == false) { ?><?php echo $sitepath; ?>
 if($id == '6') {
 ?>
 <div class="container minheight mt-3">
-<?php
+  <?php
  require_once ('salt.php');
  require_once ('classes/securesession.class.php');
  enterLogin($salt);
@@ -613,36 +619,36 @@ if($id == '6') {
   die();
  }
 ?>
-<div class="row mt-5">
-<div class="col-md-12">
-<h4><?php echo $lang['183'] ?></h4>
-</div>
-</div>
-<div class="row mt-1 mb-3">
-<div class="col-md-12">
-<a href="post.php" class="btn btn-danger"><?php echo $lang['220']; ?></a>
-</div>
-</div>
-<form action="post.php" method="post">
-<div class="row mt-4">
-<div class="col-md-12">
-<label><?php echo $lang['221']; ?></label>
-<input type="text" name="incname" class="form-control" placeholder="http://" data-validation="url" />
-</div>
-</div>
-<div class="row mt-1">
-<div class="col-md-12">
-<input class="btn btn-danger mt-3" type="submit" value="<?php echo $lang['221']; ?>" name="Submit">
-</div>
-</div>
-</form>
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h4><?php echo $lang['183'] ?></h4>
+    </div>
+  </div>
+  <div class="row mt-1 mb-3">
+    <div class="col-md-12">
+      <a href="post.php" class="btn btn-danger"><?php echo $lang['220']; ?></a>
+    </div>
+  </div>
+  <form action="post.php" method="post">
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <label><?php echo $lang['221']; ?></label>
+        <input type="text" name="incname" class="form-control" placeholder="http://" data-validation="url" />
+      </div>
+    </div>
+    <div class="row mt-1">
+      <div class="col-md-12">
+        <input class="btn btn-danger mt-3" type="submit" value="<?php echo $lang['221']; ?>" name="Submit">
+      </div>
+    </div>
+  </form>
 </div>
 <?php
 }
 if($id == '7') { 
 ?>
 <div class="container minheight mt-3">
-<?php
+  <?php
 if(isset($_POST['Submit'])) {
   if($stopspam == 2) {
   if(strlen($_POST['check']) < 4) {
@@ -804,7 +810,7 @@ keysi
  } else {
   $random = rand(100,800);
 ?>
-<form action="auth.php?auth=7" id="inrform" method="post">
+  <!-- <form action="auth.php?auth=7" id="inrform" method="post">
 <input type="hidden" name="privilege" value="<?php echo $signuprole ?>">
 <div class="row mt-5">
 <div class="col-md-12">
@@ -839,8 +845,37 @@ keysi
 <input class="btn btn-danger mt-3" type="submit" value="<?php echo $lang['211']; ?>" name="Submit">
 </div>
 </div>
-</form>
-<?php } ?>
+</form> -->
+  <div class="col-md-6">
+    <style>
+      .card {
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+      }
+
+      .card-container {
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+      }
+    </style>
+    <div class="card">
+      <div class="card-container">
+        Creating an account enables you to publish
+        and also comment on news articles on the USAC News Portal.
+        <br> 
+        You need to be a registered member of USAC to access
+        these features.
+        <br>
+        If you have no account yet, Register as USAC Member to enjoy more features on the USAC news portal.
+      </div>
+    </div>
+
+    <a href="/usac-website/register.php" type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:10px;">Member
+      Registration</a>
+  </div>
+  <?php } ?>
 </div>
 <?php } ?>
 </div>
@@ -848,13 +883,13 @@ keysi
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
 <script>
-$(function(){
-$('#coolMenu').find('> li').hover(function(){
-$(this).find('ul')
-.removeClass('noJS')
-.stop(true, true).toggle('fast');
-});
-});
+  $(function () {
+    $('#coolMenu').find('> li').hover(function () {
+      $(this).find('ul')
+        .removeClass('noJS')
+        .stop(true, true).toggle('fast');
+    });
+  });
 </script>
 <script src="<?php echo $sitepath; ?>/scripts/jquery.form-validator.min.js"></script>
 <script>
