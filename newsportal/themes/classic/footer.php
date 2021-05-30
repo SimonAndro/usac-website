@@ -77,10 +77,10 @@
                         <a href="{$sitepath}">{$lang.110}</a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">USAC website</a>
+                        <a href="./.." target="_blank">USAC website</a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">USAC Community</a>
+                        <a href="./../community" target="_blank">USAC Community</a>
                     </li>
                 </ul>
             </div>
