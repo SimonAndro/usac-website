@@ -32,9 +32,10 @@ else
   $newser[] = $ac->fields;
   $ac->MoveNext();
 }
-$smarty->caching = 1;
+$smarty->caching = 0;
 $smarty->assign('newser', @$newser);
 $smarty->display('rss.php');
+
 $conn->Close();
 ######################################
 ##rss.php                       BETA##

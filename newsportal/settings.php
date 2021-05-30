@@ -88,8 +88,14 @@ $keypublic = $option[33];
 $slider = $option[35];
 $efslide = $option[36];
 $logotext = $option[50];
-include ('libs/Smarty.class.php');
-$smarty = new smarty();
+
+// include ('libs/Smarty.class.php');
+// $smarty = new smarty();
+
+// use 
+require_once('libs/SmartyBC.class.php');
+$smarty = new SmartyBC();
+
 $smarty->template_dir = 'themes/'.$themes;
 $smarty->compile_dir = 'temp/templates_c';
 $smarty->config_dir = 'temp/config';

@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>{$sitetitle}</title>
-<description>{$metadesc}</description>
+<description><![CDATA[{$metadesc}]]></description>
 <link>{$sitepath}</link>
 {section name=newser loop=$newser}
 <item>

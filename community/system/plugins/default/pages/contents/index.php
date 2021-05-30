@@ -11,11 +11,21 @@
 ?>
 <div class="row ossn-page-contents">
 	<div class="col-md-6 home-left-contents">
+		<style>
+			.logo-usac{
+				width:100%;
+                height:auto;
+				background-color: rgb(255 255 255 / 15%);
+			}
+		
+		</style>
 		<div class="logo">
 			<?php if(ossn_site_settings('cache') == true){?>
-			<img src="<?php echo ossn_theme_url();?>images/logo.png" />
+			<!-- <img src="<?php echo ossn_theme_url();?>images/logo.png" /> -->
+			<img class ="logo-usac" src="../assets/img/usac-logo.png" />
 			<?php } else { ?>
-			<img src="<?php echo ossn_theme_url();?>images/logo.png?v=<?php echo time();?>" />
+			<!-- <img src="<?php echo ossn_theme_url();?>images/logo.png?v=<?php echo time();?>" /> -->
+			<img class ="logo-usac" src="../assets/img/usac-logo.png" />
 			<?php } ?>
 		</div>
 		<div class="description">
