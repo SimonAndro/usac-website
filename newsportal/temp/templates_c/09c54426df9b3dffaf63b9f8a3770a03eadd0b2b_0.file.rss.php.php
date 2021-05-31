@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2021-05-30 06:00:05
+/* Smarty version 3.1.32, created on 2021-05-30 11:59:17
   from 'E:\Ampps\www\usac-website\newsportal\themes\classic\rss.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_60b329e5387fe3_94220869',
+  'unifunc' => 'content_60b37e15b6ff88_61959901',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60b329e5387fe3_94220869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60b37e15b6ff88_61959901 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),1=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),2=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
 ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>

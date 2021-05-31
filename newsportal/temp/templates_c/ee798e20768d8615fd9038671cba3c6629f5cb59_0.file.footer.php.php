@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2021-05-30 03:19:06
+/* Smarty version 3.1.32, created on 2021-05-30 18:13:05
   from 'E:\Ampps\www\usac-website\newsportal\themes\classic\footer.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_60b3042a246d12_34519406',
+  'unifunc' => 'content_60b3d5b1a871b1_73847036',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee798e20768d8615fd9038671cba3c6629f5cb59' => 
     array (
       0 => 'E:\\Ampps\\www\\usac-website\\newsportal\\themes\\classic\\footer.php',
-      1 => 1622344729,
+      1 => 1622398114,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60b3042a246d12_34519406 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60b3d5b1a871b1_73847036 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Footer -->
 <footer class="page-footer font-small indigo" style="background-color: #4d4d4d !important; color:#212529; !important">
     <!-- Footer Links -->
@@ -96,7 +96,7 @@ function content_60b3042a246d12_34519406 (Smarty_Internal_Template $_smarty_tpl)
                     </li>
                 </ul>
             </div>
-            
+
             <!-- Grid column -->
             <hr class="clearfix w-100 d-md-none">
             <!-- Grid column -->
@@ -111,10 +111,10 @@ function content_60b3042a246d12_34519406 (Smarty_Internal_Template $_smarty_tpl)
 </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">USAC website</a>
+                        <a href="./.." target="_blank">USAC website</a>
                     </li>
                     <li>
-                        <a href="#" target="_blank">USAC Community</a>
+                        <a href="./../community" target="_blank">USAC Community</a>
                     </li>
                 </ul>
             </div>
@@ -124,10 +124,11 @@ function content_60b3042a246d12_34519406 (Smarty_Internal_Template $_smarty_tpl)
     </div>
     <!-- Footer Links -->
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">&copy; <?=date("Y")?> Copyright:
+    <div class="footer-copyright text-center py-3">
+        &copy; <?=date("Y")?> Copyright:
         <a href="<?php echo $_smarty_tpl->tpl_vars['sitepath']->value;?>
 "> <?php echo $_smarty_tpl->tpl_vars['sitetitle']->value;?>
-</a>
+</a>     
     </div>
     <!-- Copyright -->
 </footer>

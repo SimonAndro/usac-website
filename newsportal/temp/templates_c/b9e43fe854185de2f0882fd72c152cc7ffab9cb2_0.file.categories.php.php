@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2021-05-29 16:50:41
+/* Smarty version 3.1.32, created on 2021-05-30 11:13:23
   from 'E:\Ampps\www\usac-website\newsportal\themes\classic\categories.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_60b270e1296366_71064313',
+  'unifunc' => 'content_60b3735380a054_81940806',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:themes/".((string)$_smarty_tpl->tpl_vars[\'themes\']->value)."/footer.php' => 1,
   ),
 ),false)) {
-function content_60b270e1296366_71064313 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60b3735380a054_81940806 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),1=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.timeAgo.php','function'=>'smarty_modifier_timeAgo',),2=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),3=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\modifier.sortby.php','function'=>'smarty_modifier_sortby',),4=>array('file'=>'E:\\Ampps\\www\\usac-website\\newsportal\\libs\\plugins\\function.counter.php','function'=>'smarty_function_counter',),));
 ?><!DOCTYPE html>
 <html lang="en">

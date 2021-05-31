@@ -10,7 +10,7 @@
                     <div class="single-widget-wrap">
                         <div class="widgei-body">
                             <div class="footer-about">
-                                <img src="assets/img/footer-logo.png" alt="Logo" class="img-fluid">
+                                <img src="assets/img/usac-logo.png" alt="Logo" class="img-fluid" style="background-color: #ffffff40;">
                                 <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod
                                     tempor incidunt ut et do maga aliqua enim ad minim.</p>
                                 <a href="#">Phone: +8745 44 5444</a> <a href="#">Fax: +88474 156 362</a> <br> <a
@@ -91,25 +91,34 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="footer-bottom-text">
-                        <p>&#xA9; <cms:date  format='Y'/> USAC, All Rights Reserved. <a href="www.coffee.com">Designed by Coffee</a></p>
+                <div class="col-lg-12 text-center footer-note">
+                    <div class="footer-left">
+                        <div class="footer-bottom-text">
+                            <p>&#xA9;
+                                <cms:date format='Y' /> USAC, All Rights Reserved.</p>
+                        </div>
+
+                        <div id="copyright">
+                            Powered by
+                            <a href="https://www.couchcms.com/"
+                                title="CouchCMS - Simple Open-Source Content Management">
+                                CouchCMS
+                            </a>
+                        </div>
                     </div>
-        
-                    <div id="copyright">
-                        Powered by
-                        <a href="https://www.couchcms.com/" title="CouchCMS - Simple Open-Source Content Management">
-                            CouchCMS
+                    <div class="footer-right">
+                        <a href="https://www.360degrees.com/">
+                            <img style="-webkit-user-select: none;" src="assets/img/360degrees-btn.png" width="88" height="31">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
     <!-- Footer Bottom End -->
-   
-       
+
+
 </footer>
 <!--== Footer Area End ==-->
 
@@ -170,9 +179,9 @@
 
 <!-- custom js: main custom theme js file  -->
 <script>
-$("#owl-demo").owlCarousel({
-    navigation : true
-  });
+    $("#owl-demo").owlCarousel({
+        navigation: true
+    });
 </script>
 <script src="assets/js/theme.min.js"></script>
 

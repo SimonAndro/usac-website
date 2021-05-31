@@ -65,7 +65,7 @@
                     </li>
                 </ul>
             </div>
-            
+
             <!-- Grid column -->
             <hr class="clearfix w-100 d-md-none">
             <!-- Grid column -->
@@ -90,8 +90,9 @@
     </div>
     <!-- Footer Links -->
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">&copy; <?=date("Y")?> Copyright:
-        <a href="{$sitepath}"> {$sitetitle}</a>
+    <div class="footer-copyright text-center py-3">
+        &copy; <?=date("Y")?> Copyright:
+        <a href="{$sitepath}"> {$sitetitle}</a>     
     </div>
     <!-- Copyright -->
 </footer>

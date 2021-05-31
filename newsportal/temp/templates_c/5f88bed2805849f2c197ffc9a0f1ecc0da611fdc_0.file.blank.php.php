@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2021-05-29 16:50:32
+/* Smarty version 3.1.32, created on 2021-05-30 11:21:51
   from 'E:\Ampps\www\usac-website\newsportal\themes\classic\blank.php' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_60b270d887f964_66729873',
+  'unifunc' => 'content_60b3754f0fb987_67138276',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:themes/".((string)$_smarty_tpl->tpl_vars[\'themes\']->value)."/maindir.php' => 1,
   ),
 ),false)) {
-function content_60b270d887f964_66729873 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60b3754f0fb987_67138276 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
