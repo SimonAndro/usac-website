@@ -6,7 +6,7 @@
 #/components/*
 /cache
 /installation/INSTALLED
-/.htaccess
+#.htaccess
 Thumbs.db
 Desktop.ini
 DISPLAY_ERRORS
