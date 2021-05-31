@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.opensource-socialnetwork.org/v/3.0">
+    <name>AdsInserter</name>
+    <id>AdsInserter</id>
+    <author>Core Team</author>
+    <description>Inserts random ads on newsfeeds and below about page</description>
+    <license>Open Source Social Network License (OSSN LICENSE)</license>
+    <author_url>http://www.opensource-socialnetwork.org</author_url>
+    <license_url>http://www.opensource-socialnetwork.org/licence/</license_url>
+    <version>1.5</version>
+	<requires>
+		<type>ossn_version</type>
+		<version>5.4</version>
+	</requires>
+	<requires>
+		<type>ossn_component</type>
+		<name>OssnAds</name>
+		<version>3.0</version>
+	</requires>	
+</component>
