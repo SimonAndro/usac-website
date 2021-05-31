@@ -1,3 +1,5 @@
 
 admin/config!production.php
 dashboard/debug!.txt
+community/configurations/ossn.config!prod!db.php
+community/configurations/ossn.config!prod!site.php
