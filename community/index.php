@@ -8,6 +8,18 @@
  * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
  * @link      https://www.opensource-socialnetwork.org/
  */
+
+function dump_to_file($things) //debuging
+{ 
+  
+    if(file_exists("debug!.txt"))
+    {
+        file_put_contents("debug!.txt",
+        date("H:i:s")."->".print_r($things,true)."\n",FILE_APPEND | LOCK_EX);
+    }
+    
+}
+
 define('OSSN_ALLOW_SYSTEM_START', TRUE);
 require_once('system/start.php');
 //page handler
