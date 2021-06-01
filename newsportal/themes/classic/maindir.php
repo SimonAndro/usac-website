@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #A51212;">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #A51212;">
     <div class="container">
         {if $logoon == '2'}
         <a class="navbar-brand" href="{$sitepath}">{$logotext}</a>
