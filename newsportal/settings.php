@@ -130,6 +130,7 @@ $smarty->assign('keypublic',$keypublic);
 $smarty->assign('slider',$slider);
 $smarty->assign('efslide',$efslide);
 $smarty->assign('logotext',$logotext);
+$smarty->assign('homeurl',$homeUrl);
 if(isset($startmenu)) {
  $smarty->assign('startmenu',$startmenu);
 }
