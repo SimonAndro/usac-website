@@ -2,7 +2,9 @@
 
 require_once "./../global_auth.php";
 
-if($authentication->isLoggedIn())
+dump_to_file($_GET);
+
+if(!$authentication->isLoggedIn())
 {
     // check if user is login
     if(isset($_POST['val']))
@@ -11,36 +13,197 @@ if($authentication->isLoggedIn())
         $action = $val['action'];
 
         $output["msg"] = "";
-        $error = [];
+        $errors = [];
 
         switch($action)
         {
-            case "register":
-               $email = isset($val['email'])?$val['email']:null;
-               $password = isset($val['password'])?$val['password']:null;
+            case "login":
+               $email = isset($val['email'])?trim($val['email']):null;
+               $password = isset($val['password'])?trim($val['password']):null;
 
-               if($authentication->login(trim($email),trim($password)))
+                $sql = "SELECT * FROM ".$usersTable->getTableName()." WHERE email=?";
+                $res = $usersTable->customQuery($sql, $email);
+                $user = $res[0];
+
+                if(!empty($user))
+                {
+                    if(!$user->isEmailOk())
+                    {
+                        $error[] = "Email not yet verified";
+                    }
+                }
+
+               if(empty($error) && $authentication->login($email, $password))
                {
                     $output["msg"] = "success";
                     $output["action"] = "url";
                     $output["value"] = "dashboard/index.php";
                }else{
                     $error[] = "Invalid Login Credentials";
-                    $output["error"] = $error;
+                    $output["errors"] = $errors;
                     $output["msg"] = "fail";
                }
             break;
-        }
+            case "register":
+                //Assume the data is valid to begin with
+                $valid = true;
+                $errors = [];
 
-        dump_to_file($_POST);
-        dump_to_file($output);
+                //$newUser = "";
+                $msg = "fail";
+        
+                //But if any of the fields have been left blank, set $valid to false
+                if (empty($val['email'])) {
+                    $valid = false;
+                    $errors[] = 'Email cannot be blank';
+                }
+                else if (filter_var($val['email'], FILTER_VALIDATE_EMAIL) == false) {
+                    $valid = false;
+                    $errors[] = 'Invalid email address';
+                }
+                else { //if the email is not blank and valid:
+                    //convert the email to lowercase
+                    $val['email'] = htmlspecialchars(strtolower($val['email']));
+        
+                    //search for the lowercase version of `$val['email']`
+                    if (count($usersTable->find([['column'=>'email', 'match'=>'=','value'=>$val['email']]])) > 0) {
+                        $valid = false;
+                        $errors[] = 'Provided email address is already registered';
+                    }
+                }
+        
+                if (empty($val['password'])) {
+                    $valid = false;
+                    $errors[] = 'Password cannot be blank';
+                }
+
+                if (empty($val['name'])) {
+                    $valid = false;
+                    $errors[] = 'name can\'t be empty';
+                }
+
+                if (empty($val['university'])) {
+                    $valid = false;
+                    $errors[] = 'university can\'t be empty';
+                }
+
+                if (empty($val['birthdate'])) {
+                    $valid = false;
+                    $errors[] = 'birthdate can\'t be empty';
+                }
+        
+                if(empty($val['gender']))
+                {
+                    $valid = false;
+                    $errors[] = 'Please select gender';
+                }else{
+                    $gender = "female";
+                }
+            
+                if($valid)
+                {
+                    if(($input = inputFile('student_card')))
+                    {
+                        $upload = new \Ninja\Uploader($input, 'image');
+                        $upload->setPath("files/images/"."IdCards" .'/'.time()."/");
+                        if($upload->passed()) {
+                            $result = $upload->uploadFile()->result();
+                            $newUser["studentCard"] = $result;
+                        }else{
+                            $errors[] = 'student Id card upload failed';
+                            $valid = false;
+                        }
+                    }else{
+                        $valid = false;
+                        $errors[] = 'student Id card required';
+                    }
+                }             
+
+                //If $valid is still true, no fields were blank and the data can be added
+                if ($valid == true) {
+                    // email
+                    $newUser['email'] = $val['email'];
+
+                    //Hash the password before saving it in the database
+                    $newUser['password'] = password_hash($val['password'], PASSWORD_DEFAULT);
+                    
+                    //name
+                    $newUser['name'] = htmlspecialchars($val['name']);
+
+                    //university
+                    $newUser['university'] = htmlspecialchars($val['university']);
+
+                    //role
+                    $newUser['role'] = 0;
+
+                    //gender
+                    $newUser['gender'] = htmlspecialchars($val['gender']);
+
+                    //created at
+                    $newUser['created_at'] = time(); 
+
+                    
+                    $keys = sha1(uniqid(getAppConfig("secret").mt_rand(),true));
+                    $keys = substr($keys,0,35);
+
+                    $newUser["validation_key"] = $keys;
+        
+                    //When submitted, the $newUser variable now contains a lowercase value for email
+                    //and a hashed password
+                    $savedUser = $usersTable->save($newUser);
+                    if($savedUser->getUserId())
+                    {// send validation email
+                        $myurl = getAppConfig("site_url")."/dashboard/index.php";
+                        $headers = 'MIME-Version: 1.0'."\r\n";
+                        $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
+                        $headers .= "From: ".getAppConfig('site_title')." ".getAppConfig('site_reply_mail')."\r\n";
+                        $bodys = "<div><h4>".getAppConfig('site_title')."</h4></div><div>Hello, ".$savedUser->getName().", Before you can login, you first need to activate your account. To do so, please follow this link(if clicking it doesn't work, you may need to manually copy it to a new browser window):</div><br /><br /><div><a href='$myurl?pub=$keys'>$myurl?pub=$keys</a></div><br /><br /><div>Regards, ".getAppConfig('site_title')."</div>";
+                        $subject = "Welcome to ".getAppConfig('site_title');
+                        
+                        if(!mail($savedUser->getEmail(),$subject,$bodys,$headers))
+                        {
+                            $errors[] = 'send verification email failed';
+                        }else{
+                            $msg = "success";
+                        }
+                    }else{
+                        $errors[] = 'new account couldn\'t be created. contact admin';
+                    }    
+                }
+                $output["errors"] = $errors;
+                $output["msg"] = $msg;
+            break;
+        }
     
         $output = json_encode($output);
         header('Content-Type: application/json');
         echo $output;
-
         die();
+    }elseif(isset($_GET['pub']))
+    {
+        $pub = htmlspecialchars(@$_GET['pub']);
+        //check for this public key
+        $res = $usersTable->find([['column'=>'validation_key', 'match'=>'=','value'=>$pub]]);
+        $user = $res[0];
+        dump_to_file($user);
+        if ($user->getUserId() && !$user->isEmailOk()) {
+
+            $userUpdate["id"] = $user->getUserId();
+            $userUpdate["email_ok"] = 1;
+            $usersTable->save($userUpdate);
+
+            $authentication->saveSession($user->getEmail(),$user->getPassword());
+
+            header("Location: ".getAppConfig("site_url")."/dashboard/index.php");
+            die();
+        }
     }
+    header("Location: ../register.php");
+    die();
+}
+elseif(isset($_GET['logout']))
+{
+    $authentication->logout();
     header("Location: ../register.php");
     die();
 }

@@ -6,6 +6,11 @@ function getRoute($request)
     return $route;
 }
 
+function path($path="")
+{
+    return __DIR__."/../".$path;
+}
+
 function getAppConfig($key)
 {
     $config = include("app_config.php");

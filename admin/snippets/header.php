@@ -128,9 +128,21 @@
                                 require_once __DIR__ ."/../global_auth.php";
                                 if($authentication->isLoggedIn()){
                                     echo '<a title="Dashboard" class="btn-auth btn-auth-rev" href="./dashboard">Dashboard</a>';
+                                    echo '<a title="Register or Login" class="btn-auth btn-auth" href="./dashboard/index.php?logout=1">Logout</a>';
+                                    
+                                    global $CTX;
+                                    $CTX->set( 'user_logged_in', 1, 'global' );
+                                }else{
+                                    echo '<a title="Register or Login" class="btn-auth btn-auth" href="register.php">Login or Signup</a>';
                                 } 
-                            </cms:php>    
-                            <a title="Register or Login" class="btn-auth btn-auth" href="register.php">Login or Signup</a>
+                            </cms:php>   
+                            <cms:if k_template_name="register.php">
+                                <cms:if user_logged_in>
+                                    <cms:php>
+                                       header("Location: ./dashboard");
+                                    </cms:php>
+                                </cms:if>
+                            </cms:if>
                         </div>
                     </div>
                 </div>

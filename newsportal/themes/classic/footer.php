@@ -30,18 +30,14 @@
                 <!-- Links -->
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">News</h5>
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="#!">Education</a>
-                    </li>
-                    <li>
-                        <a href="#!">Entertainment</a>
-                    </li>
-                    <li>
-                        <a href="#!">Health</a>
-                    </li>
-                    <li>
-                        <a href="#!">Science</a>
-                    </li>
+                    {foreach from=$subcat item=inc}
+                        {if $inc.cord neq 0 && $inc.parent eq 1 }
+                        <li>
+                            <a  href="{$sitepath}/categories.php?id={$inc.catid}">{$inc.name|stripslashes|replace:"
+                                        ":"&nbsp;"}</a>
+                        </li>
+                        {/if}
+                    {/foreach}
                 </ul>
             </div>
             <!-- Grid column -->
@@ -51,18 +47,14 @@
                 <!-- Links -->
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Lifestyle</h5>
                 <ul class="list-unstyled">
+                {foreach from=$subcat item=inc}
+                    {if $inc.cord neq 0 && $inc.parent eq 17}
                     <li>
-                        <a href="#!">Fashion</a>
+                        <a  href="{$sitepath}/categories.php?id={$inc.catid}">{$inc.name|stripslashes|replace:"
+                                    ":"&nbsp;"}</a>
                     </li>
-                    <li>
-                        <a href="#!">Religion</a>
-                    </li>
-                    <li>
-                        <a href="#!">Relationship</a>
-                    </li>
-                    <li>
-                        <a href="#!">Profiles</a>
-                    </li>
+                    {/if}
+                {/foreach}
                 </ul>
             </div>
 

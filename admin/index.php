@@ -1,4 +1,5 @@
 <?php
+
     ob_start();
     k_timer_start();
     define( 'K_ADMIN', 1 );

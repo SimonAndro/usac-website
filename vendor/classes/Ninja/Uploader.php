@@ -64,10 +64,10 @@ class Uploader
     private $type;
 
     //max sizes
-    private $maxFileSize = 10000000;
-    private $maxImageSize = 10000000;
-    private $maxVideoSize = 10000000;
-    private $maxAudioSize = 10000000;
+    private $maxFileSize = 1000000;
+    private $maxImageSize = 1000000;
+    private $maxVideoSize = 1000000;
+    private $maxAudioSize = 1000000;
 
     private $error = false;
     private $errorMessage;
@@ -104,12 +104,11 @@ class Uploader
             $this->errorMessage = l("failed-to-upload-file");
 
         }
-
-
+        
         //confirm the creation of uploads directory
-        if (!is_dir(path('//uploads/'))) {
-            @mkdir(path('//uploads/'), 0777, true);
-            $file = @fopen(path('//uploads/index.html'), 'x+');
+        if (!is_dir(path('uploads/'))) {
+            @mkdir(path('uploads/'), 0777, true);
+            $file = @fopen(path('uploads/index.html'), 'x+');
             fclose($file);
         }
 

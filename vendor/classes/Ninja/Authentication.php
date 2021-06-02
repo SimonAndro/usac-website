@@ -17,14 +17,19 @@ class Authentication {
 		$user = $this->users->find([['column'=>$this->usernameColumn,'match'=>'=','value'=>strtolower($username)]]);
 
 		if (!empty($user) && password_verify($password, $user[0]->{$this->passwordColumn})) {
-			session_regenerate_id();
-			$_SESSION['username'] = $username;
-			$_SESSION['password'] = $user[0]->{$this->passwordColumn};
+			$this->saveSession($username,$user[0]->{$this->passwordColumn});
 			return true;
 		}
 		else {
 			return false;
 		}
+	}
+
+	public function saveSession($username,$password)
+	{
+		session_regenerate_id();
+		$_SESSION['username'] = $username;
+		$_SESSION['password'] = $password;
 	}
 
 	public function logout() {

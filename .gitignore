@@ -4,3 +4,5 @@ dashboard/debug!.txt
 community/configurations/ossn.config!prod!db.php
 community/configurations/ossn.config!prod!site.php
 community/debug!.txt
+uploads
+newsportal/temp

@@ -409,7 +409,9 @@
     if( !defined('K_THEME_URL') ) define( 'K_THEME_URL', '' );
 
     // include custom functions/addons if any
+ 
     if( file_exists(K_ADDONS_DIR . 'kfunctions.php') ){
+        
         include_once( K_ADDONS_DIR . 'kfunctions.php' );
     }
     if( file_exists(K_SITE_DIR . 'kfunctions.php') ){

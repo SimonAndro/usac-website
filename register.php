@@ -2,6 +2,7 @@
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
+<!--  -->
 <!--== Header Area End ==-->
 
 <!--== Page Title Area Start ==-->
@@ -42,7 +43,7 @@
                                                     <div class="sign-form">
                                                         <form action="./dashboard/index.php"
                                                             onsubmit="event.preventDefault(); loginUser(this);">
-                                                            <input type="hidden" value="register" name="val[action]" />
+                                                            <input type="hidden" value="login" name="val[action]" />
                                                             <input id="login-email" type="text" name="val[email]"
                                                                 placeholder="Enter your email">
                                                             <input id="login-password" type="password"
@@ -64,14 +65,16 @@
                                         <div class="register-form-wrap">
                                             <h3>registration Form</h3>
                                             <div class="register-form">
-                                          
-                                                <form onsubmit="event.preventDefault(); registerUser(this);">
+                                                <div class="error-msg-list-register invisible">
+                                                </div>
+                                                <form action="./dashboard/index.php"  onsubmit="event.preventDefault(); registerUser(this);" enctype="multipart/form-data">
+                                                    <input type="hidden" value="register" name="val[action]" />
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="register_email">Email</label>
                                                                 <input type="email" class="form-control"
-                                                                    id="register_email" name="register_email">
+                                                                    id="register_email" name="val[email]">
                                                             </div>
                                                         </div>
 
@@ -79,7 +82,7 @@
                                                             <div class="form-group">
                                                                 <label for="register_password">Password</label>
                                                                 <input type="password" class="form-control"
-                                                                    id="register_password" name="register_password">
+                                                                    id="register_password" name="val[password]">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -88,7 +91,7 @@
                                                             <div class="form-group">
                                                                 <label for="register_name">Name</label>
                                                                 <input type="text" class="form-control"
-                                                                    id="register_name" name="register_name">
+                                                                    id="register_name" name="val[name]">
                                                             </div>
                                                         </div>
 
@@ -96,40 +99,41 @@
                                                             <div class="form-group">
                                                                 <label for="register_stuid">University</label>
                                                                 <input type="text" class="form-control"
-                                                                    id="register_stuid" name="register_stuid">
+                                                                    id="register_uni" name="val[university]">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                       
                                                         <div class="col-12 col-sm-12">
-                                      
-                                                        
-                                                            <input style="height: 39px !important; font-size:16px;" class="form-control" type="text" name="val[birthdate]" placeholder="Birthdate" readonly="readonly" id="quiDatepicker">
-                                                    
-                                                   
+                                                            <input style="height: 39px !important; font-size:16px;"
+                                                                class="form-control" type="text" name="val[birthdate]"
+                                                                placeholder="Birthdate" readonly="readonly"
+                                                                id="quiDatepicker">
                                                         </div>
                                                     </div>
                                                     <div class="form-group file-input">
-                                                        <input type="file" name="register_file" id="customfile"
-                                                            class="d-none">
-                                                        <label class="custom-file" for="customfile"><i
+                                                        <!-- student-card-file -->
+                                                        <label class="custom-file" for="customfile" ><i
                                                                 class="fa fa-upload"></i>Upload Your Student ID
-                                                            Card</label>
+                                                            Card (required)</label>
+                                                        <input type="file" name="student_card" id="customfile" onchange="fileChanged(this)"
+                                                            class="d-none student-card-file">
+                                                        <span class="std-card-fn f-error"></span>
+                                                        
                                                     </div>
 
                                                     <div class="gender form-group">
                                                         <label class="g-name d-block">Gender</label>
                                                         <div class="custom-control custom-radio custom-control-inline">
                                                             <input type="radio" id="register_gender_male"
-                                                                name="register_gender" value="mail"
+                                                                name="val[gender]" value="male"
                                                                 class="custom-control-input">
                                                             <label class="custom-control-label"
                                                                 for="register_gender_male">Male</label>
                                                         </div>
                                                         <div class="custom-control custom-radio custom-control-inline">
                                                             <input type="radio" id="register_gender_female"
-                                                                name="register_gender" value="female"
+                                                                name="val[gender]" value="female"
                                                                 class="custom-control-input">
                                                             <label class="custom-control-label"
                                                                 for="register_gender_female">Female</label>
@@ -139,10 +143,10 @@
                                                     <div class="form-group">
                                                         <div class="custom-control custom-checkbox float-lg-right">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="customCheck1">
-                                                            <label class="custom-control-label" for="customCheck1">
+                                                                id="customCheck1" >
+                                                            <label class="custom-control-label" for="customCheck1" name="val[terms]">
                                                                 I have read and agree to the <a href="terms.php">USAC
-                                                                Terms of Service </a></label>
+                                                                    Terms of Service </a></label>
                                                         </div>
                                                         <input type="submit" class="btn btn-reg" value="Registration">
                                                     </div>

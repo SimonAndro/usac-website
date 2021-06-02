@@ -8,6 +8,8 @@ try {
     $usersTable = new \Ninja\DatabaseTable($pdo, 'students', 'id', 'User');
     $authentication = new \Ninja\Authentication($usersTable, 'email', 'password');
 
+    dump_to_file("added");
+
 }
 catch (PDOException $e) {
 
