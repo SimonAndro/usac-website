@@ -145,9 +145,9 @@ function registerUser(t) {
                     $('.error-msg-list-register').append(
                         '<div class="alert alert-success text-center"><strong>Success!</strong></div>'
                     );
-                   // $("#page-title-area").remove();
-                    //$("#footer-area").remove();
-                    //$(".register-page-inner").html('<div class="alert alert-success" style="margin:10px;">A verification email has been sent to your inbox. Please open it to verify email.(if not in the inbox, it could be in the spam folder)</div>');
+                    $("#page-title-area").remove();
+                    $("#footer-area").remove();
+                    $(".register-page-inner").html('<div class="alert alert-success" style="margin:10px;">A verification email has been sent to your inbox. Please open it to verify email.(if not in the inbox, it could be in the spam folder)</div>');
                 } else {
                     $('.error-msg-list-register').html(' ');
                     var error = result.errors;
@@ -173,7 +173,7 @@ function registerUser(t) {
         $('.error-msg-list-register').removeClass('invisible');
     }
 
-    window.scrollBy(0, -window.innerHeight); // scroll to top to show messages
+    window.scrollBy(0, -window.innerHeight*0.5); // scroll to top to show messages
 
     return false;
 }

@@ -29,11 +29,11 @@ if(!$authentication->isLoggedIn())
                 {
                     if(!$user->isEmailOk())
                     {
-                        $error[] = "Email not yet verified";
+                        $errors[] = "Invalid Login Credentials";
                     }
                 }
 
-               if(empty($error) && $authentication->login($email, $password))
+               if(empty($errors) && $authentication->login($email, $password))
                {
                     $output["msg"] = "success";
                     $output["action"] = "url";
@@ -185,18 +185,27 @@ if(!$authentication->isLoggedIn())
         //check for this public key
         $res = $usersTable->find([['column'=>'validation_key', 'match'=>'=','value'=>$pub]]);
         $user = $res[0];
-        dump_to_file($user);
-        if ($user->getUserId() && !$user->isEmailOk()) {
+        if(!empty($user))
+        {
+            if ($user->getUserId() && !$user->isEmailOk()) {
 
-            $userUpdate["id"] = $user->getUserId();
-            $userUpdate["email_ok"] = 1;
-            $usersTable->save($userUpdate);
-
-            $authentication->saveSession($user->getEmail(),$user->getPassword());
-
-            header("Location: ".getAppConfig("site_url")."/dashboard/index.php");
+                $userUpdate["id"] = $user->getUserId();
+                $userUpdate["email_ok"] = 1;
+                $usersTable->save($userUpdate);
+    
+                $authentication->saveSession($user->getEmail(),$user->getPassword());
+    
+                header("Location: ".getAppConfig("site_url")."/dashboard/index.php");
+                die();
+            }else{
+                header("Location: ../error.php");
+                die();
+            }
+        }else{
+            header("Location: ../error.php");
             die();
         }
+        
     }
     header("Location: ../register.php");
     die();
@@ -308,7 +317,7 @@ elseif(isset($_GET['logout']))
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="./../">View Site</a>
                                     <hr style="padding:0;margin:0;">
-                                    <a class="dropdown-item" href="#">Logout</a>
+                                    <a class="dropdown-item" href="./index.php?logout=1">Logout</a>
                                 </div>
                             </li>
     
