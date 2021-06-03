@@ -13,7 +13,13 @@ function path($path="")
 
 function getAppConfig($key)
 {
-    $config = include("app_config.php");
+    if(file_exists("LOCAL.DEV"))
+    {
+        $config = include("app_config.dev.php");
+    }else{
+        $config = include("app_config.php");
+    }
+    
     return $config[$key];
 }
 
