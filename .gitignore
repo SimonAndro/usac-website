@@ -9,3 +9,7 @@ newsportal/temp
 newsportal/admin/config.php
 newsportal/admin/config.php
 includes/app_config.php
+newsportal/admin/LOCAL.DEV
+community/configurations/LOCAL.DEV
+admin/LOCAL.DEV
+includes/LOCAL.DEV
