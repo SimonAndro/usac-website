@@ -13,7 +13,7 @@ function path($path="")
 
 function getAppConfig($key)
 {
-    if(file_exists("LOCAL.DEV"))
+    if(is_file(__DIR__."/LOCAL.DEV"))
     {
         $config = include("app_config.dev.php");
     }else{

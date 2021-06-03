@@ -13,3 +13,5 @@ newsportal/admin/LOCAL.DEV
 community/configurations/LOCAL.DEV
 admin/LOCAL.DEV
 includes/LOCAL.DEV
+debug!.txt
+dashboard/debug!.txt
