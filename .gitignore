@@ -15,3 +15,4 @@ admin/LOCAL.DEV
 includes/LOCAL.DEV
 debug!.txt
 dashboard/debug!.txt
+admin/config.php
