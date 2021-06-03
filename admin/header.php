@@ -52,12 +52,24 @@
     define( 'K_COUCH_VERSION', '2.2.1' ); // Changes with every release
     define( 'K_COUCH_BUILD', '20201114' ); // YYYYMMDD - do -
 
-    if( file_exists(K_COUCH_DIR.'config.php') ){
-        require_once( K_COUCH_DIR.'config.php' );
+    if(file_exists(K_COUCH_DIR.'LOCAL.DEV')) // load dev config
+    {
+        if( file_exists(K_COUCH_DIR.'config.dev.php') ){
+            require_once( K_COUCH_DIR.'config.dev.php' );
+        }
+        else{
+            die( '<h3>"config.php" not found. Perhaps you forgot to rename the "config.example.php" file to "config.php" after editing it?</h3>' );
+        }
+    }else{
+        if( file_exists(K_COUCH_DIR.'config.php') ){
+            require_once( K_COUCH_DIR.'config.php' );
+        }
+        else{
+            die( '<h3>"config.php" not found. Perhaps you forgot to rename the "config.example.php" file to "config.php" after editing it?</h3>' );
+        }
     }
-    else{
-        die( '<h3>"config.php" not found. Perhaps you forgot to rename the "config.example.php" file to "config.php" after editing it?</h3>' );
-    }
+    
+
     if( function_exists('mb_internal_encoding') ) mb_internal_encoding( K_CHARSET );
     define( 'K_CACHE_OPCODES', '1' );
     define( 'K_CACHE_SETTINGS', '0' );

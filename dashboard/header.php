@@ -244,14 +244,13 @@ elseif(isset($_GET['logout']))
     <div class="wrapper ">
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
-                <a href="" class="simple-text logo-mini">
-                    <div class="logo-image-small">
+                <a href="" class="simple-text logo-normal">
+                    <div class="logo-image-small text-center">
                         <img src="../assets/img/usac-logo.png">
                     </div>
                     <!-- <p>CT</p> -->
                 </a>
                 <a href="" class="simple-text logo-normal">
-                    USAC
                     <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->

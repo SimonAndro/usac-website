@@ -6,3 +6,6 @@ community/configurations/ossn.config!prod!site.php
 community/debug!.txt
 uploads
 newsportal/temp
+newsportal/admin/config.php
+newsportal/admin/config.php
+includes/app_config.php

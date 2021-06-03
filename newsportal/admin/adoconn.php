@@ -4,7 +4,12 @@
 * GNU General Public License version 2
 * ************************************* */
 include ('../classes/adodb/adodb.inc.php');
-include ('config.php');
+if(file_exists("LOCAL.DEV"))
+{
+    include ('config.dev.php');
+}else{
+    include ('config.php');
+}
 $dbdriver = "mysqli";
 ##$ADODB_CACHE_DIR = '../db/ADODB_cache';
 $conn = ADONewConnection($dbdriver);
