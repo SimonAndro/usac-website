@@ -194,6 +194,10 @@ if(!$authentication->isLoggedIn())
                 $usersTable->save($userUpdate);
     
                 $authentication->saveSession($user->getEmail(),$user->getPassword());
+
+                //register on news platfrom
+
+                //register on social platform
     
                 header("Location: ".getAppConfig("site_url")."/dashboard/index.php");
                 die();

@@ -29,7 +29,16 @@ if(!file_exists($filename)) {
  die();
 }
 error_reporting(E_ALL & ~ E_STRICT & ~ E_NOTICE);
-include ('admin/config.php');
+if(file_exists("admin/LOCAL.DEV"))
+{
+    include ('admin/config.dev.php');
+}else{
+    include ('admin/config.php');
+}
+
+include ('../global_auth.php');
+
+
 include ('classes/adodb/adodb.inc.php');
 $dbdriver = "mysqli";
 ######################################
@@ -146,4 +155,17 @@ if (file_exists("install/index.php") or file_exists("install/index.php") or file
 ######################################
 ##settings.php                  BETA##
 ######################################
+
+/**Cross logins  */
+if($authentication->isLoggedIn())
+{
+    dump_to_file("is logged in");
+    $crossLogginUser = $authentication->getUser();
+    dump_to_file($crossLogginUser);
+    if($crossLogginUser->isEmailOk())
+    {
+        //check if user with this email exists
+    
+    }
+}
 ?>
