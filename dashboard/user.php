@@ -81,6 +81,25 @@ include "header.php";
               </div>
             </div>
 
+            <div class="row">
+            <div class="col-md-12 pl-1">
+            Update password
+            </div>
+              
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Old Password</label>
+                  <input type="text" class="form-control" placeholder="old password" value="">
+                </div>
+              </div>
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>New Password</label>
+                  <input type="text" class="form-control" placeholder="new password" value="" >
+                </div>
+              </div>
+            </div>
+
             <?php if($currentUser->isAdmin()):?>
             <div class="row">
             <div class="col-md-4 pr-1 pl-1">
