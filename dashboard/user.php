@@ -1,6 +1,8 @@
 <?php 
 $page = "user";
 include "header.php";
+
+$currentUser = $authentication->getUser();
  ?>
 <div class="content">
   <div class="row">
@@ -11,11 +13,10 @@ include "header.php";
         </div>
         <div class="card-body">
           <div class="author">
-            <a href="#">
-              <img class="avatar border-gray" src="../assets/img/mike.jpg" alt="...">
-              <h5 class="title">Chet Faker</h5>
+            <a href="#" onclick="return BigPicture({	el: this,	imgSrc: '<?= loadAsset($currentUser->getStudentCard(),true) ?>',})">
+              <img class="veri-doc border-gray" src="<?= loadAsset($currentUser->getStudentCard(),true) ?>" alt="Verification doc">
+              <h5 class="title">Verification</h5>
             </a>
-            
           </div>
         </div>
       </div>
@@ -28,81 +29,59 @@ include "header.php";
         <div class="card-body">
           <form class="pr-1 pl-1">
             <div class="row">
-              <div class="col-md-5 pr-1 pl-1">
-                <div class="form-group">
-                  <label>Association (disabled)</label>
-                  <input type="text" class="form-control" disabled="" placeholder="Company" value="USAC">
-                </div>
-              </div>
-              <div class="col-md-3 px-1 ">
-                <div class="form-group">
-                  <label>Username</label>
-                  <input type="text" class="form-control" placeholder="Username" value="michael23">
-                </div>
-              </div>
-              <div class="col-md-4 pr-1 pl-1">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" placeholder="Email">
-                </div>
-              </div>
-            </div>
-            <div class="row">
               <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
                   <label>First Name</label>
-                  <input type="text" class="form-control" placeholder="Company" value="Chet">
+                  <input type="text" class="form-control" placeholder="First name" value="<?= $currentUser->getFirstName() ?>">
                 </div>
               </div>
               <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
                   <label>Last Name</label>
-                  <input type="text" class="form-control" placeholder="Last Name" value="Faker">
+                  <input type="text" class="form-control" placeholder="Last Name" value="<?= $currentUser->getLastName() ?>">
                 </div>
               </div>
               <div class="col-md-4 pr-1 pl-1"> 
               <label>Date of Birth</label>
-              <input style="height: 39px !important; font-size:16px;" class="form-control" type="text" name="val[birthdate]" placeholder="Birthdate" readonly="readonly" id="quiDatepicker">
-              </div>
-            </div>
-            
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label>University</label>
-                  <input type="text" class="form-control" placeholder="University name" value="">
-                </div>
+              <input style="height: 39px !important; font-size:16px;" class="form-control" type="text" name="val[birthdate]" placeholder="Birthdate" readonly="readonly" id="quiDatepicker" value="<?= $currentUser->getBirthDate() ?>">
               </div>
             </div>
 
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-6 pl-1">
                 <div class="form-group">
-                  <label>Address</label>
-                  <input type="text" class="form-control" placeholder="Home Address" value="Melbourne, Australia">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" placeholder="Email" value="<?= $currentUser->getEmail() ?>">
+                
                 </div>
               </div>
+              
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                <label>Gender</label>
+                  <select class="form-control" id="genderSelect" value="<?= $currentUser->getGender() ?>">
+                    <option>male</option>
+                    <option>female</option>
+                </select>
+               </div>
+              </div>
             </div>
+            
             <div class="row">
-              <div class="col-md-4 pr-1 pl-1">
+              <div class="col-md-6 pl-1">
                 <div class="form-group">
-                  <label>City</label>
-                  <input type="text" class="form-control" placeholder="City" value="Melbourne">
+                  <label>University (Most recent)</label>
+                  <input type="text" class="form-control" placeholder="University name" value="<?= $currentUser->getUniversity() ?>">
                 </div>
               </div>
-              <div class="col-md-4 px-1">
+              <div class="col-md-6 pr-1">
                 <div class="form-group">
-                  <label>Country</label>
-                  <input type="text" class="form-control" placeholder="Country" value="Australia">
-                </div>
-              </div>
-              <div class="col-md-4 pr-1 pl-1">
-                <div class="form-group">
-                  <label>Postal Code</label>
-                  <input type="number" class="form-control" placeholder="ZIP Code">
+                  <label>Grad. Year</label>
+                  <input type="text" class="form-control" placeholder="Grad. Year" value="<?= $currentUser->getGraduationDate() ?>" readonly="readonly" id="quiDatepicker2">
                 </div>
               </div>
             </div>
+
             <div class="row">
               <div class="update ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary btn-round">Update Profile</button>

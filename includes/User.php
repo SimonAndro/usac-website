@@ -55,15 +55,15 @@ class User {
 	}
 
 	public function getBirthDate(){
-		return $this->grad_date;
+		return $this->date_birth;
 	}
 
 	public function getStudentCard(){
-		return $this->grad_date;
+		return $this->studentCard;
 	}
 
 	public function getGender(){
-		return $this->grad_date;
+		return $this->gender;
 	}
 
 	public function isEmailOk(){

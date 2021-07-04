@@ -15,6 +15,8 @@ return array(
 
     'site_url'=>'http://localhost/usac-website/',
 
+    'base-url'=>'http://localhost/usac-website/',
+
     'site_title'=>'USAC website',
 
     'site_reply_mail'=>'usac@noreply.com',
