@@ -3,7 +3,7 @@
 require_once "./../global_auth.php";
 require_once "actions.php";
 
-dump_to_file("$_GET");
+//dump_to_file("$_GET");
 
 // function generateRandomString($length = 6) {
 //     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -245,7 +245,7 @@ if(!$authentication->isLoggedIn())
                         }else{
                             $ossn_users_table = new \Ninja\DatabaseTable($ossn_pdo , 'ossn_users', 'guid', 'User');
                             $ossn_user = $ossn_users_table->save($ossn_fields);
-                            dump_to_file($ossn_user);
+                            //dump_to_file($ossn_user);
                             if(empty($ossn_user->{"guid"}))
                             {
                                 //handle error
@@ -273,7 +273,7 @@ if(!$authentication->isLoggedIn())
                         }else{
                             $np_users_table = new \Ninja\DatabaseTable($np_pdo , 'users', 'usid', 'User');
                             $np_user = $np_users_table->save($np_fields);
-                            dump_to_file($np_user);
+                            //dump_to_file($np_user);
                             if(empty($np_user->{"usid"}))
                             {
                                 //handle error
@@ -305,14 +305,14 @@ if(!$authentication->isLoggedIn())
                             $msg = "fail";
                         }
 
-                        dump_to_file($errors);
+                        //dump_to_file($errors);
                         if(!empty($errors["code"]))
                         {
                             $errors[] = "error code: ".$errors["code"][0];
                             unset($errors["code"]);
 
                             //remove saved emails
-                            dump_to_file($savedUser);
+                            //dump_to_file($savedUser);
                             if(!empty($savedUser->{"id"}))
                             {
                                 
@@ -420,7 +420,7 @@ if(!$authentication->isLoggedIn())
                 die();
             }
         }else{
-            dump_to_file($res);
+            //dump_to_file($res);
             header("Location: ../error.php?code=0x1548");
             die();
         }

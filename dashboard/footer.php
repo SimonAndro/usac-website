@@ -23,6 +23,8 @@
 
 <script src="../assets/js/plugins/Bigpicture.js"></script>
 
+<script src="../assets/js/plugins/notify.min.js"></script>
+
 <!-- custom js: custom js file is added for easy custom js code  -->
 <script src="../assets/js/custom.js"></script>
 

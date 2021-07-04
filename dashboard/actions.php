@@ -1,5 +1,6 @@
 <?php
 
+
 $reqAction = @$_GET["reqaction"];
 switch($reqAction)
 {
@@ -43,3 +44,36 @@ switch($reqAction)
     die();
     break;
 }
+
+$val = @$_POST['val'];
+if(isset($val))
+{
+    $reqAction = @$val["reqaction"];
+    if(isset($reqAction))
+    {
+        switch($reqAction)
+        {
+            case "update_user":
+                dump_to_file($val);
+                $msg = "success";
+
+                $userUpdate["email"] = "";
+                $userUpdate["name"] = "";
+                $userUpdate["name_last"] = "";
+                $userUpdate["gender"] = "";
+                $userUpdate["date_birth"] = "";
+                $userUpdate["university"] = "";
+                $userUpdate["grad_date"] = "";
+                $userUpdate["password"] = "";
+                $userUpdate["role"] = "";
+
+                $output["msg"] = $msg;
+                $output = json_encode($output);
+                header('Content-Type: application/json');
+                echo $output;
+                die();
+            break;
+        }
+    }
+}
+

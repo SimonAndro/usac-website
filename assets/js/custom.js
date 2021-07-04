@@ -9,6 +9,34 @@ jQuery(document).ready(function ($) {
             yearRange: "-200:+0", // last hundred years
         });
     });
+
+    $(".general-form").on("submit",function(e){
+        e.preventDefault();
+
+        $.ajax({
+            url: 'index.php',
+            type: 'post',
+            dataType: 'json',
+            data: $(this).serialize(),
+            success: function(res) {
+                    console.log(res);
+                    if(res.msg == "success")
+                    {
+                        $.notify("User Info Update Success", { globalPosition: "top center",  className: res.msg,});
+                    }else if(res.msg == "error")
+                    {
+                        $.notify("User Info Update Failed", { globalPosition: "top center",  className: res.msg,});
+                    }
+                    
+                },
+            error: function(res){
+                    console.log(res);
+                    $.notify("An Error Ocurred", { globalPosition: "top center",  className: 'error',});
+                }
+        });
+
+        return false;
+    });
 });
 
 function fileChanged(t) {

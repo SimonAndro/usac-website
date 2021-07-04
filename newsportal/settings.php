@@ -160,9 +160,9 @@ if (file_exists("install/index.php") or file_exists("install/index.php") or file
 /**Cross logins  */
 if($authentication->isLoggedIn())
 {
-    dump_to_file("is logged in");
+    //dump_to_file("is logged in");
     $crossLogginUser = $authentication->getUser();
-    dump_to_file($crossLogginUser);
+    //dump_to_file($crossLogginUser);
     if($crossLogginUser->isEmailOk())
     {
         //check if user with this email exists
