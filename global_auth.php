@@ -2,6 +2,7 @@
 try {
 	include __DIR__ . '/includes/autoload.php';
 	include __DIR__ . '/includes/utils.php';
+    include __DIR__ . '/includes/multi_register.php';
     include __DIR__ . '/includes/DatabaseConnection.php';
     include __DIR__ . '/includes/User.php';
 

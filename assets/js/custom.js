@@ -3,7 +3,7 @@
 jQuery(document).ready(function ($) {
 
     $(function () {
-        $("#quiDatepicker").datepicker({
+        $("#quiDatepicker,#quiDatepicker2").datepicker({
             changeMonth: true,
             changeYear: true,
             yearRange: "-200:+0", // last hundred years
@@ -43,9 +43,11 @@ function registerUser(t) {
         $email = $form.find('#register_email'),
         $password = $form.find('#register_password'),
         $name = $form.find('#register_name'),
+        $nameLast = $form.find('#register_name_last'),
         $sexFemale = $form.find('#register_gender_male'),
         $sexMale = $form.find('#register_gender_female'),
         $university = $form.find('#register_uni'),
+        $gradYear = $form.find('#quiDatepicker2'),
         $birthdate = $form.find('#quiDatepicker'),
         $stdcard = $form.find("#customfile"),
         $terms = $form.find("#customCheck1"),
@@ -73,19 +75,35 @@ function registerUser(t) {
     }
 
     if ($name.val().length < 3) {
-        $password.closest('.form-group').addClass('has-error');
+        $name.closest('.form-group').addClass('has-error');
         hasError = true;
-        errors.push('Invalid name');
+        errors.push('Invalid first name');
     } else {
         $name.closest('.form-group').addClass('has-success').removeClass('has-error');
     }
 
+    if ($nameLast.val().length < 3) {
+        $nameLast.closest('.form-group').addClass('has-error');
+        hasError = true;
+        errors.push('Invalid last name');
+    } else {
+        $nameLast.closest('.form-group').addClass('has-success').removeClass('has-error');
+    }
+
     if ($university.val().length < 4) {
-        $password.closest('.form-group').addClass('has-error');
+        $university.closest('.form-group').addClass('has-error');
         hasError = true;
         errors.push('Invalid university name');
     } else {
         $university.closest('.form-group').addClass('has-success').removeClass('has-error');
+    }
+
+    if ($gradYear.val().length == 0) {
+        $gradYear.closest('.form-group').addClass('has-error');
+        hasError = true;
+        errors.push('graduation date can\'t be empty');
+    } else {
+        $gradYear.closest('.form-group').addClass('has-success').removeClass('has-error');
     }
 
     if ($birthdate.val().length == 0) {
@@ -148,7 +166,7 @@ function registerUser(t) {
                     $("#page-title-area").remove();
                     $("#footer-area").remove();
                     $(".register-page-inner").html('<div class="alert alert-success" style="margin:10px;">A verification email has been sent to your inbox. Please open it to verify email.(if not in the inbox, it could be in the spam folder)</div>');
-                } else {
+                } else if(result['msg'] == 'fail') {
                     $('.error-msg-list-register').html(' ');
                     var error = result.errors;
                     error.forEach(function (v, i) {
@@ -157,9 +175,14 @@ function registerUser(t) {
                         );
                     });
                     $('.error-msg-list-register').removeClass('invisible');
+                }else{
+                    $('.error-msg-list-register').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
+                    $('.error-msg-list-register').removeClass('invisible');
                 }
             },
             error: function(result){
+                $('.error-msg-list-register').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
+                $('.error-msg-list-register').removeClass('invisible');
                 console.log(result)
             }
         });
@@ -233,7 +256,7 @@ function loginUser(t) {
                         window.location.replace(result['value']);
 
                     }
-                } else {
+                } else if(result['msg'] == 'fail') {
                     $('.error-msg-list-login').html('');
                     var error = result.errors;
                     error.forEach(function (v, i) {
@@ -242,10 +265,16 @@ function loginUser(t) {
                         );
                     });
                     $('.error-msg-list-login').removeClass('invisible');
+                }else{
+                    $('.error-msg-list-login').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
+                    $('.error-msg-list-login').removeClass('invisible');
+
                 }
             },
             error: function (err) {
-                console.log(err);
+                console.log("login fail:",err);
+                $('.error-msg-list-login').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
+                $('.error-msg-list-login').removeClass('invisible');
             }
         });
     } else {

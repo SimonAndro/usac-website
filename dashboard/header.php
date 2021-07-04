@@ -2,7 +2,29 @@
 
 require_once "./../global_auth.php";
 
-dump_to_file($_GET);
+dump_to_file("$_GET");
+
+// function generateRandomString($length = 6) {
+//     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//     $charactersLength = strlen($characters);
+//     $randomString = '';
+//     for ($i = 0; $i < $length; $i++) {
+//         $randomString .= $characters[rand(0, $charactersLength - 1)];
+//     }
+//     return $randomString;
+// }
+
+// $val['action'] = "register";
+// $val['gender'] = "female";
+// $val['birthdate'] ="1998/01/05";
+// $val['university'] = "Macorni";
+// $val['grad_year'] ="2022/07/15";
+// $val['name'] ="Owen falls ".generateRandomString();
+// $val['name_last'] ="Owen falls ".generateRandomString();
+// $val['password'] = "1234abcd!%";
+// $val['email']  = generateRandomString()."@email.com";
+
+// $_POST['val'] = $val;
 
 if(!$authentication->isLoggedIn())
 {
@@ -29,7 +51,22 @@ if(!$authentication->isLoggedIn())
                 {
                     if(!$user->isEmailOk())
                     {
-                        $errors[] = "Invalid Login Credentials";
+                        //send validation email
+                        $keys = $user->getValidationKey(); 
+                        $myurl = getAppConfig("site_url")."/dashboard/index.php";
+                        $headers = 'MIME-Version: 1.0'."\r\n";
+                        $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
+                        $headers .= "From: ".getAppConfig('site_title')." ".getAppConfig('site_reply_mail')."\r\n";
+                        $bodys = "<div><h4>".getAppConfig('site_title')."</h4></div><div>Hello, ".$user->getName().", Before you can login, you first need to activate your account. To do so, please follow this link(if clicking it doesn't work, you may need to manually copy it to a new browser window):</div><br /><br /><div><a href='$myurl?pub=$keys'>$myurl?pub=$keys</a></div><br /><br /><div>Regards, ".getAppConfig('site_title')."</div>";
+                        $subject = "Welcome to ".getAppConfig('site_title');
+                        
+                        if(!mail($user->getEmail(),$subject,$bodys,$headers))
+                        {
+                            $errors[] = 'Account requires verification, send verification email failed';
+                            $output["user"] = $user;
+                        }else{
+                            $errors[] = "Account verification link has been sent to your email address";
+                        }
                     }
                 }
 
@@ -61,9 +98,14 @@ if(!$authentication->isLoggedIn())
                     $valid = false;
                     $errors[] = 'Invalid email address';
                 }
+                else if(strlen($val['email']) > 30) 
+                {
+                    $valid = false;
+                    $errors[] = 'Email should be less than 30 character';
+                }
                 else { //if the email is not blank and valid:
                     //convert the email to lowercase
-                    $val['email'] = htmlspecialchars(strtolower($val['email']));
+                    $val['email'] = htmlspecialchars(strtolower(trim($val['email'])));
         
                     //search for the lowercase version of `$val['email']`
                     if (count($usersTable->find([['column'=>'email', 'match'=>'=','value'=>$val['email']]])) > 0) {
@@ -72,32 +114,47 @@ if(!$authentication->isLoggedIn())
                     }
                 }
         
+                $val['password'] = trim($val['password']);
                 if (empty($val['password'])) {
                     $valid = false;
                     $errors[] = 'Password cannot be blank';
                 }
 
+                $val['name'] = trim($val['name']);
                 if (empty($val['name'])) {
                     $valid = false;
-                    $errors[] = 'name can\'t be empty';
+                    $errors[] = 'first name can\'t be empty';
                 }
 
+                $val['name_last'] = trim($val['name_last']);
+                if (empty($val['name_last'])) {
+                    $valid = false;
+                    $errors[] = 'last name can\'t be empty';
+                }
+
+                $val['university'] = trim($val['university']);
                 if (empty($val['university'])) {
                     $valid = false;
                     $errors[] = 'university can\'t be empty';
                 }
 
-                if (empty($val['birthdate'])) {
+                $val['grad_year'] = trim($val['grad_year']);
+                if (empty($val['grad_year'])) { 
+                    $valid = false;
+                    $errors[] = 'graduation date can\'t be empty';
+                }
+
+                $val['birthdate'] = trim($val['birthdate']);
+                if (empty($val['birthdate'])) { 
                     $valid = false;
                     $errors[] = 'birthdate can\'t be empty';
                 }
         
+                $val['gender'] = trim($val['gender']);
                 if(empty($val['gender']))
                 {
                     $valid = false;
                     $errors[] = 'Please select gender';
-                }else{
-                    $gender = "female";
                 }
             
                 if($valid)
@@ -130,8 +187,17 @@ if(!$authentication->isLoggedIn())
                     //name
                     $newUser['name'] = htmlspecialchars($val['name']);
 
+                    //last name 
+                    $newUser['name_last'] = htmlspecialchars($val['name_last']);
+
+                    //birth date
+                    $newUser['date_birth'] = htmlspecialchars($val['birthdate']);
+
                     //university
                     $newUser['university'] = htmlspecialchars($val['university']);
+
+                    //graduation date
+                    $newUser['grad_date'] = htmlspecialchars($val['grad_year']);
 
                     //role
                     $newUser['role'] = 0;
@@ -151,21 +217,124 @@ if(!$authentication->isLoggedIn())
                     //When submitted, the $newUser variable now contains a lowercase value for email
                     //and a hashed password
                     $savedUser = $usersTable->save($newUser);
+                    //print_r($savedUser);
                     if($savedUser->getUserId())
-                    {// send validation email
-                        $myurl = getAppConfig("site_url")."/dashboard/index.php";
-                        $headers = 'MIME-Version: 1.0'."\r\n";
-                        $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
-                        $headers .= "From: ".getAppConfig('site_title')." ".getAppConfig('site_reply_mail')."\r\n";
-                        $bodys = "<div><h4>".getAppConfig('site_title')."</h4></div><div>Hello, ".$savedUser->getName().", Before you can login, you first need to activate your account. To do so, please follow this link(if clicking it doesn't work, you may need to manually copy it to a new browser window):</div><br /><br /><div><a href='$myurl?pub=$keys'>$myurl?pub=$keys</a></div><br /><br /><div>Regards, ".getAppConfig('site_title')."</div>";
-                        $subject = "Welcome to ".getAppConfig('site_title');
-                        
-                        if(!mail($savedUser->getEmail(),$subject,$bodys,$headers))
-                        {
-                            $errors[] = 'send verification email failed';
+                    {
+                        // register on social platform
+                        $ossn_salt = ossn_generateSalt();
+						$ossn_password = ossn_generate_password($val["password"], $ossn_salt);
+                        $ossn_fields["type"] = "normal";
+                        $ossn_fields["username"] = explode(" ",$savedUser->getName())[0];
+                        $ossn_fields["email"] = $savedUser->getEmail();
+                        $ossn_fields["password"] = $ossn_password;
+                        $ossn_fields["salt"] = $ossn_salt;
+                        $ossn_fields["first_name"] = $savedUser->getFirstName();
+                        $ossn_fields["last_name"] = $savedUser->getLastName();
+                        $ossn_fields["last_login"]=0;
+                        $ossn_fields["last_activity"]=0;
+                        $ossn_fields["activation"]=$keys;
+                        $ossn_fields["time_created"]=time();
+
+                        $ossn_pdo = create_ossn_pdo();
+                        if(!$ossn_pdo){
+                            // handle error
+                            //header("Location: ../error.php?code=0x1543");
+                            $errors["code"][] = "0x1543";
+                            //die();
                         }else{
-                            $msg = "success";
+                            $ossn_users_table = new \Ninja\DatabaseTable($ossn_pdo , 'ossn_users', 'guid', 'User');
+                            $ossn_user = $ossn_users_table->save($ossn_fields);
+                            dump_to_file($ossn_user);
+                            if(empty($ossn_user->{"guid"}))
+                            {
+                                //handle error
+                                //header("Location: ../error.php?code=0x1544");
+                                $errors["code"][] = "0x1544";
+                                //die();
+                            }
+    
                         }
+                       
+                        // register on newsportal
+                        $np_fields["fullname"] =  $savedUser->getFirstName()." ".$savedUser->getLastName();
+                        $np_fields["username"] = explode(" ",$savedUser->getName())[0];
+                        $np_fields["password"] = md5($val["password"]);
+                        $np_fields["email"] = $savedUser->getEmail();
+                        $np_fields["ipos"] = np_get_ipos();
+                        $np_fields["keysi"] = $keys;
+
+                        $np_pdo = create_np_pdo();
+                        if(!$np_pdo){
+                            // handle error
+                            //header("Location: ../error.php?code=0x1545");
+                            $errors["code"][] = "0x1545";
+                            //die();
+                        }else{
+                            $np_users_table = new \Ninja\DatabaseTable($np_pdo , 'users', 'usid', 'User');
+                            $np_user = $np_users_table->save($np_fields);
+                            dump_to_file($np_user);
+                            if(empty($np_user->{"usid"}))
+                            {
+                                //handle error
+                               // header("Location: ../error.php?code=0x1546");
+                                //die();
+                                $errors["code"][] = "0x1546";
+                            } 
+                        }
+                                               
+        
+                        if(empty($errors))
+                        {
+                            //send validation email
+                            $myurl = getAppConfig("site_url")."/dashboard/index.php";
+                            $headers = 'MIME-Version: 1.0'."\r\n";
+                            $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
+                            $headers .= "From: ".getAppConfig('site_title')." ".getAppConfig('site_reply_mail')."\r\n";
+                            $bodys = "<div><h4>".getAppConfig('site_title')."</h4></div><div>Hello, ".$savedUser->getName().", Before you can login, you first need to activate your account. To do so, please follow this link(if clicking it doesn't work, you may need to manually copy it to a new browser window):</div><br /><br /><div><a href='$myurl?pub=$keys'>$myurl?pub=$keys</a></div><br /><br /><div>Regards, ".getAppConfig('site_title')."</div>";
+                            $subject = "Welcome to ".getAppConfig('site_title');
+                            
+                            if(!mail($savedUser->getEmail(),$subject,$bodys,$headers))
+                            {
+                                $errors[] = 'send verification email failed';
+                                $msg = "fail";
+                            }else{
+                                $msg = "success";
+                            }
+                        }else{
+                            $msg = "fail";
+                        }
+
+                        dump_to_file($errors);
+                        if(!empty($errors["code"]))
+                        {
+                            $errors[] = "error code: ".$errors["code"][0];
+                            unset($errors["code"]);
+
+                            //remove saved emails
+                            dump_to_file($savedUser);
+                            if(!empty($savedUser->{"id"}))
+                            {
+                                
+                                $newUser["id"] = $savedUser->{"id"};
+                                $newUser["email"] = $newUser["email"]."*".time(); 
+                                $savedUser = $usersTable->save($newUser);
+                            }
+                            
+                            if(!empty($np_user->{"usid"}))
+                            {
+                                $np_fields["email"] = $np_fields["email"]."*".time(); 
+                                $np_user = $np_users_table->save($np_fields);
+                            }
+                                                        
+
+                            if(!empty($np_user->{"guid"}))
+                            {
+                                $ossn_fields["email"] =  $ossn_fields["email"]."*".time();
+                                $ossn_user = $ossn_users_table->save($ossn_fields);
+                            }
+                            
+                        }
+                        
                     }else{
                         $errors[] = 'new account couldn\'t be created. contact admin';
                     }    
@@ -188,30 +357,80 @@ if(!$authentication->isLoggedIn())
         if(!empty($user))
         {
             if ($user->getUserId() && !$user->isEmailOk()) {
-
+                /*
+                *activate on main site
+                */
                 $userUpdate["id"] = $user->getUserId();
                 $userUpdate["email_ok"] = 1;
                 $usersTable->save($userUpdate);
-    
                 $authentication->saveSession($user->getEmail(),$user->getPassword());
 
-                //register on news platfrom
+                /* 
+                * active on newsportal
+                */
+                $np_pdo = create_np_pdo();
+                if(!$np_pdo){
+                    // handle error
+                    header("Location: ../error.php?code=0x1545-2");
+                    die();
+                }
+                $np_users_table = new \Ninja\DatabaseTable($np_pdo , 'users', 'usid', 'User');
+                $sql = "SELECT * FROM ".$np_users_table->getTableName()." WHERE email=?";
+                $np_res = $np_users_table->customQuery($sql, $user->getEmail());
+                $np_user = $np_res[0];
+                if(empty($np_user->{"usid"}))
+                {
+                    //handle error
+                    header("Location: ../error.php?code=0x1546-2");
+                    die();
+                }
+                $np_user_update["usid"] = $np_user->{"usid"};
+                $np_user_update["tempass"] = 1;
+                $np_user_update["active"] = 1;
+                $np_users_table->save($np_user_update);
 
-                //register on social platform
-    
+                /*
+                * active on social community
+                */
+                $ossn_pdo = create_ossn_pdo();
+                if(!$ossn_pdo){
+                    // handle error
+                    header("Location: ../error.php?code=0x1543-2");
+                    die();
+                }
+                $ossn_users_table = new \Ninja\DatabaseTable($ossn_pdo , 'ossn_users', 'guid', 'User');
+                $sql = "SELECT * FROM ".$ossn_users_table->getTableName()." WHERE email=?";
+                $ossn_res = $ossn_users_table->customQuery($sql, $user->getEmail());
+                $ossn_user = $ossn_res[0];
+                if(empty($ossn_user->{"guid"}))
+                {
+                    //handle error
+                    header("Location: ../error.php?code=0x1544-2");
+                    die();
+                }
+                $ossn_user_update["guid"] = $ossn_user->{"guid"};
+                $ossn_user_update["activation"] = "";
+                $ossn_users_table->save($ossn_user_update);
+                
                 header("Location: ".getAppConfig("site_url")."/dashboard/index.php");
                 die();
             }else{
-                header("Location: ../error.php");
+                header("Location: ../error.php?code=0x1547");
                 die();
             }
         }else{
-            header("Location: ../error.php");
+            dump_to_file($res);
+            header("Location: ../error.php?code=0x1548");
             die();
         }
         
     }
-    header("Location: ../register.php");
+    ?> 
+    <script type="text/javascript">
+    // redirect to register.php
+    window.location.href = '<?php echo getAppConfig("site_url"); ?>/register.php';
+    </script>
+    <?php
     die();
 }
 elseif(isset($_GET['logout']))
@@ -221,9 +440,10 @@ elseif(isset($_GET['logout']))
     die();
 }
 ?>
+
+<?=$output?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">

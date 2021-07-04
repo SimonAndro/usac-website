@@ -52,6 +52,7 @@ if(is_file(ossn_route()->configs . 'LOCAL.DEV'))
 }
 
 //Load session start after classes #1318
+session_save_path($Ossn->userdata."/tmp");
 session_start();
 foreach ($Ossn->libraries as $lib) {
     if (!include_once(ossn_route()->libs . "ossn.lib.{$lib}.php")) {

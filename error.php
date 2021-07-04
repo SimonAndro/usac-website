@@ -13,7 +13,7 @@
                     <div class="register-page-inner">
                         <div class="main" style="margin:20px;">
                             <h1>An Error Occurred</h1>
-                            <p>An unknown error occured, Contact Admin</p>
+                            <p><?= @$_GET["code"] ?>An unknown error occured, Contact Admin</p>
                         </div>
                     </div>
                 </div>

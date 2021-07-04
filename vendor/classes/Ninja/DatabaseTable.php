@@ -244,6 +244,7 @@ class DatabaseTable {
 			$entity->{$this->primaryKey} = $insertId;
 		}
 		catch (\PDOException $e) {
+			dump_to_file($e);
 			$this->update($record);
 		}
 
