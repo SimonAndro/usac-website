@@ -1,6 +1,9 @@
 <?php 
 $page = "user";
-include "header.php";
+if(!isset($q_user))
+{
+  include "header.php";
+}
  ?>
 <div class="content">
   <div class="row">
@@ -100,7 +103,7 @@ include "header.php";
               </div>
             </div>
 
-            <?php if($currentUser->isAdmin()):?>
+            <?php if($authentication->getUser()->isAdmin()):?>
             <div class="row">
             <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">

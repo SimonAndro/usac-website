@@ -3,13 +3,36 @@ $page = "tables";
 include "header.php"; 
 if(!$currentUser->isAdmin())
 {
-  echo "Access denied !";
+  echo '<div class="content">Access Denied!</div>';
   die();
 }else{
 
+  $q_user = @$_GET["user"];
+
+  if(isset($q_user))
+  {
+    $currentUser = $usersTable->findById($q_user);
+
+    if(empty($currentUser))
+    {
+      echo '<div class="content">User not found!</div>';
+      die();
+    }
+
+    include("user.php");
+    die();
+  }
   $f_limit = 5;
   $f_page = @$_GET["fp"];
-  $f_offset = isset($f_page)?($f_page*$f_limit):0;
+
+  if(isset($f_page))
+  {
+    $f_offset = $f_page*$f_limit;
+  }else{
+    $f_offset = 0;
+    $f_page = 1;
+  }
+
 
   $ttt = count($usersTable->findAll());
   $p = (int) $ttt/$f_limit;
@@ -64,10 +87,10 @@ if(!$currentUser->isAdmin())
                   Email
                 </th>
                 <th>
-                  University
+                  Uni.
                 </th>
                 <th>
-                  Graduation Date
+                  Grad. Date
                 </th>
                 <th>
                   Action
@@ -105,7 +128,7 @@ if(!$currentUser->isAdmin())
                         Action
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">View User</a>
+                        <a class="dropdown-item" href="./tables.php?user=<?=$fu->getUserId() ?>">View User</a>
                         <!-- <a class="dropdown-item" href="#">Delete User</a> -->
                       </div>
                     </div>
