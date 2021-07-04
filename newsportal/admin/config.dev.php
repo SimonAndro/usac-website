@@ -2,7 +2,9 @@
 $server = 'localhost';
 $user = 'root';
 $password = '';
-$database = 'phpenter';
+$database = 'usac_news';
 
-$homeUrl = "https://localhost/usac-website/"
+$homeUrl = "https://localhost/usac-website/";
+
+$sitePath = $homeUrl."/newsportal";
 ?>

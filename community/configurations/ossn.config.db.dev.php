@@ -17,10 +17,10 @@ $Ossn->host = 'localhost';
 $Ossn->port = '3306';
 
 // replace admin with your database username;
-$Ossn->user = 'admin';
+$Ossn->user = 'root';
 
 // replace 123 with your database password;
-$Ossn->password = '123';
+$Ossn->password = '';
 
 // replace ossn with your database name;
-$Ossn->database = 'ossn';
+$Ossn->database = 'usac_community';

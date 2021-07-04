@@ -9,7 +9,7 @@ return array(
 
     'db_username' => 'root',
 
-    'db_name' => 'usac_students_db',
+    'db_name' => 'usac_students',
 
     'db_password' => '',
 

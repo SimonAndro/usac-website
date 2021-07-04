@@ -64,7 +64,8 @@ else
 $sitetitle = $option[1];
 $metadesc = $option[2];
 $keywords = $option[3];
-$sitepath = $option[4];
+// $sitepath = $option[4];
+$sitepath = $sitePath;
 $langs = $option[5];
 $caching = $option[6];
 $themes = $option[7];

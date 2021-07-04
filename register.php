@@ -89,17 +89,34 @@
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="register_name">Name</label>
+                                                                <label for="register_name">First Name</label>
                                                                 <input type="text" class="form-control"
                                                                     id="register_name" name="val[name]">
                                                             </div>
                                                         </div>
-
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="register_name">Last Name</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="register_name_last" name="val[name_last]">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">                                                    
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="register_stuid">University</label>
                                                                 <input type="text" class="form-control"
                                                                     id="register_uni" name="val[university]">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 col-sm-6">
+                                                            <div class="form-group">
+                                                                <label for="register_name">Grad. Date</label>
+                                                                <input style="height: 39px !important; font-size:16px;"
+                                                                class="form-control" type="text" name="val[grad_year]"
+                                                                placeholder="Graduation Year" readonly="readonly"
+                                                                id="quiDatepicker2">
                                                             </div>
                                                         </div>
                                                     </div>

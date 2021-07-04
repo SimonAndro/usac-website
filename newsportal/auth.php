@@ -443,7 +443,7 @@ unset($_SESSION['cusid']);
     $smarty->display('footer.php');
     die();
    }
-   if(strlen($name) > 30) {
+   if(strlen($name) > 100) {
     echo "<div class='alert alert-danger'>$lang[198]</div></div>";
     unset($_SESSION['check']);
      session_destroy();
@@ -702,6 +702,8 @@ if(isset($_POST['Submit'])) {
    $email = stripslashes($email);
    $keys = stripslashes($keys);
   }
+
+
   $list = "/(content-type|mime-version|content-transfer-encoding|to:|bcc:|cc:|document.cookie|document.write|onmouse|onkey|onclick|onload|script)/i";
   $name = array($username,$password,$email);
   foreach($name as $name) {
@@ -798,9 +800,13 @@ keysi
   $headers .= "From: $sitetitle <$sitemail>"."\r\n";
   $bodys = "<div><h4>$sitetitle</h4></div><div>$lang[144] $username, $lang[217]</div><br /><br /><div><a href='$myurl?pub=$keys&amp;auth=3'>$myurl?pub=$keys&amp;auth=3</a></div><br /><br /><div>$lang[146], $sitetitle $lang[147]</div>";
   $subject = "$lang[216] $sitetitle";
-  mail($email,$subject,$bodys,$headers);
+  if($messaging == '1')
+  {
+    mail($email,$subject,$bodys,$headers);
+  }
   $adminsubject = $sitetitle." - $username $lang[219]";
   $adminbody = "<div><h4>$sitetitle</h4></div><div>$lang[218]</div><br /><br /><div>$username $lang[219]</div><br /><br /><div><a href='$sitepath'>$sitetitle</a></div>";
+
   if($messaging == '1'){
   mail($sitemail,$adminsubject,$adminbody,$headers);
   }
