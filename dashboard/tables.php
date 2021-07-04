@@ -1,22 +1,34 @@
 <?php 
 $page = "tables";
 include "header.php"; 
+if(!$currentUser->isAdmin())
+{
+  echo "Access denied !";
+  die();
+}
 ?>
 <div class="content">
   <div class="row">
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title"> User Table</h4>
+
+            <div class="card-title">
+
+                 <span style="font-size:25px;">User Table</span>
+                 <a href='<?= getAppConfig("site_url")."/dashboard/index.php?reqaction=export" ?>' target="_blank" class="btn btn-dark pull-right mt-0">Export</a>
+
+            </div>
+        
           <form onsubmit="return searchUser();">
-            <div class="input-group no-border">
+            <!-- <div class="input-group no-border">
               <input type="text" value="" class="form-control" placeholder="Search...">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <i class="nc-icon nc-zoom-split"></i>
                 </div>
               </div>
-            </div>
+            </div> -->
           </form>
         </div>
         <div class="card-body">

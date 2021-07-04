@@ -1,6 +1,7 @@
 <?php
 
 require_once "./../global_auth.php";
+require_once "actions.php";
 
 dump_to_file("$_GET");
 
@@ -438,6 +439,12 @@ elseif(isset($_GET['logout']))
     $authentication->logout();
     header("Location: ../register.php");
     die();
+}else{
+    if(!$currentUser = $authentication->getUser())
+    {
+        header("Location: ../error.php?code=0x15452");
+        die();
+    }
 }
 ?>
 
@@ -495,12 +502,14 @@ elseif(isset($_GET['logout']))
                             <p>User Profile</p>
                         </a>
                     </li>
+                    <?php if($currentUser->isAdmin()):?>
                     <li class="<?=$page=="tables"?"active":""?>">
                         <a href="./tables.php">
                             <i class="nc-icon nc-tile-56"></i>
                             <p>Table List</p>
                         </a>
                     </li>
+                    <?php endif ?>
                 </ul>
             </div>
         </div>

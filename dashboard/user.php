@@ -1,8 +1,6 @@
 <?php 
 $page = "user";
 include "header.php";
-
-$currentUser = $authentication->getUser();
  ?>
 <div class="content">
   <div class="row">
@@ -60,8 +58,9 @@ $currentUser = $authentication->getUser();
                 <div class="form-group">
                 <label>Gender</label>
                   <select class="form-control" id="genderSelect" value="<?= $currentUser->getGender() ?>">
-                    <option>male</option>
-                    <option>female</option>
+                  <option value="" selected disabled><?=  $currentUser->getGender() ?></option>  
+                  <option value="male">male</option>
+                    <option value="female">female</option>
                 </select>
                </div>
               </div>
@@ -81,6 +80,20 @@ $currentUser = $authentication->getUser();
                 </div>
               </div>
             </div>
+
+            <?php if($currentUser->isAdmin()):?>
+            <div class="row">
+            <div class="col-md-4 pr-1 pl-1">
+                <div class="form-group">
+                  <label>Role</label>
+                  <select class="form-control" id="roleSelect" value="<?= $currentUser->getRole() ?>">
+                    <option value="" selected disabled><?=  $currentUser->getRole() ?></option>
+                    <option value="0">Normal User</option>
+                    <option vlaue="1">Adminstrator</option>
+                </select> </div>
+              </div>
+            </div>
+            <?php endif ?>
 
             <div class="row">
               <div class="update ml-auto mr-auto">
