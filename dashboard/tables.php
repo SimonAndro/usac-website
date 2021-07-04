@@ -5,6 +5,17 @@ if(!$currentUser->isAdmin())
 {
   echo "Access denied !";
   die();
+}else{
+
+  $f_limit = 5;
+  $f_page = @$_GET["fp"];
+  $f_offset = isset($f_page)?($f_page*$f_limit):0;
+
+  $ttt = count($usersTable->findAll());
+  $p = (int) $ttt/$f_limit;
+
+  $fetched_users = $usersTable->findAll("id",$f_limit,$f_offset);
+  
 }
 ?>
 <div class="content">
@@ -13,13 +24,14 @@ if(!$currentUser->isAdmin())
       <div class="card">
         <div class="card-header">
 
-            <div class="card-title">
+          <div class="card-title">
 
-                 <span style="font-size:25px;">User Table</span>
-                 <a href='<?= getAppConfig("site_url")."/dashboard/index.php?reqaction=export" ?>' target="_blank" class="btn btn-dark pull-right mt-0">Export</a>
+            <span style="font-size:25px;">User Table</span>
+            <a href='<?= getAppConfig("site_url")."/dashboard/index.php?reqaction=export" ?>' target="_blank"
+              class="btn btn-dark pull-right mt-0">Export</a>
 
-            </div>
-        
+          </div>
+
           <form onsubmit="return searchUser();">
             <!-- <div class="input-group no-border">
               <input type="text" value="" class="form-control" placeholder="Search...">
@@ -34,119 +46,71 @@ if(!$currentUser->isAdmin())
         <div class="card-body">
           <div class="table-responsive">
             <table class="table">
+
               <thead class=" text-primary">
                 <th>
-                  Name
+                  First Name
                 </th>
                 <th>
-                  Country
+                  Last Name
                 </th>
                 <th>
-                  City
+                  Gender
                 </th>
-                <th class="text-right">
-                  Salary
+                <th>
+                  DOB
+                </th>
+                <th>
+                  Email
+                </th>
+                <th>
+                  University
+                </th>
+                <th>
+                  Graduation Date
+                </th>
+                <th>
+                  Action
                 </th>
               </thead>
+
               <tbody>
+                <?php foreach($fetched_users as $fu): ?>
                 <tr>
                   <td>
-                    Dakota Rice
+                    <?=$fu->getFirstName()?>
                   </td>
                   <td>
-                    Niger
+                    <?=$fu->getLastName()?>
                   </td>
                   <td>
-                    Oud-Turnhout
+                    <?=$fu->getGender()?>
                   </td>
-                  <td class="text-right">
-                    $36,738
+                  <td>
+                    <?=$fu->getBirthDate()?>
                   </td>
+                  <td>
+                    <?=$fu->getEmail()?>
+                  </td>
+                  <td>
+                    <?=$fu->getUniversity()?>
+                  </td>
+                  <td>
+                    <?=$fu->getGraduationDate()?>
+                  </td>
+                  <td>
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Action
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">View User</a>
+                        <!-- <a class="dropdown-item" href="#">Delete User</a> -->
+                      </div>
+                    </div>
                 </tr>
-                <tr>
-                  <td>
-                    Minerva Hooper
-                  </td>
-                  <td>
-                    Curaçao
-                  </td>
-                  <td>
-                    Sinaai-Waas
-                  </td>
-                  <td class="text-right">
-                    $23,789
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Sage Rodriguez
-                  </td>
-                  <td>
-                    Netherlands
-                  </td>
-                  <td>
-                    Baileux
-                  </td>
-                  <td class="text-right">
-                    $56,142
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Philip Chaney
-                  </td>
-                  <td>
-                    Korea, South
-                  </td>
-                  <td>
-                    Overland Park
-                  </td>
-                  <td class="text-right">
-                    $38,735
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Doris Greene
-                  </td>
-                  <td>
-                    Malawi
-                  </td>
-                  <td>
-                    Feldkirchen in Kärnten
-                  </td>
-                  <td class="text-right">
-                    $63,542
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Mason Porter
-                  </td>
-                  <td>
-                    Chile
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td class="text-right">
-                    $78,615
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Jon Porter
-                  </td>
-                  <td>
-                    Portugal
-                  </td>
-                  <td>
-                    Gloucester
-                  </td>
-                  <td class="text-right">
-                    $98,615
-                  </td>
-                </tr>
+                <?php endforeach ?>
               </tbody>
             </table>
           </div>
@@ -154,24 +118,25 @@ if(!$currentUser->isAdmin())
       </div>
     </div>
   </div>
+  
+  <?php if($ttt>=$f_limit): ?>
   <div class="row">
     <div class="col-md-12">
       <nav aria-label="...">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
+        <ul class="pagination justify-content-center" style="overflow-x:auto;">
+          <?php for($count=0; $count<$p; $count++):?>
+          <?php if($count+1==$f_page): ?>
+            <li class="page-item active">
+            <a class="page-link" href="./tables.php?fp=<?=$count+1?>"><?=$count+1?> <span class="sr-only">(current)</span></a>
+            </li>
+          <?php else: ?>
+            <li class="page-item"><a class="page-link" href="./tables.php?fp=<?=$count+1?>"><?=$count+1?></a></li>
+          <?php endif ?>
+          <?php endfor ?>
         </ul>
       </nav>
     </div>
   </div>
+  <?php endif ?>
 </div>
 <?php include "footer.php"; ?>
