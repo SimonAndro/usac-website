@@ -878,7 +878,7 @@ keysi
       </div>
     </div>
 
-    <a href="<?=$sitepath?>../register.php" type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:10px;">Member
+    <a href="<?=$sitepath?>/../register.php" type="button" class="btn btn-primary btn-lg btn-block" style="margin-top:10px;">Member
       Registration</a>
   </div>
   <?php } ?>

@@ -245,3 +245,29 @@ function dump_to_file($things) //debuging
     }
     
 }
+
+/**
+ * Validation
+ */
+function validate_email()
+{
+    $valid = true;
+    $errors = array();
+
+    //But if any of the fields have been left blank, set $valid to false
+    if (empty($val['email'])) {
+        $valid = false;
+        $errors[] = 'Email cannot be blank';
+    }
+    else if (filter_var($val['email'], FILTER_VALIDATE_EMAIL) == false) {
+        $valid = false;
+        $errors[] = 'Invalid email address';
+    }
+    else if(strlen($val['email']) > 30) 
+    {
+        $valid = false;
+        $errors[] = 'Email should be less than 30 character';
+    }
+
+    return $errors;
+}

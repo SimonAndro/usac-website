@@ -6,8 +6,55 @@ jQuery(document).ready(function ($) {
         $("#quiDatepicker,#quiDatepicker2").datepicker({
             changeMonth: true,
             changeYear: true,
-            yearRange: "-200:+0", // last hundred years
+            yearRange: "-200:+20", // last hundred years
         });
+    });
+
+    $(".general-form").on("submit", function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: 'index.php',
+            type: 'post',
+            dataType: 'json',
+            data: $(this).serialize(),
+            success: function (res) {
+                console.log(res);
+                if (res.msg == "success") {
+                    $.notify("User Info Update Success", {
+                        globalPosition: "top center",
+                        className: res.msg,
+                    });
+
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000);
+                } else if (res.msg == "error") {
+                    $.notify("User Info Update Failed", {
+                        globalPosition: "top center",
+                        className: res.msg,
+                    });
+                    $('.error-msg-list-update').html(' ');
+                    var error = res.errors;
+                    error.forEach(function (v, i) {
+                        $('.error-msg-list-update').append(
+                            '<div class="alert alert-warning "><strong>' + v + '</strong></div>'
+                        );
+                    });
+                    $('.error-msg-list-update').removeClass('invisible');
+                }
+
+            },
+            error: function (res) {
+                console.log(res);
+                $.notify("An Error Ocurred", {
+                    globalPosition: "top center",
+                    className: 'error',
+                });
+            }
+        });
+
+        return false;
     });
 });
 
@@ -166,7 +213,7 @@ function registerUser(t) {
                     $("#page-title-area").remove();
                     $("#footer-area").remove();
                     $(".register-page-inner").html('<div class="alert alert-success" style="margin:10px;">A verification email has been sent to your inbox. Please open it to verify email.(if not in the inbox, it could be in the spam folder)</div>');
-                } else if(result['msg'] == 'fail') {
+                } else if (result['msg'] == 'fail') {
                     $('.error-msg-list-register').html(' ');
                     var error = result.errors;
                     error.forEach(function (v, i) {
@@ -175,12 +222,12 @@ function registerUser(t) {
                         );
                     });
                     $('.error-msg-list-register').removeClass('invisible');
-                }else{
+                } else {
                     $('.error-msg-list-register').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
                     $('.error-msg-list-register').removeClass('invisible');
                 }
             },
-            error: function(result){
+            error: function (result) {
                 $('.error-msg-list-register').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
                 $('.error-msg-list-register').removeClass('invisible');
                 console.log(result)
@@ -196,7 +243,7 @@ function registerUser(t) {
         $('.error-msg-list-register').removeClass('invisible');
     }
 
-    window.scrollBy(0, -window.innerHeight*0.5); // scroll to top to show messages
+    window.scrollBy(0, -window.innerHeight * 0.5); // scroll to top to show messages
 
     return false;
 }
@@ -256,7 +303,7 @@ function loginUser(t) {
                         window.location.replace(result['value']);
 
                     }
-                } else if(result['msg'] == 'fail') {
+                } else if (result['msg'] == 'fail') {
                     $('.error-msg-list-login').html('');
                     var error = result.errors;
                     error.forEach(function (v, i) {
@@ -265,14 +312,14 @@ function loginUser(t) {
                         );
                     });
                     $('.error-msg-list-login').removeClass('invisible');
-                }else{
+                } else {
                     $('.error-msg-list-login').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
                     $('.error-msg-list-login').removeClass('invisible');
 
                 }
             },
             error: function (err) {
-                console.log("login fail:",err);
+                console.log("login fail:", err);
                 $('.error-msg-list-login').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
                 $('.error-msg-list-login').removeClass('invisible');
             }
@@ -289,4 +336,16 @@ function loginUser(t) {
     }
 
     return false;
+}
+
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
 }

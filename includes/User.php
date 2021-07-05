@@ -13,6 +13,7 @@ class User {
 	public $studentCard;
 	public $validation_key;
 	public $gender;
+	public $role;
 
 	public $created_at;
 	public $email_ok;
@@ -55,15 +56,15 @@ class User {
 	}
 
 	public function getBirthDate(){
-		return $this->grad_date;
+		return $this->date_birth;
 	}
 
 	public function getStudentCard(){
-		return $this->grad_date;
+		return $this->studentCard;
 	}
 
 	public function getGender(){
-		return $this->grad_date;
+		return $this->gender;
 	}
 
 	public function isEmailOk(){
@@ -80,7 +81,12 @@ class User {
 		return $this->validation_key;
 	}
 
-	public function isAdmin($permission) {
-		return $this->permissions & $permission;  
+	public function getRole()
+	{
+		return $this->role?"Adminstrator":"Normal User";
+	}
+
+	public function isAdmin() {
+		return $this->role;  
 	}
 }

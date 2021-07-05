@@ -49,10 +49,8 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Depertment</th>
-                                        <th scope="col">Batch</th>
-                                        <th scope="col">Campus</th>
-                                        <th scope="col">Role</th>
+                                        <th scope="col">University</th>
+                                        <th scope="col">Grad.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -61,8 +59,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -70,8 +68,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -79,8 +77,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -88,8 +86,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -97,8 +95,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -106,8 +104,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -115,8 +113,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -124,8 +122,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -133,8 +131,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -142,8 +140,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
 
                                     <tr>
@@ -151,8 +149,8 @@
                                         </td>
                                         <td>Computer</td>
                                         <td>2014</td>
-                                        <td>Dhaka</td>
-                                        <td>Student</td>
+                                 
+                             
                                     </tr>
                                 </tbody>
                             </table>

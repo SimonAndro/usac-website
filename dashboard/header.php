@@ -1,8 +1,9 @@
 <?php
 
 require_once "./../global_auth.php";
+require_once "actions.php";
 
-dump_to_file("$_GET");
+//dump_to_file("$_GET");
 
 // function generateRandomString($length = 6) {
 //     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -118,6 +119,10 @@ if(!$authentication->isLoggedIn())
                 if (empty($val['password'])) {
                     $valid = false;
                     $errors[] = 'Password cannot be blank';
+                }else if(strlen($val['password']) < 8)
+                {
+                    $valid = false;
+                    $errors[] = 'Password too short';
                 }
 
                 $val['name'] = trim($val['name']);
@@ -244,7 +249,7 @@ if(!$authentication->isLoggedIn())
                         }else{
                             $ossn_users_table = new \Ninja\DatabaseTable($ossn_pdo , 'ossn_users', 'guid', 'User');
                             $ossn_user = $ossn_users_table->save($ossn_fields);
-                            dump_to_file($ossn_user);
+                            //dump_to_file($ossn_user);
                             if(empty($ossn_user->{"guid"}))
                             {
                                 //handle error
@@ -272,7 +277,7 @@ if(!$authentication->isLoggedIn())
                         }else{
                             $np_users_table = new \Ninja\DatabaseTable($np_pdo , 'users', 'usid', 'User');
                             $np_user = $np_users_table->save($np_fields);
-                            dump_to_file($np_user);
+                            //dump_to_file($np_user);
                             if(empty($np_user->{"usid"}))
                             {
                                 //handle error
@@ -304,14 +309,14 @@ if(!$authentication->isLoggedIn())
                             $msg = "fail";
                         }
 
-                        dump_to_file($errors);
+                        //dump_to_file($errors);
                         if(!empty($errors["code"]))
                         {
                             $errors[] = "error code: ".$errors["code"][0];
                             unset($errors["code"]);
 
                             //remove saved emails
-                            dump_to_file($savedUser);
+                            //dump_to_file($savedUser);
                             if(!empty($savedUser->{"id"}))
                             {
                                 
@@ -419,7 +424,7 @@ if(!$authentication->isLoggedIn())
                 die();
             }
         }else{
-            dump_to_file($res);
+            //dump_to_file($res);
             header("Location: ../error.php?code=0x1548");
             die();
         }
@@ -438,6 +443,12 @@ elseif(isset($_GET['logout']))
     $authentication->logout();
     header("Location: ../register.php");
     die();
+}else{
+    if(!$currentUser = $authentication->getUser())
+    {
+        header("Location: ../error.php?code=0x15452");
+        die();
+    }
 }
 ?>
 
@@ -460,8 +471,8 @@ elseif(isset($_GET['logout']))
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="../assets/demo/demo.css" rel="stylesheet" />
+    <link href="../assets/css/custom.css" rel="stylesheet" />
+
 </head>
 
 <body class="">
@@ -495,12 +506,14 @@ elseif(isset($_GET['logout']))
                             <p>User Profile</p>
                         </a>
                     </li>
+                    <?php if($currentUser->isAdmin()):?>
                     <li class="<?=$page=="tables"?"active":""?>">
                         <a href="./tables.php">
                             <i class="nc-icon nc-tile-56"></i>
                             <p>Table List</p>
                         </a>
                     </li>
+                    <?php endif ?>
                 </ul>
             </div>
         </div>

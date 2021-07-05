@@ -1,3 +1,10 @@
+<cms:php>
+    require_once __DIR__ ."/../global_auth.php";
+    if($authentication->isLoggedIn()){
+        global $CTX;
+        $CTX->set( 'user_logged_in', 1, 'global' );
+    }
+</cms:php>
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -124,22 +131,18 @@
 
                     <div class="col-lg-6 col-sm-5 col-5 text-right">
                         <div class="preheader-right">
-                            <cms:php> 
-                                require_once __DIR__ ."/../global_auth.php";
-                                if($authentication->isLoggedIn()){
-                                    echo '<a title="Dashboard" class="btn-auth btn-auth-rev" href="./dashboard">Dashboard</a>';
-                                    echo '<a title="Register or Login" class="btn-auth btn-auth" href="./dashboard/index.php?logout=1">Logout</a>';
-                                    
-                                    global $CTX;
-                                    $CTX->set( 'user_logged_in', 1, 'global' );
-                                }else{
-                                    echo '<a title="Register or Login" class="btn-auth btn-auth" href="register.php">Login or Signup</a>';
-                                } 
-                            </cms:php>   
+                            <cms:if user_logged_in>
+                                <a title="Dashboard" class="btn-auth btn-auth-rev" href="./dashboard">Dashboard</a>
+                                <a title="Register or Login" class="btn-auth btn-auth"
+                                    href="./dashboard/index.php?logout=1">Logout</a>
+                            <cms:else />
+                                <a title="Register or Login" class="btn-auth btn-auth" href="register.php">Login or Signup</a>
+                            </cms:if>
+
                             <cms:if k_template_name="register.php">
                                 <cms:if user_logged_in>
                                     <cms:php>
-                                       header("Location: ./dashboard");
+                                        header("Location: ./dashboard");
                                     </cms:php>
                                 </cms:if>
                             </cms:if>
@@ -189,11 +192,13 @@
                                         <ul class="dropdown-menu">
                                             <li class="nav-item"><a class="nav-link" href="newsportal">News Portal</a>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="community">Social Community</a>
+                                            <li class="nav-item"><a class="nav-link" href="community">Social
+                                                    Community</a>
                                             </li>
                                             <li class="nav-item"><a class="nav-link" href="committee.php">Committee</a>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="directory.php">Directory</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="directory.php">Directory</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
@@ -205,5 +210,5 @@
             </div>
         </div>
     </header>
- 
+
     <!--== Header Area End ==-->

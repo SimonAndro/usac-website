@@ -16,3 +16,4 @@ includes/LOCAL.DEV
 debug!.txt
 dashboard/debug!.txt
 admin/config.php
+h.html
