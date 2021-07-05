@@ -32,6 +32,9 @@ if(!isset($q_user))
         <div class="card-body">
           <form class="pr-1 pl-1 general-form" action="index.php" method="post" onsubmit="return false">
             <input type="hidden" name="val[reqaction]" value="update_user">
+            <input type="hidden" name="val[userId]" value="<?=$currentUser->getUserId()?>">
+            <div class="error-msg-list-update invisible">
+            </div>
             <div class="row">
               <div class="col-md-4 pr-1 pl-1">
                 <div class="form-group">
@@ -94,7 +97,6 @@ if(!isset($q_user))
                 </div>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-12 pl-1">
                 Update password
@@ -102,13 +104,13 @@ if(!isset($q_user))
               <div class="col-md-6 pl-1">
                 <div class="form-group">
                   <label>Old Password</label>
-                  <input name="val[oldpass]" type="text" class="form-control" placeholder="old password" value="">
+                  <input autocomplete="off" name="val[oldpass]" type="password" class="form-control" placeholder="old password" value="">
                 </div>
               </div>
               <div class="col-md-6 pr-1">
                 <div class="form-group">
                   <label>New Password</label>
-                  <input name="val[newpass]" type="text" class="form-control" placeholder="new password" value="">
+                  <input autocomplete="off" name="val[newpass]" type="password" class="form-control" placeholder="new password" value="">
                 </div>
               </div>
             </div>
@@ -121,13 +123,16 @@ if(!isset($q_user))
                   <select name="val[role]" class="form-control" id="roleSelect" value="<?= $currentUser->isAdmin() ?>">
                     <option value="" selected disabled><?=  $currentUser->getRole() ?></option>
                     <option value="0">Normal User</option>
-                    <option vlaue="1">Adminstrator</option>
+                    <option value="1">Adminstrator</option>
                   </select> </div>
               </div>
             </div>
             <?php endif ?>
 
             <div class="row">
+              <div class="col-md-12 px-1">
+              <p>Note: updates don't automatically apply to all other platforms, password/email change requires logging in again</p>
+              </div>
               <div class="update ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary btn-round">Update Profile</button>
               </div>

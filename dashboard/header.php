@@ -119,6 +119,10 @@ if(!$authentication->isLoggedIn())
                 if (empty($val['password'])) {
                     $valid = false;
                     $errors[] = 'Password cannot be blank';
+                }else if(strlen($val['password']) < 8)
+                {
+                    $valid = false;
+                    $errors[] = 'Password too short';
                 }
 
                 $val['name'] = trim($val['name']);
