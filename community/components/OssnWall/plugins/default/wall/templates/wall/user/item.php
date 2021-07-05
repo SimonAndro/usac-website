@@ -81,7 +81,12 @@ if ($params['user']->guid !== $params['post']->owner_guid) {
             <?php
             if (!empty($image)) {
                 ?>
-                <img src="<?php echo ossn_site_url("post/photo/{$params['post']->guid}/{$image}"); ?>"/>
+				<?php if(strtolower(end(explode(".",$image))) =="mp4"): ?>
+
+                	<video src="<?php echo $ossn_site_url("post/photo/{$params['post']->guid}/{$image}"); ?>"> </video>
+				<?php else: ?>
+					<img src="<?php echo ossn_site_url("post/photo/{$params['post']->guid}/{$image}"); ?>"/>
+				<?php endif ?>
 
             <?php } ?>          
 		</div>

@@ -131,7 +131,7 @@ if(!isset($q_user))
 
             <div class="row">
               <div class="col-md-12 px-1">
-              <p>Note: updates don't automatically apply to all other platforms, password/email change requires logging in again</p>
+              <p> <span class="btn-danger px-1">Note:</span> password/email change requires logging in again</p>
               </div>
               <div class="update ml-auto mr-auto">
                 <button type="submit" class="btn btn-primary btn-round">Update Profile</button>
