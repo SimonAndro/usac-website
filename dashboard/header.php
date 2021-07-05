@@ -77,7 +77,7 @@ if(!$authentication->isLoggedIn())
                     $output["action"] = "url";
                     $output["value"] = "dashboard/index.php";
                }else{
-                    $error[] = "Invalid Login Credentials";
+                    $errors[] = "Invalid Login Credentials";
                     $output["errors"] = $errors;
                     $output["msg"] = "fail";
                }

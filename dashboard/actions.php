@@ -57,12 +57,14 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
                 $valid = true;
                 $errors = array();
                 $msg = "error";
+                $toUpdate = $usersTable->findById(@$val["userId"]);
+
                 if (!empty($val['email'])) {
 
                     if (filter_var($val['email'], FILTER_VALIDATE_EMAIL) == false) {
                         $valid = false;
                         $errors[] = 'Invalid email address';
-                    } else if (strlen($val['email']) > 30) {
+                    } else if (strlen($val['email']) > 300) {
                         $valid = false;
                         $errors[] = 'Email should be less than 30 characters';
                     } else { //if the email is not blank and valid:
@@ -78,7 +80,7 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
                 $val['newpass'] = trim($val['newpass']);
                 if (!empty($val['newpass']) && !empty($val['oldpass'])) {
 
-                    if ($toUpdate = $usersTable->findById($val["userId"])) {
+                    if (isset($toUpdate)) {
                         if (password_verify($val['oldpass'], $toUpdate->getPassword())) {
                             if (strlen($val['newpass']) < 8) {
                                 $valid = false;
@@ -88,6 +90,14 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
                                 $errors[] = 'new and old Password can\'t be the same';
                             } else {
                                 $userUpdate["password"] = password_hash($val['newpass'], PASSWORD_DEFAULT);
+
+                                $ossn_salt = ossn_generateSalt();
+                                $ossn_password = ossn_generate_password($val["newpass"], $ossn_salt);
+                                $ossn_fields["password"] = $ossn_password;
+                                $ossn_fields["salt"] = $ossn_salt;
+
+                                $np_password = md5($val["newpass"]);
+                                $np_fields["password"] = $np_password;
                             }
                         } else {
                             $valid = false;
@@ -165,11 +175,61 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
                     }
                 }
 
-                if ($valid and !empty($val["userId"])) {
+                if ($valid and !empty($toUpdate)) {
                     $userUpdate["id"] = $val["userId"];
 
-                    if ($usersTable->save($userUpdate)) {
+                    if ($savedUser = $usersTable->save($userUpdate)) {
                         $msg = "success";
+
+                        //update on other platforms
+                        // update on social platform
+                        $ossn_fields["username"] = explode(" ", $savedUser->getName())[0];
+                        $ossn_fields["email"] = $savedUser->getEmail();
+                        $ossn_fields["first_name"] = $savedUser->getFirstName();
+                        $ossn_fields["last_name"] = $savedUser->getLastName();
+
+                        // update on newsportal
+                        $np_fields["fullname"] = $savedUser->getFirstName() . " " . $savedUser->getLastName();
+                        $np_fields["username"] = explode(" ", $savedUser->getName())[0];
+                        $np_fields["email"] = $savedUser->getEmail();
+
+                        /*
+                         * update on newsportal
+                         */
+                        $np_pdo = create_np_pdo();
+                        if ($np_pdo) {
+                            $np_users_table = new \Ninja\DatabaseTable($np_pdo, 'users', 'usid', 'User');
+                            $sql = "SELECT * FROM " . $np_users_table->getTableName() . " WHERE email=?";
+                            $np_res = $np_users_table->customQuery($sql, $toUpdate->getEmail());
+                            $np_user = $np_res[0];
+                            if (!empty($np_user->{"usid"})) {
+                                $np_fields["usid"] = $np_user->{"usid"};
+                                $np_users_table->save($np_fields);
+                            }else{
+                                $errors[] = 'Update failed on newsportal';
+                            }
+                        }else{
+                            $errors[] = 'Update failed on newsportal';
+                        }
+
+                        /*
+                         * update on social community
+                         */
+                        $ossn_pdo = create_ossn_pdo();
+                        if ($ossn_pdo) {
+                            $ossn_users_table = new \Ninja\DatabaseTable($ossn_pdo, 'ossn_users', 'guid', 'User');
+                            $sql = "SELECT * FROM " . $ossn_users_table->getTableName() . " WHERE email=?";
+                            $ossn_res = $ossn_users_table->customQuery($sql, $toUpdate->getEmail());
+                            $ossn_user = $ossn_res[0];
+                            if (!empty($ossn_user->{"guid"})) {
+                                $ossn_fields["guid"] = $ossn_user->{"guid"};
+                                $ossn_users_table->save($ossn_fields);
+                            }else{
+                                $errors[] = 'Update failed on social community';
+                            }
+                        }else{
+                            $errors[] = 'Update failed on social community';
+                        }
                     }
                 }
 
