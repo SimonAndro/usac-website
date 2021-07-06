@@ -77,7 +77,9 @@
                                             <div class="up-event-thumb">
                                                 <img src="<cms:show  event_image />" class="img-fluid"
                                                     alt="Upcoming Event">
-                                                <h4 class="up-event-date">It&#x2019;s <cms:date  event_date /></h4>
+                                                <h4 class="up-event-date">It&#x2019;s
+                                                    <cms:date event_date />
+                                                </h4>
                                             </div>
                                         </div>
 
@@ -86,12 +88,16 @@
                                                 <div class="display-table-cell">
                                                     <div class="up-event-text">
                                                         <div class="event-countdown">
-                                                            <div class="event-countdown-counter" data-date="<cms:date  event_date format='Y/m/d' />">
+                                                            <div class="event-countdown-counter"
+                                                                data-date="<cms:date  event_date format='Y/m/d' />">
                                                             </div>
                                                             <p>Remaining</p>
                                                         </div>
-                                                        <h3><a href="<cms:show k_page_link />"><cms:show event_short_title /></a></h3>
-                                                        <p> <cms:show event_short_desc /> </p>
+                                                        <h3><a href="<cms:show k_page_link />">
+                                                                <cms:show event_short_title /></a></h3>
+                                                        <p>
+                                                            <cms:show event_short_desc />
+                                                        </p>
                                                         <a href="<cms:show k_page_link />"
                                                             class="btn btn-brand btn-brand-dark">Check Event</a>
                                                     </div>
@@ -102,18 +108,15 @@
                                 </div>
                                 <!-- Single Event End -->
                                 <cms:if k_paginated_bottom>
-                                    <!-- Blog Navigation -->
-                                    <p class="clearfix">
-                                        <cms:if k_paginate_link_next>
-                                            <a href="<cms:show k_paginate_link_next />" class="button float">&lt;&lt;
-                                                Previous Posts</a>
-                                        </cms:if>
-
-                                        <cms:if k_paginate_link_prev>
-                                            <a href="<cms:show k_paginate_link_prev />" class="button float right">Newer
-                                                Posts >></a>
-                                        </cms:if>
-                                    </p>
+                                    <cms:set u_allow_paginate='1' 'global' />
+                                    <cms:if k_paginate_link_next>
+                                        <cms:set u_allow_next_paginate='1' 'global' />
+                                        <cms:set u_next_link="<cms:show k_paginate_link_next />" 'global' />
+                                    </cms:if>
+                                    <cms:if k_paginate_link_prev>
+                                        <cms:set u_allow_prev_paginate='1' 'global' />
+                                        <cms:set u_prev_link="<cms:show k_paginate_link_prev />" 'global' />
+                                    </cms:if>
                                 </cms:if>
                             </cms:pages>
                         </div>
@@ -121,26 +124,34 @@
                 </div>
 
                 <!-- Pagination Start -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="pagination-wrap text-center">
-                            <nav>
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#"><i
-                                                class="fa fa-angle-left"></i></a>
-                                    </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">50</a></li>
-                                    <li class="page-item"><a class="page-link" href="#"><i
-                                                class="fa fa-angle-right"></i></a></li>
-                                </ul>
-                            </nav>
+                <cms:if u_allow_paginate>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pagination-wrap text-center">
+                                <nav>
+                                    <ul class="pagination">
+                                        <cms:if u_allow_prev_paginate>
+                                            <li class="page-item"><a class="page-link"
+                                                    href="<cms:show u_prev_link />"><i
+                                                        class="fa fa-angle-left"></i>Previous</a>
+                                            </li>
+                                        </cms:if>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <cms:if u_allow_next_paginate>
+                                            <li class="page-item"><a class="page-link"
+                                                    href="<cms:show u_next_link />"><i
+                                                        class="fa fa-angle-right"></i>Next</a></li>
+                                        </cms:if>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </cms:if>
                 <!-- Pagination End -->
             </div>
         </div>
