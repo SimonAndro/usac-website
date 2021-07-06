@@ -2,340 +2,163 @@
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "blog", 'global' ); 
+    $CTX->set( 'u_page', "blog", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
+<cms:template title='Blog Intro'>
+    <cms:editable name='page_intro' label='Intro' desc='Enter page intro info here' type='text'>
+        Usac Needs enables you to harness the power of your Usac network. Whatever may be the
+        need
+    </cms:editable>
+    <cms:editable name='page_cta' label='Call to action' desc='Enter call to action here' type='text'>
+        Let&apos;s See
+    </cms:editable>
 
-<!--== Page Title Area Start ==-->
-<section id="page-title-area" style="background-image: url('<cms:show intro_image />');">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 m-auto text-center">
-                <div class="page-title-content">
-                    <h1 class="h2">Blog List</h1>
-                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
-                        need</p>
-                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--== Page Title Area End ==-->
+    <cms:editable name='intro_image' label='page intro image' desc='Upload page intro Image here' crop='1' width='1918'
+        height='789' type='image' />
+</cms:template>
 
-<!--== Blog Page Content Start ==-->
-<div id="page-content-wrap">
-    <div class="blog-page-content-wrap section-padding">
+<cms:if k_is_page>
+    <cms:embed 'blog_single.php' />
+    <cms:else />
+    <!--== Page Title Area Start ==-->
+    <section id="page-title-area" style="background-image: url('<cms:show intro_image />');">
         <div class="container">
             <div class="row">
-                <!-- Blog content Area Start -->
-                <div class="col-lg-8">
-                    <div class="blog-page-contant-start">
-                        <div class="row">
-                            <!--== Single Blog Post start ==-->
-                            <div class="col-lg-6 col-md-6">
-                                <article class="single-blog-post">
-                                    <figure class="blog-thumb">
-                                        <div class="blog-thumbnail">
-                                            <img src="http://placehold.it/700x353" alt="Blog" class="img-fluid">
-                                        </div>
-                                        <figcaption class="blog-meta clearfix">
-                                            <a href="single-blog.html" class="author">
-                                                <div class="author-pic">
-                                                    <img src="http://placehold.it/200x200" alt="Author">
-                                                </div>
-                                                <div class="author-info">
-                                                    <h5>Daney williams</h5>
-                                                    <p>2 hours Ago</p>
-                                                </div>
-                                            </a>
-                                            <div class="like-comm pull-right">
-                                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-
-                                    <div class="blog-content">
-                                        <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                will be a.....</a></h3>
-                                        <p>This is a big project of our company, we are happy to completed this type
-                                            projec which are
-                                            get world famous award</p>
-                                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                                    </div>
-                                </article>
-                            </div>
-                            <!--== Single Blog Post End ==-->
-
-                            <!--== Single Blog Post start ==-->
-                            <div class="col-lg-6 col-md-6">
-                                <article class="single-blog-post">
-                                    <figure class="blog-thumb">
-                                        <div class="blog-thumbnail">
-                                            <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                                        </div>
-                                        <figcaption class="blog-meta clearfix">
-                                            <a href="single-blog.html" class="author">
-                                                <div class="author-pic">
-                                                    <img src="http://placehold.it/200x200" alt="Author">
-                                                </div>
-                                                <div class="author-info">
-                                                    <h5>Daney williams</h5>
-                                                    <p>2 hours Ago</p>
-                                                </div>
-                                            </a>
-                                            <div class="like-comm pull-right">
-                                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-
-                                    <div class="blog-content">
-                                        <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                will be a.....</a></h3>
-                                        <p>This is a big project of our company, we are happy to completed this type
-                                            projec which are
-                                            get world famous award</p>
-                                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                                    </div>
-                                </article>
-                            </div>
-                            <!--== Single Blog Post End ==-->
-
-                            <!--== Single Blog Post start ==-->
-                            <div class="col-lg-6 col-md-6">
-                                <article class="single-blog-post">
-                                    <figure class="blog-thumb">
-                                        <div class="blog-thumbnail">
-                                            <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                                        </div>
-                                        <figcaption class="blog-meta clearfix">
-                                            <a href="single-blog.html" class="author">
-                                                <div class="author-pic">
-                                                    <img src="http://placehold.it/200x200" alt="Author">
-                                                </div>
-                                                <div class="author-info">
-                                                    <h5>Daney williams</h5>
-                                                    <p>2 hours Ago</p>
-                                                </div>
-                                            </a>
-                                            <div class="like-comm pull-right">
-                                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-
-                                    <div class="blog-content">
-                                        <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                will be a.....</a></h3>
-                                        <p>This is a big project of our company, we are happy to completed this type
-                                            projec which are
-                                            get world famous award</p>
-                                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                                    </div>
-                                </article>
-                            </div>
-                            <!--== Single Blog Post End ==-->
-
-                            <!--== Single Blog Post start ==-->
-                            <div class="col-lg-6 col-md-6">
-                                <article class="single-blog-post">
-                                    <figure class="blog-thumb">
-                                        <div class="blog-thumbnail">
-                                            <img src="http://placehold.it/700x353" alt="Blog" class="img-fluid">
-                                        </div>
-                                        <figcaption class="blog-meta clearfix">
-                                            <a href="single-blog.html" class="author">
-                                                <div class="author-pic">
-                                                    <img src="http://placehold.it/200x200" alt="Author">
-                                                </div>
-                                                <div class="author-info">
-                                                    <h5>Daney williams</h5>
-                                                    <p>2 hours Ago</p>
-                                                </div>
-                                            </a>
-                                            <div class="like-comm pull-right">
-                                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-
-                                    <div class="blog-content">
-                                        <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                will be a.....</a></h3>
-                                        <p>This is a big project of our company, we are happy to completed this type
-                                            projec which are
-                                            get world famous award</p>
-                                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                                    </div>
-                                </article>
-                            </div>
-                            <!--== Single Blog Post End ==-->
-
-                            <!--== Single Blog Post start ==-->
-                            <div class="col-lg-6 col-md-6">
-                                <article class="single-blog-post">
-                                    <figure class="blog-thumb">
-                                        <div class="blog-thumbnail">
-                                            <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                                        </div>
-                                        <figcaption class="blog-meta clearfix">
-                                            <a href="single-blog.html" class="author">
-                                                <div class="author-pic">
-                                                    <img src="http://placehold.it/200x200" alt="Author">
-                                                </div>
-                                                <div class="author-info">
-                                                    <h5>Daney williams</h5>
-                                                    <p>2 hours Ago</p>
-                                                </div>
-                                            </a>
-                                            <div class="like-comm pull-right">
-                                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-
-                                    <div class="blog-content">
-                                        <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                will be a.....</a></h3>
-                                        <p>This is a big project of our company, we are happy to completed this type
-                                            projec which are
-                                            get world famous award</p>
-                                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                                    </div>
-                                </article>
-                            </div>
-                            <!--== Single Blog Post End ==-->
-
-                            <!--== Single Blog Post start ==-->
-                            <div class="col-lg-6 col-md-6">
-                                <article class="single-blog-post">
-                                    <figure class="blog-thumb">
-                                        <div class="blog-thumbnail">
-                                            <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                                        </div>
-                                        <figcaption class="blog-meta clearfix">
-                                            <a href="single-blog.html" class="author">
-                                                <div class="author-pic">
-                                                    <img src="http://placehold.it/200x200" alt="Author">
-                                                </div>
-                                                <div class="author-info">
-                                                    <h5>Daney williams</h5>
-                                                    <p>2 hours Ago</p>
-                                                </div>
-                                            </a>
-                                            <div class="like-comm pull-right">
-                                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-
-                                    <div class="blog-content">
-                                        <h3><a href="single-blog.html">Recently we create a maassive project that
-                                                will be a.....</a></h3>
-                                        <p>This is a big project of our company, we are happy to completed this type
-                                            projec which are
-                                            get world famous award</p>
-                                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                                    </div>
-                                </article>
-                            </div>
-                            <!--== Single Blog Post End ==-->
-                        </div>
-
-                        <!-- Pagination Start -->
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="pagination-wrap text-center">
-                                    <nav>
-                                        <ul class="pagination">
-                                            <li class="page-item"><a class="page-link" href="#"><i
-                                                        class="fa fa-angle-left"></i></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">50</a></li>
-                                            <li class="page-item"><a class="page-link" href="#"><i
-                                                        class="fa fa-angle-right"></i></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Pagination End -->
+                <div class="col-lg-8 m-auto text-center">
+                    <div class="page-title-content">
+                        <h1 class="h2">Blog List</h1>
+                        <p>
+                            <cms:show page_intro />
+                        </p>
+                        <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">
+                            <cms:show page_cta /></a>
                     </div>
                 </div>
-                <!-- Blog content Area End -->
+            </div>
+        </div>
+    </section>
+    <!--== Page Title Area End ==-->
 
-                <!-- Sidebar Area Start -->
-                <div class="col-lg-4 order-first order-lg-last">
-
-                    <div class="sidebar-area-wrap">
-                        <!-- Single Sidebar Start -->
-                        <div class="single-sidebar-wrap">
-                            <div class="brand-search-form">
-                                <form action="index.html">
-                                    <input type="search" placeholder="Type and hit here">
-                                    <button type="button"><i class="fa fa-search"></i></button>
-                                </form>
+    <!--== Blog Page Content Start ==-->
+    <div id="page-content-wrap">
+        <div class="blog-page-content-wrap section-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Blog content Area Start -->
+                    <div class="col-lg-8">
+                        <div class="blog-page-contant-start">
+                            <div class="row">
+                                <cms:set u_has_data="0" 'global' />
+                                <cms:pages masterpage='blog_single.php' start_on=k_archive_date
+                                    stop_before=k_next_archive_date paginate='1' limit='5'
+                                    folder="<cms:php> echo !empty($_GET['folder'])?$_GET['folder']:null;</cms:php>">
+                                    <cms:set u_has_data="1" 'global' />
+                                    <!--== Single Blog Post start ==-->
+                                    <div class="col-lg-6 col-md-6">
+                                        <article class="single-blog-post">
+                                            <figure class="blog-thumb">
+                                                <div class="blog-thumbnail">
+                                                    <img src="<cms:show blog_image_small />" alt="Blog"
+                                                        class="img-fluid">
+                                                </div>
+                                            </figure>
+                                            <div class="blog-content">
+                                                <h3><a href="<cms:show k_page_link />">
+                                                        <cms:excerptHTML count='75' ignore='img'>
+                                                            <cms:show blog_title />
+                                                        </cms:excerptHTML>
+                                                    </a></h3>
+                                                <p>
+                                                    <cms:excerptHTML count='75' ignore='img'>
+                                                        <cms:show blog_details />
+                                                    </cms:excerptHTML>
+                                                </p>
+                                                <a href="<cms:show k_page_link />" class="btn btn-brand">More</a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <!--== Single Blog Post End ==-->
+                                    <cms:if k_paginated_bottom>
+                                        <cms:set u_allow_paginate='1' 'global' />
+                                        <cms:if k_paginate_link_next>
+                                            <cms:set u_allow_next_paginate='1' 'global' />
+                                            <cms:set u_next_link="<cms:show k_paginate_link_next />" 'global' />
+                                        </cms:if>
+                                        <cms:if k_paginate_link_prev>
+                                            <cms:set u_allow_prev_paginate='1' 'global' />
+                                            <cms:set u_prev_link="<cms:show k_paginate_link_prev />" 'global' />
+                                        </cms:if>
+                                    </cms:if>
+                                </cms:pages>
+                                <cms:if u_has_data eq '0'>
+                                    <p class="text-center">No results found</p>
+                                </cms:if>
                             </div>
+                            <!-- Pagination Start -->
+                            <cms:if u_allow_paginate>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="pagination-wrap text-center">
+                                            <nav>
+                                                <ul class="pagination">
+                                                    <cms:if u_allow_prev_paginate>
+                                                        <li class="page-item"><a class="page-link"
+                                                                href="<cms:show u_prev_link />"><i
+                                                                    class="fa fa-angle-left"></i>Previous</a>
+                                                        </li>
+                                                    </cms:if>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <li></li>
+                                                    <cms:if u_allow_next_paginate>
+                                                        <li class="page-item"><a class="page-link"
+                                                                href="<cms:show u_next_link />"><i
+                                                                    class="fa fa-angle-right"></i>Next</a></li>
+                                                    </cms:if>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </cms:if>
+                            <!-- Pagination End -->
                         </div>
-                        <!-- Single Sidebar End -->
+                    </div>
+                    <!-- Blog content Area End -->
 
-                        <!-- Single Sidebar Start -->
-                        <div class="single-sidebar-wrap">
-                            <h4 class="sidebar-title">Categories</h4>
-                            <div class="sidebar-body">
-                                <ul class="brand-unorderlist">
-                                    <li><a href="#">Scholership</a></li>
-                                    <li><a href="#">Usac</a></li>
-                                    <li><a href="#">Events</a></li>
-                                    <li><a href="#">Member</a></li>
-                                    <li><a href="#">Tour</a></li>
-                                    <li><a href="#">Current Student</a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Single Sidebar End -->
-
-                        <!-- Single Sidebar Start -->
-                        <div class="single-sidebar-wrap d-none d-lg-block">
-                            <h4 class="sidebar-title">Popular Tags</h4>
-                            <div class="sidebar-body">
-                                <div class="tags">
-                                    <a href="#">Bootstrap</a>
-                                    <a href="#">Design</a>
-                                    <a href="#">web</a>
-                                    <a class="active" href="#">custom</a>
-                                    <a href="#">wordpres</a>
-                                    <a href="#">Art</a>
-                                    <a href="#">our team</a>
-                                    <a href="#">Classic</a>
+                    <!-- Sidebar Area Start -->
+                    <div class="col-lg-4 order-first order-lg-last">
+                        <div class="sidebar-area-wrap">
+                            <!-- Single Sidebar Start -->
+                            <div class="single-sidebar-wrap">
+                                <h4 class="sidebar-title">Categories</h4>
+                                <div class="sidebar-body">
+                                    <ul class="brand-unorderlist">
+                                        <cms:folders masterpage='blog_single.php'>
+                                            <li><a
+                                                    href="<cms:show k_template_link />?folder=<cms:show k_folder_name />">
+                                                    <cms:show k_folder_title  />( <cms:show k_folder_pagecount/> )</a></li>
+                                        </cms:folders>
+                                    </ul>
                                 </div>
                             </div>
+                            <!-- Single Sidebar End -->
                         </div>
-                        <!-- Single Sidebar End -->
                     </div>
+                    <!-- Sidebar Area End -->
                 </div>
-                <!-- Sidebar Area End -->
             </div>
         </div>
     </div>
-</div>
-<!--== Blog Page Content End ==-->
-
+    <!--== Blog Page Content End ==-->
+</cms:if>
 <!--== Footer Area Start ==-->
 <cms:embed 'footer.php' />
 <!--== Footer Area End ==-->
