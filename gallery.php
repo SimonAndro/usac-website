@@ -48,12 +48,17 @@
     <section id="page-content-wrap">
         <div class="gallery-page-wrap section-padding">
             <!-- Gallery Menu Start -->
+
+
             <div class="gallery-menu text-center">
-                <a href="#" class="active">All</a>
-                <a href="#">Seminar</a>
-                <a href="#">Event</a>
-                <a href="#">Picnic</a>
+                <a href="" class="active">All</a>
+                <cms:pages masterpage='gallery_single.php' start_on=k_archive_date stop_before=k_next_archive_date
+                    paginate='1' limit='5'>
+                    <a href="<cms:show k_page_link />">
+                        <cms:show k_page_foldertitle /></a>
+                </cms:pages>
             </div>
+
             <!-- Gallery Menu End -->
 
             <!--= Gallery Page Content Wrap Start =-->
