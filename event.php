@@ -49,17 +49,23 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="event-filter-area">
-                            <form action="index.html" class="form-inline">
-                                <select name="year" id="year">
-                                    <option selected>Year</option>
-                                    <option>2018</option>
-                                    <option>2017</option>
-                                    <option>2016</option>
-                                    <option>2015</option>
-                                    <option>2014</option>
-                                </select>
-                                <button class="btn btn-brand">Filter</button>
-                            </form>
+                            <cms:form name="quicksearch" id="quicksearch" class="form-inline" anchor='0'>
+                                <cms:if k_success>
+                                    <cms:if frm_my_date!='-'>
+                                        <cms:set my_start_date="<cms:show frm_my_date />-01-01" scope='global' />
+                                        <cms:set my_stop_date="<cms:add frm_my_date '1' />-01-01" scope='global' />
+                                    </cms:if>
+                                </cms:if>
+                                <div>
+                                    <cms:input type='dropdown'
+                                        opt_values="Filter by Year=- | <cms:archives masterpage='event_single.php' type='yearly'><cms:date event_date format='Y' /> </cms:archives>"
+                                        opt_selected='-' name='my_date' />
+                                </div>
+                                <div class="buttonset">
+                                    <cms:input type="submit" class="fbsubmitbtn btn btn-brand" value="Filter"
+                                        name="submit" />
+                                </div>
+                            </cms:form>
                         </div>
                     </div>
                 </div>
@@ -67,9 +73,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="all-event-list">
-
-                            <cms:pages masterpage='event_single.php' start_on=k_archive_date
-                                stop_before=k_next_archive_date paginate='1' limit='3'>
+                            <cms:no_results>
+                                No projects found
+                            </cms:no_results>
+                            <cms:pages masterpage='event_single.php' start_on=my_start_date stop_before=my_stop_date
+                                paginate='1' limit='3'>
                                 <!-- Single Event Start -->
                                 <div class="single-upcoming-event">
                                     <div class="row">

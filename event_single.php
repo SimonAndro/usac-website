@@ -20,7 +20,7 @@
         Let&apos;s See
     </cms:editable>
     <cms:editable name='event_date' type='text'>
-        <cms:date />
+        <cms:date Y-m-d />
     </cms:editable>
 
     <cms:editable name='event_image' crop='1' width='700' height='390' type='image' />
