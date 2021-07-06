@@ -1545,7 +1545,7 @@ blockquote:before {
 }
 
 .gallery-gird .gallery-bg-1 {
-  background-image: url("http://placehold.it/800x800");
+  /* background-image: url("http://placehold.it/800x800"); */
 }
 
 .gallery-gird .gallery-bg-2 {

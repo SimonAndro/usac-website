@@ -29,9 +29,8 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">All Event Archive</h1>
-                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
-                        need</p>
-                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
+                    <p><cms:show page_intro /></p>
+                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll"><cms:show page_cta /></a>
                 </div>
             </div>
         </div>
