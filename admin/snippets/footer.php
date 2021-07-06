@@ -10,11 +10,9 @@
                     <div class="single-widget-wrap">
                         <div class="widgei-body">
                             <div class="footer-about">
-                                <img src="assets/img/usac-logo.png" alt="Logo" class="img-fluid" style="background-color: #ffffff40;">
-                                <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod
-                                    tempor incidunt ut et do maga aliqua enim ad minim.</p>
-                                <a href="#">Phone: +8745 44 5444</a> <a href="#">Fax: +88474 156 362</a> <br> <a
-                                    href="#">Email: demoemail@demo.com</a>
+                                <img src="assets/img/usac-logo.png" alt="Logo" class="img-fluid"
+                                    style="background-color: #ffffff40;">
+                                <cms:get_custom_field 'site_foot_mark' masterpage='cms_templates/cms_globals.php' />
                             </div>
                         </div>
                     </div>
@@ -26,18 +24,10 @@
                     <div class="single-widget-wrap">
                         <h4 class="widget-title">Get In Touch</h4>
                         <div class="widgei-body">
-                            <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed</p>
-                            <div class="newsletter-form">
-                                <form id="cbx-subscribe-form" role="search">
-                                    <input type="email" placeholder="Enter Your Email" id="subscribe" required>
-                                    <button type="submit"><i class="fa fa-send"></i></button>
-                                </form>
-                            </div>
+                            <p>You can follow USAC on social media</p>
                             <div class="footer-social-icons">
-                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-vimeo"></i></a>
+                                <a href="<cms:get_custom_field 'fb_page' masterpage='cms_templates/cms_globals.php' />" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="<cms:get_custom_field 'twitter_page' masterpage='cms_templates/cms_globals.php' />" target="_blank"><i class="fa fa-twitter"></i></a>
                             </div>
                         </div>
                     </div>
@@ -47,19 +37,12 @@
                 <!-- Single Widget Start -->
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-widget-wrap">
-                        <h4 class="widget-title">Usefull Link</h4>
+                        <h4 class="widget-title">Useful Links</h4>
                         <div class="widgei-body">
                             <ul class="double-list footer-list clearfix">
-                                <li><a href="#">Pricing Plan</a></li>
-                                <li><a href="#">Categories</a></li>
-                                <li><a href="#">Populer Deal</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">Pricing Plan</a></li>
-                                <li><a href="#">Categories</a></li>
-                                <li><a href="#">Populer Deal</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Support</a></li>
+                                <li><a href="./newsportal" target="_blank">News portal</a></li>
+                                <li><a href="./community" target="_blank">Community</a></li>
+                                <li><a href="./directory.php">Directory</a></li>
                             </ul>
                         </div>
                     </div>
@@ -69,14 +52,10 @@
                 <!-- Single Widget Start -->
                 <div class="col-lg-2 col-sm-6">
                     <div class="single-widget-wrap">
-                        <h4 class="widget-title">University</h4>
+                        <h4 class="widget-title">USAC</h4>
                         <div class="widgei-body">
                             <ul class="footer-list clearfix">
-                                <li><a href="#">Pricing Plan</a></li>
-                                <li><a href="#">Categories</a></li>
-                                <li><a href="#">Populer Deal</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Support</a></li>
+                                <li><a href="./contact.php">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -108,7 +87,8 @@
                     </div>
                     <div class="footer-right">
                         <a href="https://www.360degrees.com/">
-                            <img style="-webkit-user-select: none;" src="assets/img/360degrees-btn.png" width="88" height="31">
+                            <img style="-webkit-user-select: none;" src="assets/img/360degrees-btn.png" width="88"
+                                height="31">
                         </a>
                     </div>
                 </div>

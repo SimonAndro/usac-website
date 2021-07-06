@@ -2,7 +2,7 @@
     require_once __DIR__ ."/../global_auth.php";
     global $CTX;
     if($authentication->isLoggedIn()){
-        $CTX->set( 'user_logged_in', 1, 'global' );
+    $CTX->set( 'user_logged_in', 1, 'global' );
     }
     $totalUsers = count($usersTable->findAll());
     $CTX->set( 'usac_total_user', $totalUsers, 'global' );
@@ -137,8 +137,9 @@
                                 <a title="Dashboard" class="btn-auth btn-auth-rev" href="./dashboard">Dashboard</a>
                                 <a title="Register or Login" class="btn-auth btn-auth"
                                     href="./dashboard/index.php?logout=1">Logout</a>
-                            <cms:else />
-                                <a title="Register or Login" class="btn-auth btn-auth" href="register.php">Login or Signup</a>
+                                <cms:else />
+                                <a title="Register or Login" class="btn-auth btn-auth" href="register.php">Login or
+                                    Signup</a>
                             </cms:if>
 
                             <cms:if k_template_name="register.php">
@@ -169,27 +170,19 @@
 
                             <div class="collapse navbar-collapse" id="menucontent">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="event.php">Event</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="gallery.php">Gallery</a></li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.php" data-toggle="dropdown"
-                                            role="button">Blog</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="nav-item"><a class="nav-link" href="blog.php">Blog List</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="single-blog.php">Single Blog
-                                                    Right Sidebar</a></li>
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="single-blog-leftsidebar.php">Single Blog left Sidebar</a>
-                                            </li>
-                                            <li class="nav-item"><a class="nav-link"
-                                                    href="single-blog-withoutsidebar.php">Single Blog No Sidebar</a>
-                                            </li>
-                                        </ul>
+                                    <li class='nav-item <cms:if u_page eq "home" > active </cms:if>'><a class="nav-link"
+                                            href="index.php">Home</a></li>
+                                    <li class='nav-item <cms:if u_page eq "about" > active </cms:if>'><a
+                                            class="nav-link" href="about.php">About</a></li>
+                                    <li class='nav-item <cms:if u_page eq "event" > active </cms:if>'><a
+                                            class="nav-link" href="event.php">Event</a></li>
+                                    <li class='nav-item <cms:if u_page eq "gallery" > active </cms:if>'><a
+                                            class="nav-link" href="gallery.php">Gallery</a></li>
+                                    <li class='nav-item <cms:if u_page eq "blog" > active </cms:if>'>
+                                        <a class="nav-link" href="blog.php">Blog</a>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+                                    <li class='nav-item <cms:if u_page eq "member" > active </cms:if> dropdown'>
+                                        <a class="nav-link dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown"
                                             role="button">Member Area</a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item"><a class="nav-link" href="newsportal">News Portal</a>
@@ -203,7 +196,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+                                    <li class='nav-item <cms:if u_page eq "contact" > active </cms:if>'><a class="nav-link"
+                                            href="contact.php">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>

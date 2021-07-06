@@ -1,4 +1,4 @@
-<?php require_once( 'admin/cms.php' ); ?>
+<?php require_once( 'admin/cms.php' ); $CTX->set( 'u_page', "event", 'global' );  ?>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
