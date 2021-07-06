@@ -1950,7 +1950,7 @@ blockquote:before {
 }
 
 #page-title-area {
-  background-image: url("http://placehold.it/1918x789");
+  /* background-image: url("http://placehold.it/1918x789"); */
   background-size: cover;
   background-position: center center;
   position: relative;

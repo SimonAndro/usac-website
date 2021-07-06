@@ -6,7 +6,7 @@
 <!--== Header Area End ==-->
 
 <!--== Page Title Area Start ==-->
-<section id="page-title-area">
+<section id="page-title-area" style="background-image: url('<cms:show intro_image />');">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 m-auto text-center">

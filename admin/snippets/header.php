@@ -1,9 +1,11 @@
 <cms:php>
     require_once __DIR__ ."/../global_auth.php";
+    global $CTX;
     if($authentication->isLoggedIn()){
-        global $CTX;
         $CTX->set( 'user_logged_in', 1, 'global' );
     }
+    $totalUsers = count($usersTable->findAll());
+    $CTX->set( 'usac_total_user', $totalUsers, 'global' );
 </cms:php>
 
 <!DOCTYPE html>
