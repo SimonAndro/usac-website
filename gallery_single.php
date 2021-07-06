@@ -1,5 +1,10 @@
 <?php require_once( 'admin/cms.php' ); ?>
 
+<cms:php>
+    global $CTX;
+    $CTX->set( 'u_page', "gallery", 'global' );
+</cms:php>
+
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
@@ -19,12 +24,12 @@
     <cms:editable name='page_cta' label='Call to action' desc='Enter call to action here' type='text'>
         Let&apos;s See
     </cms:editable>
+    <cms:editable name='intro_image' label='page intro image' desc='Upload page intro Image here' crop='1' width='1918'
+        height='789' type='image' />
 
-    <cms:editable name='blog_image' crop='1' width='610' height='150' type='image' />
-
-    <cms:folder name="s_graduation" title="Graduation" />
-    <cms:folder name="s_cultural" title="Cultural Activities" />
-    <cms:folder name="s_random" title="Random" />
+    <cms:folder name="graduation" title="Graduation" />
+    <cms:folder name="cultural" title="Cultural Activities" />
+    <cms:folder name="random" title="Random" />
 
 
 </cms:template>
@@ -37,7 +42,7 @@
                 <div class="page-title-content">
                     <h1 class="h2">Gallery</h1>
                     <p>
-                        <cms:show event_intro />
+                        <cms:show album_short_title />
                     </p>
                     <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">
                         <cms:show page_cta /></a>
@@ -56,34 +61,78 @@
                 <div class="col-lg-12">
                     <!-- Gallery Item content Start -->
                     <div class="row gallery-gird">
-                        <cms:pages masterpage='event_single.php' start_on=my_start_date stop_before=my_stop_date
-                                paginate='1' limit='3'>
+                        <cms:set u_has_data="0" 'global' />
+                        <cms:pages masterpage='gallery_photos.php' folder=k_page_foldername start_on=k_archive_date
+                            stop_before=k_next_archive_date paginate='1' limit='1'>
+                            <cms:set u_has_data="1" 'global' />
                             <!-- Single Gallery Start -->
                             <div class="col-lg-3  col-sm-6 recent event">
-                                <div class="single-gallery-item gallery-bg-1" style="background-image: url()">
+                                <div class="single-gallery-item gallery-bg-1"
+                                    style="background-image: url('<cms:show album_image />')">
                                     <div class="gallery-hvr-wrap">
                                         <div class="gallery-hvr-text">
-                                            <h4>University Cumpus</h4>
-                                            <p class="gallery-event-date">28 Oct, 2018</p>
+                                            <h4>
+                                                <cms:show photo_caption />
+                                            </h4>
+                                            <p class="gallery-event-date">
+                                                <cms:show photo_date />
+                                            </p>
                                         </div>
-                                        <a href="assets/img/gallery/gellary-img-1.jpg" class="btn-zoom image-popup">
+                                        <a href="<cms:show album_image />" class="btn-zoom image-popup">
                                             <img src="assets/img/zoom-icon.png" alt="a">
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Single Gallery End -->
+                            <cms:if k_paginated_bottom>
+                                <cms:set u_allow_paginate='1' 'global' />
+                                <cms:if k_paginate_link_next>
+                                    <cms:set u_allow_next_paginate='1' 'global' />
+                                    <cms:set u_next_link="<cms:show k_paginate_link_next />" 'global' />
+                                </cms:if>
+                                <cms:if k_paginate_link_prev>
+                                    <cms:set u_allow_prev_paginate='1' 'global' />
+                                    <cms:set u_prev_link="<cms:show k_paginate_link_prev />" 'global' />
+                                </cms:if>
+                            </cms:if>
                         </cms:pages>
+                        <cms:if u_has_data eq '0'>
+                            <p class="text-center">No results found</p>
+                        </cms:if>
                     </div>
                     <!-- Gallery Item content End -->
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <a href="#" class="btn btn-brand btn-loadmore">Load More Photo</a>
+            <!-- Pagination Start -->
+            <cms:if u_allow_paginate>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="pagination-wrap text-center">
+                            <nav>
+                                <ul class="pagination">
+                                    <cms:if u_allow_prev_paginate>
+                                        <li class="page-item"><a class="page-link" href="<cms:show u_prev_link />"><i
+                                                    class="fa fa-angle-left"></i>Previous</a>
+                                        </li>
+                                    </cms:if>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <cms:if u_allow_next_paginate>
+                                        <li class="page-item"><a class="page-link" href="<cms:show u_next_link />"><i
+                                                    class="fa fa-angle-right"></i>Next</a></li>
+                                    </cms:if>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </cms:if>
+            <!-- Pagination End -->
         </div>
     </div>
 </section>
