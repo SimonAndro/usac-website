@@ -1,4 +1,9 @@
-<?php require_once( 'admin/cms.php' ); $CTX->set( 'u_page', "blog", 'global' ); ?>
+<?php require_once( 'admin/cms.php' ); ?>
+
+<cms:php>
+    global $CTX;
+    $CTX->set( 'u_page', "blog", 'global' ); 
+</cms:php>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
