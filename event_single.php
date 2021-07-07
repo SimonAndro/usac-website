@@ -19,8 +19,8 @@
     <cms:editable name='page_cta' label='Call to action' desc='Enter call to action here' type='text'>
         Let&apos;s See
     </cms:editable>
-    <cms:editable name='event_date' type='text'>
-        <cms:date Y-m-d />
+    <cms:editable name='event_date' desc='As sample format' type='text'>
+        <cms:date format='Y-m-d' />
     </cms:editable>
     
     <cms:editable name='event_image' crop='1' width='700' height='390' type='image' />
