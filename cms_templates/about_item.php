@@ -1,5 +1,5 @@
 <?php require_once( '../admin/cms.php' ); ?>
-<cms:template clonable='1' title='About Events' executable='0'>
+<cms:template clonable='1' title='About Us Events' executable='0'>
     <cms:editable name='about_image' label='About image' desc='Upload about image here' crop='1' width='1920'
         height='1280' type='image' />
     <cms:editable name='about_year' label='About Title' desc='Enter about year here' type='text'>

@@ -9,7 +9,7 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<cms:template title='Album Gallery'>
+<cms:template title='Page Album Gallery Intro'>
     <cms:editable name='page_intro' label='Intro' desc='Enter page intro info here' type='text'>
         Usac Needs enables you to harness the power of your Usac network. Whatever may be the
         need

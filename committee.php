@@ -2,12 +2,25 @@
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "member", 'global' ); 
+    $CTX->set( 'u_page', "member", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
+
+<cms:template title='Page Committee Intro'>
+    <cms:editable name='page_intro' label='Intro' desc='Enter page intro info here' type='text'>
+        Usac Needs enables you to harness the power of your Usac network. Whatever may be the
+        need
+    </cms:editable>
+    <cms:editable name='page_cta' label='Call to action' desc='Enter call to action here' type='text'>
+        Let&apos;s See
+    </cms:editable>
+
+    <cms:editable name='intro_image' label='page intro image' desc='Upload page intro Image here' crop='1' width='1918'
+        height='789' type='image' />
+</cms:template>
 
 <!--== Page Title Area Start ==-->
 <section id="page-title-area" style="background-image: url('<cms:show intro_image />');">
@@ -16,9 +29,8 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">Committee</h1>
-                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
-                        need</p>
-                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">Let&apos;s See</a>
+                    <p><cms:show page_intro /></p>
+                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll"><cms:show page_cta /></a>
                 </div>
             </div>
         </div>
@@ -31,99 +43,60 @@
     <div class="committee-content-wrap section-padding">
         <div class="committee-member-list">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-10 col-md-7 m-auto">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Bryan Watshon <span class="committee-deg">President</span></h3>
+                <cms:set has_second_row='0' />
+                <cms:pages masterpage='cms_templates/committe_member.php' orderby='weight' order='asc'>
+                    <cms:if k_count eq '1'>
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-10 col-md-7 m-auto">
+                                <div class="single-committee-member">
+                                    <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
+                                    <h3>
+                                        <cms:show member_name /><span class="committee-deg">
+                                            <cms:show member_position />
+                                        </span>
+                                    </h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Carlos Helu <span class="committee-deg">Vice President</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Amancio Ortega <span class="committee-deg">Secretary</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Angle Tuni <span class="committee-deg">Asst Secretary</span></h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Alex Kalifa <span class="committee-deg">Office Secretary</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Mal Muhit <span class="committee-deg">Finance Member</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Alex Salina <span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Karim Mia <span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Rahim Mia <span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Prince Rimon<span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Sheoli Afsar<span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="single-committee-member">
-                            <img src="http://placehold.it/500x700" class="img-fluid" alt="Committee">
-                            <h3>Prince Kamla<span class="committee-deg">Committee Member</span></h3>
-                        </div>
-                    </div>
-                </div>
+                        <cms:else />
+                        <cms:if k_count lt '5'>
+                            <cms:if k_count eq '2'>
+                                <div class="row">
+                                    <cms:set has_second_row='1' />
+                            </cms:if>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="single-committee-member">
+                                    <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
+                                    <h3>
+                                        <cms:show member_name /><span class="committee-deg">
+                                            <cms:show member_position />
+                                        </span>
+                                    </h3>
+                                </div>
+                            </div>
+                            <cms:else />
+                            <cms:if k_count eq '5'>
             </div>
+            <div class="row">
+                </cms:if>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-committee-member">
+                        <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
+                        <h3>
+                            <cms:show member_name /><span class="committee-deg">
+                                <cms:show member_position />
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                </cms:if>
+                </cms:if>
+                </cms:pages>
+                <cms:if has_second_row eq '1'>
+            </div>
+            </cms:if>
         </div>
+    </div>
     </div>
 </section>
 <!--== Committee Page Content End ==-->
