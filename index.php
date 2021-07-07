@@ -2,90 +2,56 @@
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "home", 'global' ); 
+    $CTX->set( 'u_page', "home", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
+<cms:template title='Page Home Intro'>
+
+</cms:template>
+
 <!--== Slider Area Start ==-->
 <section id="slider-area">
     <div class="slider-active-wrap owl-carousel text-center text-md-left">
-        <!-- Single Slide Item Start -->
-        <div class="single-slide-wrap slide-bg-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="slider-content">
-                            <h2>We Are Proud</h2>
-                            <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be
-                                the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                community and get responses in three.</p>
-                            <div class="slider-btn">
-                                <a href="#about-area" class="btn btn-brand smooth-scroll">our mission</a>
-                                <a href="about.html" class="btn btn-brand-rev">our story</a>
+        <cms:pages masterpage='cms_templates/role_item.php' orderby='weight' order='asc'>
+            <!-- Single Slide Item Start -->
+            <div class="single-slide-wrap slide-bg-1" style="background-image: url('<cms:show intro_image />');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="slider-content">
+                                <h2>
+                                    <cms:show intro_title />
+                                </h2>
+                                <h3>Members of <span>USAC</span></h3>
+                                <p>
+                                    <cms:show intro_details />
+                                </p>
+                                <div class="slider-btn">
+                                    <a href="#about-area"
+                                        class="btn btn-brand <cms:if k_count eq '1'>smooth-scroll</cms:if>">USAC's
+                                        MISSION</a>
+                                    <a href="about.php" class="btn btn-brand-rev">ABOUT USAC</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Single Slide Item End -->
-
-        <!-- Single Slide Item Start -->
-        <div class="single-slide-wrap slide-bg-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="slider-content">
-                            <h2>We Are Not Proud</h2>
-                            <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be
-                                the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                community and get responses in three.</p>
-                            <div class="slider-btn">
-                                <a href="#" class="btn btn-brand">our mission</a>
-                                <a href="#" class="btn btn-brand-rev">our story</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Single Slide Item End -->
-
-        <!-- Single Slide Item Start -->
-        <div class="single-slide-wrap slide-bg-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9">
-                        <div class="slider-content">
-                            <h2>Why Proud for u</h2>
-                            <h3>Students of <span>Oxfornt University</span></h3>
-                            <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be
-                                the need (academic, relocation, career, projects, mentorship, etc. you can ask the
-                                community and get responses in three.</p>
-                            <div class="slider-btn">
-                                <a href="#" class="btn btn-brand">our mission</a>
-                                <a href="#" class="btn btn-brand-rev">our story</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Single Slide Item End -->
+            <!-- Single Slide Item End -->
+        </cms:pages>
     </div>
 
     <!-- Social Icons Area Start -->
     <div class="social-networks-icon">
         <ul>
-            <li><a href="#"><i class="fa fa-facebook"></i> <span>7.2k Likes</span></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i> <span>3.2m Followers</span></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i> <span>7.2k Likes</span></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i> <span>2.2k Subscribers</span></a></li>
+            <li><a href="<cms:get_custom_field 'fb_page' masterpage='cms_templates/cms_globals.php' />"
+                    target="_blank"><i class="fa fa-facebook"></i> <span>500+ Followers</span></a></li>
+            <li><a href="<cms:get_custom_field 'twitter_page' masterpage='cms_templates/cms_globals.php' />"
+                    target="_blank"><i class="fa fa-twitter"></i> <span>200+ Followers</span></a></li>
         </ul>
     </div>
     <!-- Social Icons Area End -->
@@ -99,115 +65,56 @@
             <div class="col-lg-12">
                 <div class="upcoming-event-wrap">
                     <div class="up-event-titile">
-                        <h3>Upcoming event</h3>
+                        <h3>Upcoming events</h3>
                     </div>
+
                     <div class="upcoming-event-content owl-carousel">
-                        <!-- No 1 Event -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
+                    <cms:set u_has_data="0" 'global' />
+                    <cms:set curr_time="<cms:date format='Y-m-d' />" />
+                    <!-- <cms:dump /> -->
+                        <cms:pages masterpage='event_single.php' limit='3' custom_field="event_date > <cms:show curr_time />">
+                         
+                        <cms:set u_has_data="1" 'global' />
+                            <!-- Single Event Start -->
+                            <div class="single-upcoming-event">
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="up-event-thumb">
+                                            <img src="<cms:show  event_image />" class="img-fluid" alt="Upcoming Event">
+                                            <h4 class="up-event-date">It&#x2019;s
+                                                <cms:date event_date />
+                                            </h4>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10">
+                                    <div class="col-lg-7">
+                                        <div class="display-table">
+                                            <div class="display-table-cell">
+                                                <div class="up-event-text">
+                                                    <div class="event-countdown">
+                                                        <div class="event-countdown-counter"
+                                                            data-date="<cms:date  event_date format='Y/m/d' />">
+                                                        </div>
+                                                        <p>Remaining</p>
                                                     </div>
-                                                    <p>Remaining</p>
+                                                    <h3><a href="<cms:show k_page_link />">
+                                                            <cms:show event_short_title /></a></h3>
+                                                    <p>
+                                                        <cms:show event_short_desc />
+                                                    </p>
+                                                    <a href="<cms:show k_page_link />"
+                                                        class="btn btn-brand btn-brand-dark">Check Event</a>
                                                 </div>
-                                                <h3><a href="single-event.html">We are going to arrange a get
-                                                        together!</a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                    dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                    exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                    with us</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- partial -->
-
-
-                        <!-- No 2 Event -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10">
-                                                    </div>
-                                                    <p>Remaining</p>
-                                                </div>
-                                                <h3><a href="single-event.html">We are going to arrange a get
-                                                        together!</a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                    dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                    exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                    with us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- partial -->
-
-
-                        <!-- No 3 Event -->
-                        <div class="single-upcoming-event">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="up-event-thumb">
-                                        <img src="http://placehold.it/700x390" class="img-fluid" alt="Upcoming Event">
-                                        <h4 class="up-event-date">It&#x2019;s 27 February 2019</h4>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-7">
-                                    <div class="display-table">
-                                        <div class="display-table-cell">
-                                            <div class="up-event-text">
-                                                <div class="event-countdown">
-                                                    <div class="event-countdown-counter" data-date="2018/9/10">
-                                                    </div>
-                                                    <p>Remaining</p>
-                                                </div>
-                                                <h3><a href="single-event.html">We are going to arrange a get
-                                                        together!</a></h3>
-                                                <p>Hello everybody Lorem ipsum dolor sit amet, consectetur
-                                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                                    dolore magna aliqua. Ut enim and minim veniam, quis nostrud
-                                                    exercitation ullamco laboris nisi ut aliquipv ex ea.</p>
-                                                <a href="single-event.html" class="btn btn-brand btn-brand-dark">join
-                                                    with us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- partial -->
+                            <!-- Single Event End -->
+                        </cms:pages>
+                        <cms:if u_has_data eq '0'>
+                            <p class="text-center">Currently No Upcoming Events, Check in later.</p>
+                        </cms:if>
                     </div>
                 </div>
             </div>
@@ -224,21 +131,12 @@
                 <div class="col-lg-10 ml-auto">
                     <div class="about-content-wrap">
                         <div class="section-title text-center text-lg-left">
-                            <h2>Our Misssion</h2>
+                            <h2>USAC's Misssion</h2>
                         </div>
-
-                        <div class="about-thumb">
-                            <img src="http://placehold.it/1440x1018" alt="" class="img-fluid">
-                        </div>
-
-                        <p>There are many company Lorem ipsm dolor sitg amet, csetur adipicing elit, sed do eiusmod
-                            tempor dncint ut labore et dolore magna alis enim ad minim veniam, quis csetur adipicing
-                            elit, sed do eiusmod tempor dncint ut labore et dolore magna alis enim ad minim veniam,
-                            quis nostrud exercitation ullamco.</p>
-                        <p>There are many company Lorem ipsm dolor sitg amet, csetur adipicing elit, sed do eiusmod
-                            tempor dncint ut labore et dolore magna alis enim ad minim veniam, quis nostrud
-                            exercitation ullamco.</p>
-                        <a href="about.html" class="btn btn-brand about-btn">know more</a>
+                        <p>
+                            <cms:get_custom_field 'mission_statement' masterpage='cms_templates/cms_globals.php' />
+                        </p>
+                        <a href="about.php" class="btn btn-brand about-btn">know more</a>
                     </div>
                 </div>
             </div>
@@ -254,7 +152,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="section-title">
-                    <h2>Our Responsibility</h2>
+                    <h2>USAC's Responsibility</h2>
                 </div>
             </div>
         </div>
@@ -262,49 +160,21 @@
 
         <!--== Responsibility Content Wrapper ==-->
         <div class="row text-center text-sm-left">
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="assets/img/responsibility/01.png" alt="Responsibility">
-                    <h4>Scholarship</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
+            <cms:pages masterpage='cms_templates/responsibility.php'>
+                <!--== Single Responsibility Start ==-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single-responsibility">
+                        <img src="<cms:show resp_image />" alt="Responsibility">
+                        <h4>
+                            <cms:show resp_title />
+                        </h4>
+                        <p>
+                            <cms:show resp_details />
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="assets/img/responsibility/02.png" alt="Responsibility">
-                    <h4>Help Current Students</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="assets/img/responsibility/03.png" alt="Responsibility">
-                    <h4>Help Our University</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
-
-            <!--== Single Responsibility Start ==-->
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-responsibility">
-                    <img src="assets/img/responsibility/04.png" alt="Responsibility">
-                    <h4>Build Our Community</h4>
-                    <p>De create building thinking about your requirment and latest treand on our marketplace area
-                    </p>
-                </div>
-            </div>
-            <!--== Single Responsibility End ==-->
+                <!--== Single Responsibility End ==-->
+            </cms:pages>
         </div>
         <!--== Responsibility Content Wrapper ==-->
     </div>
@@ -322,7 +192,9 @@
                         <img src="assets/img/fun-fact/user.svg" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5 class="funfact-count">4025</h5>
+                        <h5 class="funfact-count">
+                            <cms:show usac_total_user />
+                        </h5>
                         <p>Members</p>
                     </div>
                 </div>
@@ -336,7 +208,7 @@
                         <img src="assets/img/fun-fact/picture.svg" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5 class="funfact-count">8725</h5>
+                        <h5 class="funfact-count">1026</h5>
                         <p>Photos</p>
                     </div>
                 </div>
@@ -364,8 +236,8 @@
                         <img src="assets/img/fun-fact/medal.svg" alt="Funfact">
                     </div>
                     <div class="funfact-info">
-                        <h5><span class="funfact-count">32</span>+</h5>
-                        <p>Awards</p>
+                        <h5><span class="funfact-count">800</span>+</h5>
+                        <p>Activities</p>
                     </div>
                 </div>
             </div>
@@ -392,131 +264,49 @@
         <div class="gallery-content-wrapper">
             <div class="row">
                 <div class="col-lg-12">
+                    <cms:php>
+                        $u_gallery_folder = !empty($_GET['folder'])?$_GET['folder']:null;
+                        global $CTX;
+                        $CTX->set( 'u_gallery_folder', $u_gallery_folder, 'global' );
+                    </cms:php>
                     <!-- Gallery Menu Start -->
                     <div class="gallery-menu text-center">
-                        <span class="active" data-filter="*">All</span>
-                        <span data-filter=".old">Old Memories</span>
-                        <span data-filter=".event">Event</span>
-                        <span data-filter=".pic">Our Picnic</span>
-                        <span class="d-none d-sm-inline-block" data-filter=".recent">Recent</span>
+                        <cms:set u_template_link="<cms:show k_template_link />" />
+                        <a href="<cms:show u_template_link />#id-grallery-view"
+                            class="<cms:if u_gallery_folder eq '' >active</cms:if>">All</a>
+                        <cms:pages masterpage='gallery_single.php' start_on=k_archive_date
+                            stop_before=k_next_archive_date paginate='1' limit='5'>
+                            <a href="<cms:show u_template_link />?folder=<cms:show k_page_foldername />#id-grallery-view"
+                                class="<cms:if u_gallery_folder eq k_page_foldername >active</cms:if>">
+                                <cms:show k_page_foldertitle /></a>
+                        </cms:pages>
                     </div>
                     <!-- Gallery Menu End -->
 
                     <!-- Gallery Item content Start -->
-                    <div class="row gallery-gird">
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 recent event">
-                            <div class="single-gallery-item gallery-bg-1">
-                                <div class="gallery-hvr-wrap">
-                                    <div class="gallery-hvr-text">
-                                        <h4>University Cumpus</h4>
-                                        <p class="gallery-event-date">28 Oct, 2018</p>
+                    <div class="row gallery-gird" id="id-grallery-view">
+                        <cms:pages masterpage='gallery_photos.php' folder=k_page_foldername start_on=k_archive_date
+                            stop_before=k_next_archive_date paginate='1' limit='3'>
+                            <!-- Single Gallery Start -->
+                            <div class="col-lg-3  col-sm-6 recent event">
+                                <div class="single-gallery-item gallery-bg-1"
+                                    style="background-image: url('<cms:show album_image />')">
+                                    <div class="gallery-hvr-wrap">
+                                        <div class="gallery-hvr-text">
+                                            <h4>
+                                                <cms:show photo_caption />
+                                            </h4>
+                                            <p class="gallery-event-date">
+                                                <cms:show photo_date />
+                                            </p>
+                                        </div>
+                                        <a href="<cms:show album_image />" class="btn-zoom image-popup">
+                                            <img src="assets/img/zoom-icon.png" alt="a">
+                                        </a>
                                     </div>
-                                    <a href="assets/img/gallery/gellary-img-1.jpg" class="btn-zoom image-popup">
-                                        <img src="assets/img/zoom-icon.png" alt="a">
-                                    </a>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Single Gallery End -->
-
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 old event pic">
-                            <div class="single-gallery-item video gallery-bg-2">
-                                <a href="https://player.vimeo.com/video/140182080?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1&amp;loop=1"
-                                    class="btn btn-video-play video-popup"><i class="fa fa-play"></i></a>
-                            </div>
-                        </div>
-                        <!-- Single Gallery End -->
-
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 recent pic">
-                            <div class="single-gallery-item gallery-bg-3">
-                                <div class="gallery-hvr-wrap">
-                                    <div class="gallery-hvr-text">
-                                        <h4>University Cumpus</h4>
-                                        <p class="gallery-event-date">28 Oct, 2018</p>
-                                    </div>
-                                    <a href="assets/img/gallery/gellary-img-3.jpg" class="btn-zoom image-popup">
-                                        <img src="assets/img/zoom-icon.png" alt="a">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Gallery End -->
-
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 old">
-                            <div class="single-gallery-item gallery-bg-4">
-                                <div class="gallery-hvr-wrap">
-                                    <div class="gallery-hvr-text">
-                                        <h4>University Cumpus</h4>
-                                        <p class="gallery-event-date">28 Oct, 2018</p>
-                                    </div>
-                                    <a href="assets/img/gallery/gellary-img-4.jpg" class="btn-zoom image-popup">
-                                        <img src="assets/img/zoom-icon.png" alt="a">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Gallery End -->
-
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 pic event">
-                            <div class="single-gallery-item gallery-bg-5">
-                                <div class="gallery-hvr-wrap">
-                                    <div class="gallery-hvr-text">
-                                        <h4>University Cumpus</h4>
-                                        <p class="gallery-event-date">28 Oct, 2018</p>
-                                    </div>
-                                    <a href="assets/img/gallery/gellary-img-5.jpg" class="btn-zoom image-popup">
-                                        <img src="assets/img/zoom-icon.png" alt="a">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Gallery End -->
-
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 old recent">
-                            <div class="single-gallery-item gallery-bg-6">
-                                <div class="gallery-hvr-wrap">
-                                    <div class="gallery-hvr-text">
-                                        <h4>University Cumpus</h4>
-                                        <p class="gallery-event-date">28 Oct, 2018</p>
-                                    </div>
-                                    <a href="assets/img/gallery/gellary-img-6.jpg" class="btn-zoom image-popup">
-                                        <img src="assets/img/zoom-icon.png" alt="a">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Gallery End -->
-
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 pic">
-                            <div class="single-gallery-item video gallery-bg-7">
-                                <a href="https://player.vimeo.com/video/181545195?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1&amp;loop=1"
-                                    class="btn btn-video-play video-popup"><i class="fa fa-play"></i></a>
-                            </div>
-                        </div>
-                        <!-- Single Gallery End -->
-
-                        <!-- Single Gallery Start -->
-                        <div class="col-lg-3  col-sm-6 pic recent old">
-                            <div class="single-gallery-item gallery-bg-8">
-                                <div class="gallery-hvr-wrap">
-                                    <div class="gallery-hvr-text">
-                                        <h4>University Cumpus</h4>
-                                        <p class="gallery-event-date">28 Oct, 2018</p>
-                                    </div>
-                                    <a href="assets/img/gallery/gellary-img-8.jpg" class="btn-zoom image-popup">
-                                        <img src="assets/img/zoom-icon.png" alt="a">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Gallery End -->
+                        </cms:pages>
                     </div>
                     <!-- Gallery Item content End -->
                 </div>
@@ -528,21 +318,26 @@
 <!--== Gallery Area Start ==-->
 
 <!--== Scholership Promo Area Start ==-->
-<section id="scholership-promo">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="scholership-promo-text">
-                    <h2>Demo University Provide <span>Scholarship</span> For Talented Student!</h2>
-                    <p>Usac Needs enables you to harness the power of your Usac network. Whatever may be the
-                        need academic, relocation, career, projects, mentorship, etc you can ask the community and
-                        get </p>
-                    <a href="#" class="btn btn-brand">Apply Now</a>
+<cms:if user_logged_in eq ''>
+    <section id="scholership-promo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="scholership-promo-text">
+                        <h2>USAC Makes you <span>Feel At Home</span> Away From Home</h2>
+                        <p>USAC enables you to harness the power of your USAC network. Whatever may be the
+                            need; academic, relocation, career, projects, mentorship, etc you can ask the community and
+                            get assistance.
+                        </p>
+                        <div> <a href="javascript:void(0);" class="btn btn-brand"
+                                style="background-color:#fff; color: #000000;">What are you waiting for?</a> <a
+                                href="register.php" class="btn btn-brand">Register Now</a></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</cms:if>
 <!--== Scholership Promo Area End ==-->
 
 <!--== Blog Area Start ==-->
@@ -560,111 +355,33 @@
 
         <!--== Blog Content Wrapper ==-->
         <div class="row">
-            <!--== Single Blog Post start ==-->
-            <div class="col-lg-4 col-md-6">
-                <article class="single-blog-post">
-                    <figure class="blog-thumb">
-                        <div class="blog-thumbnail">
-                            <img src="http://placehold.it/700x353" alt="Blog" class="img-fluid">
-                        </div>
-                        <figcaption class="blog-meta clearfix">
-                            <a href="single-blog.html" class="author">
-                                <div class="author-pic">
-                                    <img src="http://placehold.it/200x200" alt="Author">
-                                </div>
-                                <div class="author-info">
-                                    <h5>Daney williams</h5>
-                                    <p>2 hours Ago</p>
-                                </div>
-                            </a>
-                            <div class="like-comm pull-right">
-                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
+            <cms:pages masterpage='blog_single.php' start_on=k_archive_date stop_before=k_next_archive_date limit='3'>
+                <cms:set u_has_data="1" 'global' />
+                <!--== Single Blog Post start ==-->
+                <div class="col-lg-4 col-md-6">
+                    <article class="single-blog-post">
+                        <figure class="blog-thumb">
+                            <div class="blog-thumbnail">
+                                <img src="<cms:show blog_image_small />" alt="Blog" class="img-fluid">
                             </div>
-                        </figcaption>
-                    </figure>
-
-                    <div class="blog-content">
-                        <h3><a href="single-blog.html">Recently we create a maassive project that</a></h3>
-                        <p>This is a big project of our company, we are happy to completed this type projec which
-                            are
-                            get world famous award</p>
-                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                    </div>
-                </article>
-            </div>
-            <!--== Single Blog Post End ==-->
-
-            <!--== Single Blog Post start ==-->
-            <div class="col-lg-4 col-md-6">
-                <article class="single-blog-post">
-                    <figure class="blog-thumb">
-                        <div class="blog-thumbnail">
-                            <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
+                        </figure>
+                        <div class="blog-content">
+                            <h3><a href="<cms:show k_page_link />">
+                                    <cms:excerptHTML count='75' ignore='img'>
+                                        <cms:show blog_title />
+                                    </cms:excerptHTML>
+                                </a></h3>
+                            <p>
+                                <cms:excerptHTML count='50' ignore='img'>
+                                    <cms:show blog_details />
+                                </cms:excerptHTML>
+                            </p>
+                            <a href="<cms:show k_page_link />" class="btn btn-brand">More</a>
                         </div>
-                        <figcaption class="blog-meta clearfix">
-                            <a href="single-blog.html" class="author">
-                                <div class="author-pic">
-                                    <img src="http://placehold.it/200x200" alt="Author">
-                                </div>
-                                <div class="author-info">
-                                    <h5>Myra Hindley</h5>
-                                    <p>1 Day Ago</p>
-                                </div>
-                            </a>
-                            <div class="like-comm pull-right">
-                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                            </div>
-                        </figcaption>
-                    </figure>
-
-                    <div class="blog-content">
-                        <h3><a href="single-blog.html">Myra Hindley and her lover, Ian Brady, plotted and</a></h3>
-                        <p>This is a big project of our company, we are happy to completed this type projec which
-                            are
-                            get world famous award</p>
-                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                    </div>
-                </article>
-            </div>
-            <!--== Single Blog Post End ==-->
-
-            <!--== Single Blog Post start ==-->
-            <div class="col-lg-4 col-md-6">
-                <article class="single-blog-post">
-                    <figure class="blog-thumb">
-                        <div class="blog-thumbnail">
-                            <img src="http://placehold.it/700x352" alt="Blog" class="img-fluid">
-                        </div>
-                        <figcaption class="blog-meta clearfix">
-                            <a href="single-blog.html" class="author">
-                                <div class="author-pic">
-                                    <img src="http://placehold.it/200x200" alt="Author">
-                                </div>
-                                <div class="author-info">
-                                    <h5>Aileen Wuornos</h5>
-                                    <p>3 mins Ago</p>
-                                </div>
-                            </a>
-                            <div class="like-comm pull-right">
-                                <a href="#"><i class="fa fa-comment-o"></i>77</a>
-                                <a href="#"><i class="fa fa-heart-o"></i>12</a>
-                            </div>
-                        </figcaption>
-                    </figure>
-
-                    <div class="blog-content">
-                        <h3><a href="single-blog.html">Nurse with a private practice, racked up dozens of
-                                victims</a></h3>
-                        <p>This is a big project of our company, we are happy to completed this type projec which
-                            are
-                            get world famous award</p>
-                        <a href="single-blog.html" class="btn btn-brand">More</a>
-                    </div>
-                </article>
-            </div>
-            <!--== Single Blog Post End ==-->
+                    </article>
+                </div>
+                <!--== Single Blog Post End ==-->
+            </cms:pages>
         </div>
         <!--== Blog Content Wrapper ==-->
     </div>
