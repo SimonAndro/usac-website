@@ -2,7 +2,7 @@
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "about", 'global' ); 
+    $CTX->set( 'u_page', "about", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
@@ -46,6 +46,14 @@
 <section id="page-content-wrap">
     <div class="about-page-content-wrap section-padding">
         <div class="container">
+            <div class="row mission-u">
+                <div class="col-lg-12 m-auto card pb-4">
+                    <h1> USAC's Mission </h1>
+                    <div>
+                     <cms:get_custom_field 'mission_statement' masterpage='cms_templates/cms_globals.php' />    
+                </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-11 m-auto">
                     <cms:pages masterpage='cms_templates/about_item.php'>
