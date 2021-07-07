@@ -193,6 +193,7 @@
                                             <li class="nav-item"><a class="nav-link" href="committee.php">Committee</a>
                                             </li>
                                             <li class="nav-item"><a class="nav-link" href="directory.php">Directory</a>
+                                            <li class="nav-item"><a class="nav-link" href="constitution.php">Constitution</a>
                                             </li>
                                         </ul>
                                     </li>
