@@ -4,7 +4,7 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<cms:template title='Event' clonable='1' commentable='1'>
+<cms:template title='Event' clonable='1' commentable='1'  order='10'>
     <cms:editable name='event_short_title' type='text'>
         Get Together 2018 </cms:editable>
     <cms:editable name='event_short_desc' type='text'>

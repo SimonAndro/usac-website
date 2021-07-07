@@ -1,6 +1,6 @@
 <?php require_once( 'admin/cms.php' ); ?>
 
-<cms:template title='Album Photo' clonable='1'>
+<cms:template title='Album Photo' clonable='1'  order='9'>
     <cms:editable name='photo_date' type='text'>
         <cms:date /> 
     </cms:editable>

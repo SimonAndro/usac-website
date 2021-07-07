@@ -9,10 +9,6 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<cms:template title='Page Home Intro'>
-
-</cms:template>
-
 <!--== Slider Area Start ==-->
 <section id="slider-area">
     <div class="slider-active-wrap owl-carousel text-center text-md-left">

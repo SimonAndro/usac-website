@@ -4,6 +4,8 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
+<cms:template title='Terms of service' executable='0'>
+</cms:template >
 <!--== Register Page Content Start ==-->
 <section id="page-content-wrap">
     <div class="register-page-wrapper section-padding">
@@ -12,6 +14,7 @@
                 <div class="col-lg-12">
                     <div class="register-page-inner">
                         <div class="main" style="margin:20px;">
+                        <cms:editable name='terms' label='Website terms of service' desc='Enter the terms here' type='richtext'>
                             <h1>Terms of Service</h1>
                             <p>Last updated: September 25, 2016</p>
                             <p>Please read these Terms of Service ("Terms", "Terms of Service") carefully before using
@@ -79,7 +82,7 @@
                             <p><strong>Contact Us</strong></p>
                             <p>If you have any questions about these Terms, please contact us.</p>
 
-
+</cms:editable>
 
                         </div>
                     </div>

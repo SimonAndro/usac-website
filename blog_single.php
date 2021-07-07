@@ -10,7 +10,7 @@
 <!--== Header Area End ==-->
 
 
-<cms:template title='Blog' clonable='1'>
+<cms:template title='Blog' clonable='1'  order='7'>
     <cms:editable name='blog_title' label='blog title' desc='Enter blog title here' type='text'>
         Awesome Article for Memory of Our Campus Life
     </cms:editable>

@@ -78,7 +78,7 @@
                         </div>
 
                         <div id="copyright">
-                        <a href="https://www.360degrees.com/">
+                        <a href="https://www.2times180.com/">
                             <img style="-webkit-user-select: none;" src="assets/img/360degrees-btn.png" width="88"
                                 height="31">
                         </a>

@@ -9,7 +9,7 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<cms:template title='Album' clonable='1'>
+<cms:template title='Album' clonable='1'  order='8'>
     <cms:editable name='album_short_title' type='text'>
         Get Together 2018 </cms:editable>
     <cms:editable name='album_short_desc' type='text'>

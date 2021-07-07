@@ -1,5 +1,5 @@
 <?php require_once( '../admin/cms.php' ); ?>
-<cms:template title='Global Settings' executable='0'>
+<cms:template title='Global Settings' executable='0'  order='1'>
     <cms:editable name='site_name' label='Website name' type='text'>USAC</cms:editable>
     <cms:editable name='site_foot_mark' label='Website\' s foot mark' type='richtext'>
         <p>We are legend Lorem ipsum dolor sitmet, nsecte ipisicing eit, sed do eiusmod

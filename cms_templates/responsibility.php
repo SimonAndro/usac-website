@@ -1,5 +1,5 @@
 <?php require_once( '../admin/cms.php' ); ?>
-<cms:template clonable='1' title='USAC Responsbilities' executable='0'>
+<cms:template clonable='1' title='USAC Responsbilities' executable='0'  order='4' >
     <cms:editable name='resp_image' label='Responsibility Image' desc='Upload Responsibility Icon Image here' crop='1'
         width='100' height='100' type='image' />
     <cms:editable name='resp_title' label='Responsibility title' desc='Enter Responsibility title here' type='text'>

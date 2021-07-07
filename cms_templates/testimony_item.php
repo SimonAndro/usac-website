@@ -1,5 +1,5 @@
 <?php require_once( '../admin/cms.php' ); ?>
-<cms:template clonable='1' title='Testimonials' executable='0'>
+<cms:template clonable='1' title='Testimonials' executable='0'  order='6'>
     <cms:editable name='member_image' label='Member image' desc='Upload member image here' crop='1' width='500'
         height='500' type='image' />
     <cms:editable name='member_test' label='Testimonial' desc='Enter Testimonial here' type='text'>

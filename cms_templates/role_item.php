@@ -1,6 +1,6 @@
 <?php require_once( '../admin/cms.php' ); ?>
-<cms:template clonable='1' title='USAC Intro' executable='0'>
-    
+<cms:template clonable='1' title='USAC Intro' executable='0'  order='5' >
+
     <cms:config_list_view orderby='weight' order='asc'>
         <cms:field 'k_selector_checkbox' />
         <cms:field 'k_page_title' sortable='0' />
