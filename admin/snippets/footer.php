@@ -78,18 +78,18 @@
                         </div>
 
                         <div id="copyright">
-                            Powered by
-                            <a href="https://www.couchcms.com/"
-                                title="CouchCMS - Simple Open-Source Content Management">
-                                CouchCMS
-                            </a>
-                        </div>
-                    </div>
-                    <div class="footer-right">
                         <a href="https://www.360degrees.com/">
                             <img style="-webkit-user-select: none;" src="assets/img/360degrees-btn.png" width="88"
                                 height="31">
                         </a>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        Powered by
+                            <a href="https://www.couchcms.com/"
+                                title="CouchCMS - Simple Open-Source Content Management">
+                                CouchCMS
+                            </a>
                     </div>
                 </div>
             </div>
