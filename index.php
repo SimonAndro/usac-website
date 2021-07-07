@@ -69,12 +69,13 @@
                     </div>
 
                     <div class="upcoming-event-content owl-carousel">
-                    <cms:set u_has_data="0" 'global' />
-                    <cms:set curr_time="<cms:date format='Y-m-d' />" />
-                    <!-- <cms:dump /> -->
-                        <cms:pages masterpage='event_single.php' limit='3' custom_field="event_date > <cms:show curr_time />">
-                         
-                        <cms:set u_has_data="1" 'global' />
+                        <cms:set u_has_data="0" 'global' />
+                        <cms:set curr_time="<cms:date format='Y-m-d H:i:s' />" />
+                        <!-- <cms:dump /> -->
+                        <cms:pages masterpage='event_single.php' limit='3'
+                            custom_field="event_date > <cms:show curr_time />">
+
+                            <cms:set u_has_data="1" 'global' />
                             <!-- Single Event Start -->
                             <div class="single-upcoming-event">
                                 <div class="row">
@@ -93,7 +94,7 @@
                                                 <div class="up-event-text">
                                                     <div class="event-countdown">
                                                         <div class="event-countdown-counter"
-                                                            data-date="<cms:date  event_date format='Y/m/d' />">
+                                                            data-date="<cms:date  event_date format='Y/m/d H:i:s' />">
                                                         </div>
                                                         <p>Remaining</p>
                                                     </div>

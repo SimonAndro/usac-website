@@ -19,8 +19,8 @@
     <cms:editable name='page_cta' label='Call to action' desc='Enter call to action here' type='text'>
         Let&apos;s See
     </cms:editable>
-    <cms:editable name='event_date' desc='As sample format' type='text'>
-        <cms:date format='Y-m-d' />
+    <cms:editable name='event_date' desc='YYYY-MM-DD hh:mm:ss' type='text'>
+        <cms:date format='Y-m-d H:i:s' />
     </cms:editable>
     
     <cms:editable name='event_image' crop='1' width='700' height='390' type='image' />
@@ -72,7 +72,7 @@
                             </div>
                             <div class="event-countdown">
                                 <div class="event-countdown-counter"
-                                    data-date="<cms:date  event_date format='Y/m/d' />"></div>
+                                    data-date="<cms:date  event_date format='Y/m/d H:i:s' />"></div>
                                 <p>Remaining</p>
                             </div>
                         </div>
