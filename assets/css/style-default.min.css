@@ -1,3 +1,12 @@
+
+.mission-u{
+  background-color: #e9ecef;
+  margin-bottom:20%;
+  border: 1px dotted #212529;
+  padding: 10px 10px 10px 10px;
+  font-family: sans-serif;
+}
+
 .footer-note{
   display: flex;
   justify-content:center;
@@ -986,15 +995,15 @@ blockquote:before {
 }
 
 #slider-area .slide-bg-1 {
-  background-image: url("http://placehold.it/1920x1280");
+  /* background-image: url("http://placehold.it/1920x1280"); */
 }
 
 #slider-area .slide-bg-2 {
-  background-image: url("http://placehold.it/1920x1280");
+  /* background-image: url("http://placehold.it/1920x1280"); */
 }
 
 #slider-area .slide-bg-3 {
-  background-image: url("http://placehold.it/1920x1280");
+  /* background-image: url("http://placehold.it/1920x1280"); */
 }
 
 #slider-area .social-networks-icon {
