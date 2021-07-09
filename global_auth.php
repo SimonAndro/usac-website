@@ -7,6 +7,7 @@ try {
     include __DIR__ . '/includes/User.php';
 
     $usersTable = new \Ninja\DatabaseTable($pdo, 'students', 'id', 'User');
+    $core_config_table = new \Ninja\DatabaseTable($pdo , 'core_config', 'id', 'User');
     $authentication = new \Ninja\Authentication($usersTable, 'email', 'password');
 
 }
