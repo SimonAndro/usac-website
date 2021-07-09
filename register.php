@@ -1,5 +1,10 @@
 <?php require_once( 'admin/cms.php' ); ?>
 
+<cms:php>
+    global $CTX;
+    $CTX->set( 'u_page', "member", 'global' );
+</cms:php>
+
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--  -->
