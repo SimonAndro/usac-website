@@ -99,7 +99,7 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
 
                 $val['name_first'] = trim($val['name_first']);
                 if (!empty($val['name_first'])) {
-                    if (strlen($val['name_first']) < 3) {
+                    if (strlen($val['name_first']) < 3 or strlen($val['name_first']) > 20) {
                         $valid = false;
                         $errors[] = 'First Name too short';
                     } else {
@@ -109,9 +109,9 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
 
                 $val['name_last'] = trim($val['name_last']);
                 if (!empty($val['name_last'])) {
-                    if (strlen($val['name_last']) < 3) {
+                    if (strlen($val['name_last']) < 3 or strlen($val['name_last']) > 20) {
                         $valid = false;
-                        $errors[] = 'Last name too short';
+                        $errors[] = 'Invalid name';
                     } else {
                         $userUpdate["name_last"] = htmlspecialchars($val['name_last']);
                     }
@@ -119,7 +119,7 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
 
                 $val['university'] = trim($val['university']);
                 if (!empty($val['university'])) {
-                    if (strlen($val['university']) < 4) {
+                    if (strlen($val['university']) < 4 or strlen($val['university']) > 150) {
                         $valid = false;
                         $errors[] = 'University name too short';
                     } else {
@@ -130,7 +130,7 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
 
                 $val['grad_year'] = trim($val['grad_year']);
                 if (!empty($val['grad_year'])) {
-                    if (strlen($val['grad_year']) < 5) {
+                    if (strlen($val['grad_year']) < 5 or strlen($val['grad_year'])>20) {
                         $valid = false;
                         $errors[] = 'Invalid grad year';
                     } else {
@@ -140,7 +140,7 @@ if (isset($_POST) and isset($val) and isset($reqAction)) {
 
                 $val['birthdate'] = trim($val['birthdate']);
                 if (!empty($val['birthdate'])) {
-                    if (strlen($val['birthdate']) < 5) {
+                    if (strlen($val['birthdate']) < 5 or strlen($val['birthdate']) > 20) {
                         $valid = false;
                         $errors[] = 'Invalid birth date';
                     } else {
