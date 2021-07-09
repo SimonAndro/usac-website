@@ -4,8 +4,69 @@
     if($authentication->isLoggedIn()){
     $CTX->set( 'user_logged_in', 1, 'global' );
     }
-    $totalUsers = count($usersTable->findAll());
+
+    $sql = "SELECT total_users FROM ".$core_config_table->getTableName()." LIMIT 1";;
+    $res = $core_config_table->customQuery($sql);
+    $res= (array)$res[0];
+    $totalUsers = $res['total_users'];
     $CTX->set( 'usac_total_user', $totalUsers, 'global' );
+
+    if($CTX->get('u_sub_page') == "directory")
+    {
+        $dpage_size = 10;
+        $curr_page = 1;
+        $total_pages = 1;
+
+        if(!empty($_POST['val']))
+        {
+            $val = $_POST['val'];
+            if(!empty($val['dir_search']) && !empty($val['key_word']))
+            {
+                $key_word = htmlentities(trim($val['key_word']));
+                $CTX->set( 'u_s_key_word', $key_word, 'global' );
+
+                $sql = "SELECT * FROM ".$usersTable->getTableName()." WHERE (name LIKE '%$key_word%' ) OR (name_last LIKE '%$key_word%' ) OR (university LIKE '%$key_word%' ) LIMIT $dpage_size";
+                $res = $usersTable->customQuery($sql);
+                $CTX->set('u_user_data',$res,'global');
+            }
+        }
+        else{
+
+            if(!empty($_GET['dir_page']) and is_numeric($_GET['dir_page']))
+            {
+                $dpage = (int)$_GET['dir_page'];
+            }else{
+                $dpage = 1;
+            }
+
+
+            if($dpage == 1){
+                $doffset = 0;
+            }else{
+                $doffset = (int)$dpage*$dpage_size;
+            }
+
+            $sql = "SELECT * FROM ".$usersTable->getTableName()." LIMIT $dpage_size OFFSET $doffset";
+            $res = $usersTable->customQuery($sql);
+
+            $curr_page = (int)((count($res) + $doffset)/$dpage_size);
+            $total_pages = (int)($totalUsers/$dpage_size);
+
+            $next_page = $curr_page+1;
+            if($next_page <= $total_pages)
+            {
+                $CTX->set( 'u_next_page', $next_page, 'global' );
+            }
+            $prev_page = $curr_page-1;
+            if($prev_page > 0)
+            {
+                $CTX->set( 'u_prev_page', $prev_page, 'global' );
+            }
+            $CTX->set('u_user_data',$res,'global');
+        }
+        $CTX->set( 'u_dcurr_page', $curr_page, 'global' );
+        $CTX->set( 'u_dtotal_page', ($total_pages==0)?1:$total_pages, 'global' );
+    }
 </cms:php>
 
 <!DOCTYPE html>
@@ -187,6 +248,7 @@
                                             </li>
                                             <li class="nav-item"><a class="nav-link" href="directory.php">Directory</a>
                                             <li class="nav-item"><a class="nav-link" href="constitution.php">Constitution</a>
+                                            <li class="nav-item"><a class="nav-link" href="register.php">Create Account</a>
                                             </li>
                                         </ul>
                                     </li>
