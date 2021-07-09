@@ -129,30 +129,50 @@ if(!$authentication->isLoggedIn())
                 if (empty($val['name'])) {
                     $valid = false;
                     $errors[] = 'first name can\'t be empty';
+                }else if(strlen($val['name']) > 20)
+                {
+                    $valid = false;
+                    $errors[] = 'first name too long';
                 }
 
                 $val['name_last'] = trim($val['name_last']);
                 if (empty($val['name_last'])) {
                     $valid = false;
                     $errors[] = 'last name can\'t be empty';
+                }else if(strlen($val['name_last']) > 20)
+                {
+                    $valid = false;
+                    $errors[] = 'last name too long';
                 }
 
                 $val['university'] = trim($val['university']);
                 if (empty($val['university'])) {
                     $valid = false;
                     $errors[] = 'university can\'t be empty';
+                }else if(strlen($val['university']) > 150)
+                {
+                    $valid = false;
+                    $errors[] = 'university name too long';
                 }
 
                 $val['grad_year'] = trim($val['grad_year']);
                 if (empty($val['grad_year'])) { 
                     $valid = false;
                     $errors[] = 'graduation date can\'t be empty';
+                }else if(strlen($val['grad_year']) > 20)
+                {
+                    $valid = false;
+                    $errors[] = 'Invalid graduation date';
                 }
 
                 $val['birthdate'] = trim($val['birthdate']);
                 if (empty($val['birthdate'])) { 
                     $valid = false;
                     $errors[] = 'birthdate can\'t be empty';
+                }else if(strlen($val['birthdate']) > 20)
+                {
+                    $valid = false;
+                    $errors[] = 'Invalid birth date';
                 }
         
                 $val['gender'] = trim($val['gender']);
@@ -160,6 +180,10 @@ if(!$authentication->isLoggedIn())
                 {
                     $valid = false;
                     $errors[] = 'Please select gender';
+                }else if(strlen($val['gender']) > 20)
+                {
+                    $valid = false;
+                    $errors[] = 'Invalid birth date';
                 }
             
                 if($valid)
@@ -416,7 +440,18 @@ if(!$authentication->isLoggedIn())
                 $ossn_user_update["guid"] = $ossn_user->{"guid"};
                 $ossn_user_update["activation"] = "";
                 $ossn_users_table->save($ossn_user_update);
-                
+
+                /**
+                 * increment users
+                 */
+                $core_config_table = new \Ninja\DatabaseTable($pdo , 'core_config', 'id', 'User');
+            
+                $sql = "SELECT id,total_users FROM ".$core_config_table->getTableName()." LIMIT 1";
+                $res = $core_config_table->customQuery($sql);
+                $res= (array)$res[0];
+                $totalUsers = array('total_users' => $res['total_users'] + 1,"id" => $res['id']);
+                $core_config_table->save($totalUsers);
+
                 header("Location: ".getAppConfig("site_url")."/dashboard/index.php");
                 die();
             }else{
