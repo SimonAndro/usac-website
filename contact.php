@@ -23,12 +23,15 @@
                             <div class="col-lg-6 m-auto">
                                 <div class="contact-form-wrap">
                                     <h3>send message</h3>
-
-
                                     <cms:form action='' method='post' id='cbx-contact-form'>
                                         <cms:if k_success>
                                             <p class="alert alert-success">Thank you. We'll get back to you as soon as
                                                 possible. </p>
+                                            <cms:send_mail from=k_email_from to=k_email_to
+                                                subject='Feedback from your site'>
+                                                The following is an email sent by a visitor to your site.
+                                                <cms:show k_success />
+                                            </cms:send_mail>
                                             <cms:else />
                                             <div class="row">
                                                 <div class="col">
@@ -72,10 +75,6 @@
                                                 <cms:if k_error_cbxmessage>
                                                     <p class="alert alert-danger">Enter a message</p>
                                                 </cms:if>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <cms:input type="checkbox" class="" id="cbxsendme" name="cbxsendme"
-                                                    opt_values="Send Me CC" />
                                             </div>
                                             <button class="btn btn-reg">Send</button>
                                             <div id="cbx-formalert"></div>
