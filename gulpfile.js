@@ -103,7 +103,7 @@ gulp.task('watch-less', ['compile-less', 'compress-js'], function () {
 
     //brower sync
     //gulp.watch(templatedir + 'assets/css/*.css').on('change', browserSync.reload);
-    //gulp.watch(templatedir + 'assets/js/theme.min.js').on('change', browserSync.reload);
+    //gulp.watch(templatedir + 'assets/js/theme-min.js').on('change', browserSync.reload);
     //gulp.watch(templatedir + '*.html').on('change', browserSync.reload);
 
 });

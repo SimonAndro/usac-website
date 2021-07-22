@@ -23,28 +23,28 @@
                             <div class="col-lg-6 m-auto">
                                 <div class="contact-form-wrap">
                                     <h3>send message</h3>
-                                    <cms:form action="" method="post" id="cbx-contact-form">
+                                    <cms:form action='' method='post' id='cbx-contact-form'>
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="cbxname">Name</label>
-                                                    <input type="text" name="cbxname" required id="cbxname"
-                                                        class="form-control">
+                                                    <cms:input type="text" name="cbxname" required id="cbxname"
+                                                        class="form-control" />
                                                 </div>
                                             </div>
 
                                             <div class="col">
                                                 <div class="form-group">
                                                     <label for="cbxemail">Email</label>
-                                                    <input type="email" name="cbxemail" required id="cbxemail"
-                                                        class="form-control">
+                                                    <cms:input type="text" name="cbxemail" required id="cbxemail"
+                                                        class="form-control" />
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="cbxsubject">Subjet</label>
-                                            <input type="text" name="cbxsubject" id="cbxsubject" class="form-control">
+                                            <cms:input type="text" name="cbxsubject" id="cbxsubject" class="form-control" />
                                         </div>
 
                                         <div class="form-group">
@@ -53,8 +53,8 @@
                                                 class="form-control"></textarea>
                                         </div>
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="cbxsendme"
-                                                name="cbxsendme" value="on">
+                                            <cms:input type="checkbox" class="custom-control-input" id="cbxsendme"
+                                                name="cbxsendme" value="on" />
                                             <label class="custom-control-label" for="cbxsendme">Send Me CC</label>
                                         </div>
 

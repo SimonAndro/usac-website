@@ -163,7 +163,7 @@
         navigation: true
     });
 </script>
-<script src="assets/js/theme.min.js"></script>
+<script src="assets/js/theme-min.js"></script>
 
 <!-- custom js: custom js file is added for easy custom js code  -->
 <script src="assets/js/custom.js"></script>

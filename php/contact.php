@@ -7,7 +7,7 @@ defined('DS') or die('Error');
 //if you want to save the contact informations in csv then change the below params to true, by default it's false
 // the csv file location is /php/contacts.csv
 
-$save_in_csv = false;
+$save_in_csv = true;
 $admin_email_to         = 'sabuj@codeboxr.com'; // admin email who will get the contact email alert
 $admin_email_to_name    = "CodeBoxr"; // Admin Name/Company name who will get the email alert
 $admin_email_from       = 'info@codeboxr.com';  // admin email from which email address email will be sent
@@ -17,7 +17,7 @@ $user_send_subject      = 'Thanks for contact, your copy'; //email subject what 
 
 //end options parameter for user
 
-
+dump_to_file($_POST);
 
 $list = array();
 $validation_message = array(

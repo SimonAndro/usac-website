@@ -193,64 +193,64 @@ jQuery(document).ready(function ($) {
 
     //Start Contact Form Validation And Ajax Submission
 
-    var $contactForm = $('form#cbx-contact-form');
-    $contactForm.validate({
-        submitHandler: function (form) {
-            var $contactForm = $(form);
-            $.ajax({
-                url: cbx_path + '/php/contact.php',
-                type: 'post',
-                data: $contactForm.serialize(),
-                success: function (ajaxResponse) {
-                    try {
-                        var ajaxResponse = $.parseJSON(ajaxResponse);
+    // var $contactForm = $('form#cbx-contact-form');
+    // $contactForm.validate({
+    //     submitHandler: function (form) {
+    //         var $contactForm = $(form);
+    //         $.ajax({
+    //             url: cbx_path + '/php/contact.php',
+    //             type: 'post',
+    //             data: $contactForm.serialize(),
+    //             success: function (ajaxResponse) {
+    //                 try {
+    //                     var ajaxResponse = $.parseJSON(ajaxResponse);
 
 
-                        if (ajaxResponse.error) {
-                            //for field error
-                            $.each(ajaxResponse.error_field, function (i) {
-                                if ($('label#' + ajaxResponse.error_field[i] + '-error').length == 0) {
-                                    $('#' + ajaxResponse.error_field[i]).after('<label class="error" for="' + ajaxResponse.error_field[i] + '" id="' + ajaxResponse.error_field[i] + '-error"></label>');
+    //                     if (ajaxResponse.error) {
+    //                         //for field error
+    //                         $.each(ajaxResponse.error_field, function (i) {
+    //                             if ($('label#' + ajaxResponse.error_field[i] + '-error').length == 0) {
+    //                                 $('#' + ajaxResponse.error_field[i]).after('<label class="error" for="' + ajaxResponse.error_field[i] + '" id="' + ajaxResponse.error_field[i] + '-error"></label>');
 
-                                }
-                                $('label#' + ajaxResponse.error_field[i] + '-error').text(ajaxResponse.message[ajaxResponse.error_field[i]]);
-                            });
-                        } else if (ajaxResponse.successmessage) {
+    //                             }
+    //                             $('label#' + ajaxResponse.error_field[i] + '-error').text(ajaxResponse.message[ajaxResponse.error_field[i]]);
+    //                         });
+    //                     } else if (ajaxResponse.successmessage) {
 
-                            //alert(ajaxResponse.successmessage);
-                            //$( '.cbx-formalert' ).addClass( "alert alert-success" );
-                            $('#cbx-formalert').addClass("alert alert alert-success").html(ajaxResponse.successmessage);
-                            $contactForm[0].reset();
-                        }
-                    } catch (e) {
-                        //consoe.log(e.message );
-                        $contactForm[0].reset();
-                    }
-                },
-                error: function (error) {
-                    $contactForm[0].reset();
-                }
-            });
+    //                         //alert(ajaxResponse.successmessage);
+    //                         //$( '.cbx-formalert' ).addClass( "alert alert-success" );
+    //                         $('#cbx-formalert').addClass("alert alert alert-success").html(ajaxResponse.successmessage);
+    //                         $contactForm[0].reset();
+    //                     }
+    //                 } catch (e) {
+    //                     //consoe.log(e.message );
+    //                     $contactForm[0].reset();
+    //                 }
+    //             },
+    //             error: function (error) {
+    //                 $contactForm[0].reset();
+    //             }
+    //         });
 
-            return false;
+    //         return false;
 
-        },
+    //     },
 
-        rules: {
-            'cbxname': {
-                required: true
-            },
-            'cbxemail': {
-                required: true
-            },
-            'cbxmessage': {
-                required: true
-            },
-            'cbxsubject': {
-                required: true
-            }
-        }
-    }); //End Contact Form js
+    //     rules: {
+    //         'cbxname': {
+    //             required: true
+    //         },
+    //         'cbxemail': {
+    //             required: true
+    //         },
+    //         'cbxmessage': {
+    //             required: true
+    //         },
+    //         'cbxsubject': {
+    //             required: true
+    //         }
+    //     }
+    // }); //End Contact Form js
 
 
     //Email Subscription Validation And Ajax Submission
