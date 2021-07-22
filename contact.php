@@ -23,7 +23,7 @@
                             <div class="col-lg-6 m-auto">
                                 <div class="contact-form-wrap">
                                     <h3>send message</h3>
-                                    <form action="#" id="cbx-contact-form">
+                                    <cms:form action="" method="post" id="cbx-contact-form">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
@@ -60,7 +60,7 @@
 
                                         <button class="btn btn-reg">Send</button>
                                         <div id="cbx-formalert"></div>
-                                    </form>
+                                    </cms:form>
                                 </div>
                             </div>
                         </div>
