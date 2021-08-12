@@ -25,6 +25,8 @@
     
     <cms:editable name='event_image' crop='1' width='700' height='390' type='image' />
 
+    <cms:editable name='intro_image' label='page intro image' desc='Upload page intro Image here' crop='1' width='1918'
+        height='789' type='image' />
 </cms:template>
 
 
