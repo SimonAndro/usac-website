@@ -6,7 +6,7 @@
     // Set the following to 1 to put your site in maintenance mode.
     // In this mode only admins will be able to access the site while the visitors will be
     // shown the 'Site undergoing maintenance' message.
-    define( 'K_SITE_OFFLINE', 0 );
+    define( 'K_SITE_OFFLINE', 1 );
 
     // 1.
     // If necessary, define the full URL of your site including the subdomain, if any.
