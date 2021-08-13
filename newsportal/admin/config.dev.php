@@ -7,4 +7,6 @@ $database = 'usac_news';
 $homeUrl = "https://localhost/usac-website/";
 
 $sitePath = $homeUrl."/newsportal";
+
+
 ?>

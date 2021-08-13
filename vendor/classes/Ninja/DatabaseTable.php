@@ -237,11 +237,13 @@ class DatabaseTable {
 		try {
 			if ($record[$this->primaryKey] == '') {
 				$record[$this->primaryKey] = null;
+
+				$insertId = $this->insert($record);
+				
+				$entity->{$this->primaryKey} = $insertId;
+			}else{
+			    $this->update($record);
 			}
-
-			$insertId = $this->insert($record);
-
-			$entity->{$this->primaryKey} = $insertId;
 		}
 		catch (\PDOException $e) {
 			//dump_to_file($e);
