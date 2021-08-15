@@ -282,8 +282,10 @@
 
                     <!-- Gallery Item content Start -->
                     <div class="row gallery-gird mb-5" id="id-grallery-view">
-                        <cms:pages masterpage='gallery_photos.php' folder=k_page_foldername start_on=k_archive_date
+                        <cms:set u_has_no_gallery_prev='1' 'global' />
+                        <cms:pages masterpage='gallery_photos.php' folder=u_gallery_folder start_on=k_archive_date
                             stop_before=k_next_archive_date paginate='1' limit='4'>
+                            <cms:set u_has_no_gallery_prev='0' 'global' />
                             <!-- Single Gallery Start -->
                             <div class="col-lg-3  col-sm-6 recent event">
                                 <div class="single-gallery-item gallery-bg-1"
@@ -303,7 +305,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <cms:if k_paginator_required >
+                            <cms:if k_paginator_required>
                                 <cms:set u_gallery_more='1' 'global' />
                             </cms:if>
                         </cms:pages>
@@ -311,11 +313,17 @@
                     <!-- Gallery Item content End -->
                 </div>
             </div>
+            <cms:if u_has_no_gallery_prev>
+                <div class="text-center">
+                    No results found
+                </div>
+            </cms:if>
         </div>
         <!--== Gallery Container Warpper==-->
-        <cms:if u_gallery_more >
+        <cms:if u_gallery_more>
             <div class="text-center">
-                <a style="font-size:15px;" class="btn btn-primary" href="./gallery.php"><span class="">View More in Gallery</span></a>
+                <a style="font-size:15px;" class="btn btn-primary" href="./gallery.php"><span class="">View More in
+                        Gallery</span></a>
             </div>
         </cms:if>
     </div>
