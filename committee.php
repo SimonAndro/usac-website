@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <cms:else />
-                        <cms:if k_count lt '5'>
+                        <cms:if k_count lt '6'>
                             <cms:if k_count eq '2'>
                                 <div class="row">
                                     <cms:set has_second_row='1' />
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <cms:else />
-                            <cms:if k_count eq '5'>
+                            <cms:if k_count eq '6'>
             </div>
             <div class="row">
                 </cms:if>
