@@ -23,6 +23,7 @@
         height='789' type='image' />
 </cms:template>
 
+
 <!--== Page Title Area Start ==-->
 <section id="page-title-area" style="background-image: url('<cms:show intro_image />');">
     <div class="container">

@@ -330,6 +330,7 @@
 </section>
 <!--== Gallery Area Start ==-->
 
+
 <!--== Scholership Promo Area Start ==-->
 <cms:if user_logged_in eq ''>
     <section id="scholership-promo">

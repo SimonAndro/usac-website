@@ -66,6 +66,7 @@
 
             <!-- Gallery Menu End -->
 
+            
             <!--= Gallery Page Content Wrap Start =-->
             <div class="container" id="id-grallery-view">
                 <div class="row">
