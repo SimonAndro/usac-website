@@ -1,7 +1,7 @@
 <?php require_once( '../admin/cms.php' ); ?>
 <cms:template clonable='1' title='Committee Members' executable='0'>
 
-    <cms:config_list_view orderby='weight' order='asc'  order='3' >
+    <cms:config_list_view orderby='weight' order='asc'>
         <cms:field 'k_selector_checkbox' />
         <cms:field 'k_page_title' sortable='0' />
         <cms:field 'k_up_down' header='Sort Order' />
