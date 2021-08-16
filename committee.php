@@ -29,8 +29,11 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">Committee</h1>
-                    <p><cms:show page_intro /></p>
-                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll"><cms:show page_cta /></a>
+                    <p>
+                        <cms:show page_intro />
+                    </p>
+                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">
+                        <cms:show page_cta /></a>
                 </div>
             </div>
         </div>
@@ -47,7 +50,7 @@
                 <cms:pages masterpage='cms_templates/committe_member.php' orderby='weight' order='asc'>
                     <cms:if k_count eq '1'>
                         <div class="row">
-                            <div class="col-lg-4 col-sm-10 col-md-7 m-auto">
+                            <div class="col-lg-3 col-sm-6 m-auto">
                                 <div class="single-committee-member">
                                     <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
                                     <h3>
@@ -64,7 +67,7 @@
                                 <div class="row">
                                     <cms:set has_second_row='1' />
                             </cms:if>
-                            <div class="col-lg-4 col-sm-6">
+                            <div class="col-lg-3 col-sm-6 m-auto">
                                 <div class="single-committee-member">
                                     <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
                                     <h3>
@@ -79,7 +82,7 @@
             </div>
             <div class="row">
                 </cms:if>
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-3 col-sm-6 m-auto">
                     <div class="single-committee-member">
                         <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
                         <h3>
