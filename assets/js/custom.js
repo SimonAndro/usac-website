@@ -311,6 +311,7 @@ function loginUser(t) {
                             '<div class="alert alert-warning "><strong>' + v + '</strong></div>'
                         );
                     });
+                    
                     $('.error-msg-list-login').removeClass('invisible');
                 } else {
                     $('.error-msg-list-login').html('<div class="alert alert-warning "><strong>' + "An error occurred, contact admin" + '</strong></div>');
