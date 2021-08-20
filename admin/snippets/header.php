@@ -77,7 +77,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>USAC</title>
+    <title>USAC | <cms:show u_page /></title>
 
     <meta name="description" content="simple description for your site">
     <meta name="keywords" content="keyword1, keyword2">
