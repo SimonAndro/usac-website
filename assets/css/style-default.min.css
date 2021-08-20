@@ -2102,7 +2102,7 @@ blockquote:before {
 }
 
 #page-content-wrap .about-page-content-wrap .single-about-text:first-child img {
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 }
 
 #page-content-wrap .about-page-content-wrap .single-about-text:nth-child(2n) .year {
