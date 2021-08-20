@@ -77,32 +77,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>USAC | <cms:show u_page /></title>
+    <title><cms:show u_page /> | Uganda Students' Association In China</title>
 
-    <meta name="description" content="simple description for your site">
-    <meta name="keywords" content="keyword1, keyword2">
-    <meta name="author" content="Jobz">
+    <meta name="description" content="The USAC Website is the information hub for Ugandan Students in China. It provides information about comming activities, scholarship opportunities, seminars and other related information.">
+    <meta name="keywords" content="usac students, usac-students, uganda students association in china, usac">
+    <meta name="author" content="USAC">
 
     <!-- twitter card starts from here, if you don't need remove this section -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@yourtwitterusername">
-    <meta name="twitter:creator" content="@yourtwitterusername">
+    <meta name="twitter:card" content="Uganda Students' Association in China,the information hub for Ugandan Students in China.">
+    <meta name="twitter:site" content="@uganda_china">
+    <meta name="twitter:creator" content="@uganda_china">
     <meta name="twitter:url" content="http://twitter.com">
-    <meta name="twitter:title" content="Your home page title, max 140 char"> <!-- maximum 140 char -->
-    <meta name="twitter:description" content="Your site description, maximum 140 char "> <!-- maximum 140 char -->
-    <meta name="twitter:image" content="assets/img/twittercardimg/twittercard-144-144.png">
+    <meta name="twitter:title" content="home | Uganda Students' Association in China"> <!-- maximum 140 char -->
+    <meta name="twitter:description" content="The USAC Website is the information hub for Ugandan Students in China. It provides information about comming activities, scholarship opportunities, seminars and other related information. "> <!-- maximum 140 char -->
+    <meta name="twitter:image" content="assets/img/usac-logo.png">
     <!-- when you post this page url in twitter , this image will be shown -->
     <!-- twitter card ends here -->
 
     <!-- facebook open graph starts from here, if you don't need then delete open graph related  -->
-    <meta property="og:title" content="Your home page title">
-    <meta property="og:url" content="http://your domain here.com">
+    <meta property="og:title" content="home | Uganda Students' Association In China">
+    <meta property="og:url" content="https://usac-students.com">
     <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Your site name here">
+    <meta property="og:site_name" content="USAC website">
     <!--meta property="fb:admins" content="" /-->
     <!-- use this if you have  -->
     <meta property="og:type" content="website"> <!-- 'article' for single page  -->
-    <meta property="og:image" content="assets/img/opengraph/fbphoto-476-476.png">
+    <meta property="og:image" content="assets/img/usac-logo.png">
     <!-- when you post this page url in facebook , this image will be shown -->
     <!-- facebook open graph ends here -->
 
