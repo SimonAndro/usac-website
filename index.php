@@ -283,8 +283,8 @@
                     <!-- Gallery Item content Start -->
                     <div class="row gallery-gird mb-5" id="id-grallery-view">
                         <cms:set u_has_no_gallery_prev='1' 'global' />
-                        <cms:pages masterpage='gallery_photos.php' folder=u_gallery_folder start_on=k_archive_date
-                            stop_before=k_next_archive_date paginate='1' limit='4'>
+                        <cms:pages masterpage='gallery_photos.php' orderby='weight' order='asc' folder=u_gallery_folder start_on=k_archive_date
+                            stop_before=k_next_archive_date paginate='1' limit='8'>
                             <cms:set u_has_no_gallery_prev='0' 'global' />
                             <!-- Single Gallery Start -->
                             <div class="col-lg-3  col-sm-6 recent event">
