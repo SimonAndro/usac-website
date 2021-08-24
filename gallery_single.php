@@ -32,6 +32,13 @@
     <cms:folder name="get_together" title="Get Together" />
     <cms:folder name="random" title="Random" />
 
+    <cms:config_list_view orderby='weight' order='asc'>
+        <cms:field 'k_selector_checkbox' />
+        <cms:field 'k_page_title' sortable='0' />
+        <cms:field 'k_up_down' header='Sort Order' />
+        <cms:field 'k_actions' />
+    </cms:config_list_view>
+
 
 </cms:template>
 
