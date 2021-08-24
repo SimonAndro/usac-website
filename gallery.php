@@ -57,7 +57,7 @@
             <div class="gallery-menu text-center" id="id-gallery-changer">
                 <cms:set u_template_link= "<cms:show k_template_link />" />
                 <a href="<cms:show u_template_link />#id-gallery-changer" class="<cms:if u_gallery_folder eq '' >active</cms:if>">All</a>
-                <cms:pages masterpage='gallery_single.php' start_on=k_archive_date stop_before=k_next_archive_date
+                <cms:pages masterpage='gallery_single.php' orderby='weight' order='asc' start_on=k_archive_date stop_before=k_next_archive_date
                     paginate='1' limit='5'>
                     <a href="<cms:show u_template_link />?folder=<cms:show k_page_foldername />#id-gallery-changer" class="<cms:if u_gallery_folder eq k_page_foldername >active</cms:if>">
                         <cms:show k_page_foldertitle /></a>
@@ -72,7 +72,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="full-album-content">
-                            <cms:pages masterpage='gallery_single.php' folder=u_gallery_folder start_on=k_archive_date
+                            <cms:pages masterpage='gallery_single.php' orderby='weight' order='asc' folder=u_gallery_folder start_on=k_archive_date
                                 stop_before=k_next_archive_date paginate='1' limit='5'>
                                 <!-- Single Album Start -->
                                 <div class="single-album-wraper">
