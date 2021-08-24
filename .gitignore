@@ -19,3 +19,5 @@ admin/config.php
 h.html
 social_data
 newsportal/scripts/ckeditor/plugins/codeTag
+package.json
+package-lock.json
