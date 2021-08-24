@@ -29,6 +29,7 @@
 
     <cms:folder name="graduation" title="Graduation" />
     <cms:folder name="cultural" title="Cultural Activities" />
+    <cms:folder name="get_together" title="Get Together" />
     <cms:folder name="random" title="Random" />
 
 
