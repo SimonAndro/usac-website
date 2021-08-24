@@ -89,7 +89,7 @@
                                         <div class="row gallery-gird">
                                             <cms:pages masterpage='gallery_photos.php' folder=k_page_foldername
                                                 start_on=k_archive_date stop_before=k_next_archive_date paginate='1'
-                                                limit='3'>
+                                                limit='4'>
                                                 <!-- Single Gallery Start -->
                                                 <div class="col-lg-3  col-sm-6 recent event">
                                                     <div class="single-gallery-item gallery-bg-1"
