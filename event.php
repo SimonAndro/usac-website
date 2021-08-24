@@ -75,7 +75,7 @@
                             <cms:no_results>
                                 No projects found
                             </cms:no_results>
-                            <cms:pages masterpage='event_single.php' start_on=my_start_date stop_before=my_stop_date
+                            <cms:pages masterpage='event_single.php' orderby='weight' order='asc' start_on=my_start_date stop_before=my_stop_date
                                 paginate='1' limit='3'>
                                 <!-- Single Event Start -->
                                 <div class="single-upcoming-event">

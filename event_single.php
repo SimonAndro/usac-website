@@ -4,7 +4,7 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<cms:template title='Event' clonable='1' commentable='1'  order='10'>
+<cms:template title='Event' clonable='1' commentable='1' order='10'>
     <cms:editable name='event_short_title' type='text'>
         Get Together 2018 </cms:editable>
     <cms:editable name='event_short_desc' type='text'>
@@ -22,11 +22,18 @@
     <cms:editable name='event_date' desc='YYYY-MM-DD hh:mm:ss' type='text'>
         <cms:date format='Y-m-d H:i:s' />
     </cms:editable>
-    
+
     <cms:editable name='event_image' crop='1' width='700' height='390' type='image' />
 
     <cms:editable name='intro_image' label='page intro image' desc='Upload page intro Image here' crop='1' width='1918'
         height='789' type='image' />
+
+    <cms:config_list_view orderby='weight' order='asc'>
+        <cms:field 'k_selector_checkbox' />
+        <cms:field 'k_page_title' sortable='0' />
+        <cms:field 'k_up_down' header='Sort Order' />
+        <cms:field 'k_actions' />
+    </cms:config_list_view>
 </cms:template>
 
 
