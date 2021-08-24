@@ -271,7 +271,7 @@
                         <cms:set u_template_link="<cms:show k_template_link />" />
                         <a href="<cms:show u_template_link />#id-grallery-view"
                             class="<cms:if u_gallery_folder eq '' >active</cms:if>">All</a>
-                        <cms:pages masterpage='gallery_single.php' start_on=k_archive_date
+                        <cms:pages masterpage='gallery_single.php' orderby='weight' order='asc' start_on=k_archive_date
                             stop_before=k_next_archive_date paginate='1' limit='5'>
                             <a href="<cms:show u_template_link />?folder=<cms:show k_page_foldername />#id-grallery-view"
                                 class="<cms:if u_gallery_folder eq k_page_foldername >active</cms:if>">
