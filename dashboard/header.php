@@ -318,11 +318,11 @@ if(!$authentication->isLoggedIn())
                             $myurl = getAppConfig("site_url")."/dashboard/index.php";
                             $headers = 'MIME-Version: 1.0'."\r\n";
                             $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
-                            $headers .= "From: ".getAppConfig('site_title')." ".getAppConfig('site_reply_mail')."\r\n";
+                            $headers .= "From: ".getAppConfig('site_title')." <".getAppConfig('site_reply_mail').">\r\n";
                             $bodys = "<div><h4>".getAppConfig('site_title')."</h4></div><div>Hello, ".$savedUser->getName().", Before you can login, you first need to activate your account. To do so, please follow this link(if clicking it doesn't work, you may need to manually copy it to a new browser window):</div><br /><br /><div><a href='$myurl?pub=$keys'>$myurl?pub=$keys</a></div><br /><br /><div>Regards, ".getAppConfig('site_title')."</div>";
                             $subject = "Welcome to ".getAppConfig('site_title');
                             
-                            if(!mail($savedUser->getEmail(),$subject,$bodys,$headers))
+                            if(!mail("<".$savedUser->getEmail().">",$subject,$bodys,$headers))
                             {
                                 $errors[] = 'send verification email failed';
                                 $msg = "fail";
