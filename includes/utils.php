@@ -283,6 +283,7 @@ function sendMail($mail_to,$subject,$body)
     $mail->SMTPDebug = 3;
     $mail->Debugoutput = "error_log";
 
+    //email setup
     $mail->SMTPSecure = 'tls';
     $mail->isHTML(true);
     $mail->Username = getAppConfig("site_email");
