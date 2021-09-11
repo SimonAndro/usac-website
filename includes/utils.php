@@ -286,9 +286,9 @@ function sendMail($mail_to,$subject,$body)
     //email setup
     $mail->IsSMTP();
     $mail->SMTPAuth = False;
-    $mail->SMTPSecure = 'STARTTLS';
-    $mail->Host = "smtp-mail.outlook.com";
-    $mail->Port = 587;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = getAppConfig("mail_server");
+    $mail->Port = getAppConfig("stmp_port");;
 
     $mail->Username = getAppConfig("site_email");
     $mail->Password = getAppConfig("site_mailpass");
