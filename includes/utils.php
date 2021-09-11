@@ -286,6 +286,7 @@ function sendMail($mail_to,$subject,$body)
     //email setup
     $mail->SMTPSecure = 'tls';
     $mail->isHTML(true);
+    $mail->IsHTML(true);
     $mail->Username = getAppConfig("site_email");
     $mail->Password = getAppConfig("site_mailpass");
     $mail->AddAddress($mail_to);
