@@ -65,7 +65,7 @@ if(!$authentication->isLoggedIn())
                         if(!sendMail($user->getEmail(),$subject,$bodys))
                         {
                             $errors[] = 'Account requires verification, send verification email failed';
-                            $output["user"] = $user;
+                            //$output["user"] = $user;
                         }else{
                             $errors[] = "Account verification link has been sent to your email address";
                         }
