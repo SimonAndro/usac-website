@@ -292,8 +292,8 @@ function sendMail($mail_to,$subject,$body)
     $mail->FromName = getAppConfig("site_title");;
     $mail->Subject = $subject;
     $mail->Body = $body;
-    $mail->Host = "smtp.live.com";
-    $mail->Port = 25;
+    $mail->Host = "smtp-mail.outlook.com";
+    $mail->Port = 587;
     $mail->IsSMTP();
     $mail->SMTPAuth = False;
     $mail->From = $mail->Username;
