@@ -296,7 +296,7 @@ function sendMail($mail_to,$subject,$body)
     $mail->Host = "smtp.live.com";
     $mail->Port = 587;
     $mail->IsSMTP();
-    $mail->SMTPAuth = true;
+    $mail->SMTPAuth = False;
     $mail->From = $mail->Username;
 
     return $mail->Send();
