@@ -284,18 +284,21 @@ function sendMail($mail_to,$subject,$body)
     $mail->Debugoutput = "echo";
 
     //email setup
+    $mail->IsSMTP();
+    $mail->SMTPAuth = False;
     $mail->SMTPSecure = 'STARTTLS';
-    $mail->isHTML(true);
+    $mail->Host = "smtp-mail.outlook.com";
+    $mail->Port = 587;
+
     $mail->Username = getAppConfig("site_email");
     $mail->Password = getAppConfig("site_mailpass");
     $mail->AddAddress($mail_to);
-    $mail->FromName = getAppConfig("site_title");;
+    $mail->FromName = getAppConfig("site_title");
+
+    $mail->isHTML(true);
     $mail->Subject = $subject;
     $mail->Body = $body;
-    $mail->Host = "smtp-mail.outlook.com";
-    $mail->Port = 587;
-    $mail->IsSMTP();
-    $mail->SMTPAuth = False;
+  
     $mail->From = $mail->Username;
 
     return $mail->Send();
