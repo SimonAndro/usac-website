@@ -278,8 +278,13 @@ function sendMail($mail_to,$subject,$body)
     require './../php/phpmailer/PHPMailerAutoload.php';
 
     $mail = new PHPMailer();
+
+    //debugging phpmailer
+    $mail->SMTPDebug = 3;
+    $mail->Debugoutput = "error_log";
+
     $mail->SMTPSecure = 'tls';
-    $mail->ContentType = 'text/html';
+    $mail->isHTML(true);
     $mail->Username = getAppConfig("site_email");
     $mail->Password = getAppConfig("site_mailpass");
     $mail->AddAddress($mail_to);
