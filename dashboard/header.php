@@ -61,7 +61,8 @@ if(!$authentication->isLoggedIn())
                         $bodys = "<div><h4>".getAppConfig('site_title')."</h4></div><div>Hello, ".$user->getName().", Before you can login, you first need to activate your account. To do so, please follow this link(if clicking it doesn't work, you may need to manually copy it to a new browser window):</div><br /><br /><div><a href='$myurl?pub=$keys'>$myurl?pub=$keys</a></div><br /><br /><div>Regards, ".getAppConfig('site_title')."</div>";
                         $subject = "Welcome to ".getAppConfig('site_title');
                         
-                        if(!mail($user->getEmail(),$subject,$bodys,$headers))
+                        //if(!mail($user->getEmail(),$subject,$bodys,$headers))
+                        if(!sendMail($user->getEmail(),$subject,$bodys))
                         {
                             $errors[] = 'Account requires verification, send verification email failed';
                             $output["user"] = $user;
