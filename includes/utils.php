@@ -281,7 +281,7 @@ function sendMail($mail_to,$subject,$body)
 
     //debugging phpmailer
     $mail->SMTPDebug = 3;
-    $mail->Debugoutput = "error_log";
+    $mail->Debugoutput = "echo";
 
     //email setup
     $mail->SMTPSecure = 'tls';
