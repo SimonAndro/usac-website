@@ -271,3 +271,26 @@ function validate_email()
 
     return $errors;
 }
+
+function sendMail($mail_to,$subject,$body)
+{
+    //include the php emailer library
+    require './../php/phpmailer/PHPMailerAutoload.php';
+
+    $mail = new PHPMailer();
+    $mail->SMTPSecure = 'tls';
+    $mail->ContentType = 'text/html';
+    $mail->Username = getAppConfig("site_email");
+    $mail->Password = getAppConfig("site_mailpass");
+    $mail->AddAddress($mail_to);
+    $mail->FromName = getAppConfig("site_title");;
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+    $mail->Host = "smtp.live.com";
+    $mail->Port = 587;
+    $mail->IsSMTP();
+    $mail->SMTPAuth = true;
+    $mail->From = $mail->Username;
+
+    return $mail->Send();
+}
