@@ -592,9 +592,9 @@ unset($_SESSION['cusid']);
       <div class="col-md-2">
         <input class="btn btn-danger" type="submit" value="<?php echo $lang['130'] ?>" name="Submit" />
       </div>
-      <div class="col-md-3">
+      <!-- <div class="col-md-3">
         <?php echo $lang['199']; ?>
-      </div>
+      </div> -->
       <div class="col-md-7">
         <?php echo $lang['200']; ?><br />
       </div>
