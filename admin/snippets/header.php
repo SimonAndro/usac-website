@@ -165,6 +165,9 @@
 
     <!-- Main Master Style  CSS  -->
     <link id="cbx-style" data-layout="1" rel="stylesheet" href="assets/css/style-default.min.css" media="all">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4913481205042140"
+     crossorigin="anonymous"></script>
 </head>
 
 <body>
