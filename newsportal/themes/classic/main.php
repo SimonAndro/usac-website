@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="{$sitepath}/themes/{$themes}/styles/font-awesome.css" />
 <link rel="stylesheet" href="{$sitepath}/themes/{$themes}/styles/basic.css" />
 <link rel="alternate" type="application/atom+xml" title="{$sitetitle} - RSS" href="{$sitepath}/rss.php" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4913481205042140"
+     crossorigin="anonymous"></script>
 <title>{$sitetitle}</title>
 </head> 
 <body>
