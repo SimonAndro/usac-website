@@ -19,6 +19,8 @@
 <meta name="description" content="{$newser[newser].shortdesc|truncate:160}" />
 <title>{$newser[newser].title|stripslashes}</title>
 {/section}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4913481205042140"
+     crossorigin="anonymous"></script>
 </head> 
 <body>
 {include file="themes/$themes/maindir.php"}
