@@ -50,7 +50,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="directory-text-wrap">
                         <h2>Now we have <strong class="funfact-count">
-                                <cms:show usac_total_user /></strong> member </h2>
+                                <cms:show usac_total_user /></strong> members </h2>
                         <div class="table-search-area">
                             <form action="directory.php#directory-show" method="post">
                                 <input type="hidden" name="val[dir_search]" value="1">
