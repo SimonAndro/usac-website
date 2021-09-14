@@ -79,7 +79,7 @@
 
     <title><cms:show u_page /> | Uganda Students' Association In China</title>
 
-    <meta name="description" content="The USAC Website is the information hub for Ugandan Students in China. It provides information about comming activities, scholarship opportunities, seminars and other related information.">
+    <meta name="description" content="The USAC Website is the information hub for Ugandan Students in China. It provides information about coming activities, scholarship opportunities, seminars and other related information.">
     <meta name="keywords" content="usac students, usac-students, uganda students association in china, usac">
     <meta name="author" content="USAC">
 
@@ -89,7 +89,7 @@
     <meta name="twitter:creator" content="@uganda_china">
     <meta name="twitter:url" content="http://twitter.com">
     <meta name="twitter:title" content="home | Uganda Students' Association in China"> <!-- maximum 140 char -->
-    <meta name="twitter:description" content="The USAC Website is the information hub for Ugandan Students in China. It provides information about comming activities, scholarship opportunities, seminars and other related information. "> <!-- maximum 140 char -->
+    <meta name="twitter:description" content="The USAC Website is the information hub for Ugandan Students in China. It provides information about coming activities, scholarship opportunities, seminars and other related information. "> <!-- maximum 140 char -->
     <meta name="twitter:image" content="assets/img/usac-logo.png">
     <!-- when you post this page url in twitter , this image will be shown -->
     <!-- twitter card ends here -->
@@ -141,6 +141,7 @@
 
     <!-- Jquery Ui css -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="assets/vendor/jquery/jquery-ui.css"> -->
 
     <!--Animate css -->
     <link rel="stylesheet" href="assets/vendor/animate/animate.css" media="all">
@@ -178,7 +179,7 @@
 
     <!--== Header Area Start ==-->
     <header id="header-area">
-        <div class="preheader-area">
+        <div class="preheader-area" style="position:relative; z-index:10;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-sm-7 col-7">
