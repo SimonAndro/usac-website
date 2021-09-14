@@ -1246,6 +1246,7 @@ blockquote:before {
   z-index: 2;
   background-repeat: no-repeat;
   background-position: center center;
+  border-radius: 8px;
 }
 
 #responsibility-area .single-responsibility {
