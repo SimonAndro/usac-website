@@ -23,7 +23,7 @@
  			<div class="col-md-4 col-lg-3 col-sm-6 text-right right-side">
 				<div class="topbar-menu-right">
 					<ul>
-					<li class="ossn-topbar-dropdown-menu">
+					<li class="ossn-topbar-dropdown-menu" >
 						<div class="dropdown">
 						<?php
 							if(ossn_isLoggedin()){						
@@ -32,6 +32,7 @@
 									'data-toggle' => 'dropdown',
 									'data-target' => '#',
 									'text' => '<i class="fa fa-sort-desc"></i>',
+									'style'=>'display: inline-block; position: relative; z-index: 1; padding: 2em; margin: -2em; '						
 								));									
 								echo ossn_view_menu('topbar_dropdown'); 
 							}
@@ -83,6 +84,7 @@
 									'data-toggle' => 'dropdown',
 									'data-target' => '#',
 									'text' => '<i class="fa fa-sort-desc"></i>',
+									'style'=>'display: inline-block; position: relative; z-index: 1; padding: 2em; margin: -2em;'
 								));									
 								echo ossn_view_menu('topbar_dropdown'); 
 							}
