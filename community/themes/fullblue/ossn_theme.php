@@ -55,7 +55,7 @@ function ossn_fullblue_head(){
 					'src' => ossn_theme_url() . 'vendors/bootstrap/js/bootstrap.min.js'
 			  ));
 	$head[]  = ossn_html_css(array(
-					'href' => '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.css'
+					'href' => '//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/swanky-purse/jquery-ui.css'
 			  ));	
 	return implode('', $head);
 }
@@ -71,7 +71,7 @@ function ossn_fullblue_admin_head(){
 					'src' => ossn_theme_url() . 'vendors/bootstrap/js/bootstrap.min.js'
 			  ));
 	$head[]  = ossn_html_css(array(
-					'href' => '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.css'
+					'href' => '//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/themes/swanky-purse/jquery-ui.css'
 			  ));
 	return implode('', $head);
 }
