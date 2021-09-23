@@ -4,7 +4,7 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<cms:template title='Terms of service' executable='0'>
+<cms:template title='Terms of service'>
 </cms:template >
 <!--== Register Page Content Start ==-->
 <section id="page-content-wrap">
