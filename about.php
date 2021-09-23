@@ -174,6 +174,37 @@
         </div>
     </div>
 
+    <div class="our-honorable-commitee">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="about-page-area-title">
+                        <h2>Provincial Commissioners</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="honorable-committee-list">
+                <div class="row">
+                    <cms:pages masterpage='cms_templates/commissioner_member.php' orderby='weight' order='asc'>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-committee-member">
+                                <div class="commitee-thumb">
+                                    <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
+                                </div>
+                                <h3>
+                                    <cms:show member_name /><span class="committee-deg">
+                                        <cms:show member_position />
+                                    </span>
+                                </h3>
+                            </div>
+                        </div>
+                    </cms:pages>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="people-to-say section-padding">
         <div class="container">
             <div class="row">

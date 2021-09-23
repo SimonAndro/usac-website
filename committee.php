@@ -29,8 +29,11 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">Committee</h1>
-                    <p><cms:show page_intro /></p>
-                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll"><cms:show page_cta /></a>
+                    <p>
+                        <cms:show page_intro />
+                    </p>
+                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">
+                        <cms:show page_cta /></a>
                 </div>
             </div>
         </div>
@@ -97,6 +100,37 @@
             </cms:if>
         </div>
     </div>
+    </div>
+   
+    <div class="our-honorable-commitee section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="about-page-area-title">
+                        <h2>Provincial Commissioners</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="honorable-committee-list">
+                <div class="row">
+                    <cms:pages masterpage='cms_templates/commissioner_member.php' orderby='weight' order='asc'>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-committee-member">
+                                <div class="commitee-thumb">
+                                    <img src="<cms:show member_image />" class="img-fluid" alt="Committee">
+                                </div>
+                                <h3>
+                                    <cms:show member_name /><span class="committee-deg">
+                                        <cms:show member_position />
+                                    </span>
+                                </h3>
+                            </div>
+                        </div>
+                    </cms:pages>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!--== Committee Page Content End ==-->
