@@ -31,8 +31,11 @@
             <div class="col-lg-8 m-auto text-center">
                 <div class="page-title-content">
                     <h1 class="h2">Membership Form</h1>
-                    <p><cms:show page_intro /></p>
-                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll"><cms:show page_cta /></a>
+                    <p>
+                        <cms:show page_intro />
+                    </p>
+                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">
+                        <cms:show page_cta /></a>
                 </div>
             </div>
         </div>
@@ -85,7 +88,9 @@
                                             <div class="register-form">
                                                 <div class="error-msg-list-register invisible">
                                                 </div>
-                                                <form action="./dashboard/index.php"  onsubmit="event.preventDefault(); registerUser(this);" enctype="multipart/form-data">
+                                                <form action="./dashboard/index.php"
+                                                    onsubmit="event.preventDefault(); registerUser(this);"
+                                                    enctype="multipart/form-data">
                                                     <input type="hidden" value="register" name="val[action]" />
                                                     <div class="row">
                                                         <div class="col-12 col-sm-6">
@@ -120,7 +125,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row">                                                    
+                                                    <div class="row">
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
                                                                 <label for="register_stuid">University</label>
@@ -130,31 +135,35 @@
                                                         </div>
                                                         <div class="col-12 col-sm-6">
                                                             <div class="form-group">
-                                                                <label for="register_name">Grad. Date</label>
+                                                                <label for="register_name">Graduation Date</label>
                                                                 <input style="height: 39px !important; font-size:16px;"
-                                                                class="form-control" type="text" name="val[grad_year]"
-                                                                placeholder="Graduation Year" readonly="readonly"
-                                                                id="quiDatepicker2">
+                                                                    class="form-control" type="text"
+                                                                    name="val[grad_year]" placeholder="mm/dd/yyyy"
+                                                                    readonly="readonly" id="quiDatepicker2">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-12 col-sm-12">
-                                                            <input style="height: 39px !important; font-size:16px;"
-                                                                class="form-control" type="text" name="val[birthdate]"
-                                                                placeholder="Birthdate" readonly="readonly"
-                                                                id="quiDatepicker">
+                                                            <div class="form-group">
+                                                                <label for="register_name">Birthdate</label>
+                                                                <input style="height: 39px !important; font-size:16px;"
+                                                                    class="form-control" type="text"
+                                                                    name="val[birthdate]" placeholder="mm/dd/yyyy"
+                                                                    readonly="readonly" id="quiDatepicker">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group file-input">
                                                         <!-- student-card-file -->
-                                                        <label class="custom-file" for="customfile" ><i
+                                                        <label class="custom-file" for="customfile"><i
                                                                 class="fa fa-upload"></i>Upload Your Student ID
                                                             Card (required)</label>
-                                                        <input type="file" name="student_card" id="customfile" onchange="fileChanged(this)"
+                                                        <input type="file" name="student_card" id="customfile"
+                                                            onchange="fileChanged(this)"
                                                             class="d-none student-card-file">
                                                         <span class="std-card-fn f-error"></span>
-                                                        
+
                                                     </div>
 
                                                     <div class="gender form-group">
@@ -178,8 +187,9 @@
                                                     <div class="form-group">
                                                         <div class="custom-control custom-checkbox float-lg-right">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="customCheck1" >
-                                                            <label class="custom-control-label" for="customCheck1" name="val[terms]">
+                                                                id="customCheck1">
+                                                            <label class="custom-control-label" for="customCheck1"
+                                                                name="val[terms]">
                                                                 I have read and agree to the <a href="terms.php">USAC
                                                                     Terms of Service </a></label>
                                                         </div>
