@@ -82,14 +82,14 @@
                                         <p>
                                             <cms:show album_short_desc />
                                         </p>
-                                        <a href="<cms:show k_page_link />" class="btn btn-brand">View Album</a>
+                                        
                                     </div>
 
                                     <div class="album-gallery-item">
                                         <div class="row gallery-gird">
                                             <cms:pages masterpage='gallery_photos.php' folder=k_page_foldername
                                                 start_on=k_archive_date stop_before=k_next_archive_date paginate='1'
-                                                limit='4'>
+                                                limit='7'>
                                                 <!-- Single Gallery Start -->
                                                 <div class="col-lg-3  col-sm-6 recent event">
                                                     <div class="single-gallery-item gallery-bg-1"
@@ -112,6 +112,9 @@
                                                 </div>
                                             </cms:pages>
                                         </div>
+                                    </div>
+                                    <div class="mt-3 text-center">
+                                        <a href="<cms:show k_page_link />" class="btn btn-brand">View Album</a>
                                     </div>
                                 </div>
                                 <cms:if k_paginated_bottom>
