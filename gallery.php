@@ -113,7 +113,7 @@
                                             </cms:pages>
                                         </div>
                                     </div>
-                                    <div class="mt-3 text-center">
+                                    <div class="mt-5 text-center">
                                         <a href="<cms:show k_page_link />" class="btn btn-brand">View Album</a>
                                     </div>
                                 </div>
