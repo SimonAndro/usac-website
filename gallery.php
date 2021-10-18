@@ -114,7 +114,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-5 text-center">
-                                        <a href="<cms:show k_page_link />" class="btn btn-brand">View Album</a>
+                                        <a href="<cms:show k_page_link />" class="btn btn-brand">View Full Album</a>
                                     </div>
                                 </div>
                                 <cms:if k_paginated_bottom>
