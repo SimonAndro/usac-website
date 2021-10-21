@@ -32,7 +32,7 @@
         }
         else{
 
-            if(!empty($_GET['dir_page']) and is_numeric($_GET['dir_page']) and $dpage>0) //check for valide page
+            if(!empty($_GET['dir_page']) and is_numeric($_GET['dir_page']) and $_GET['dir_page']>0) //check for valide page
             {
                 $dpage = (int)$_GET['dir_page'];
             }else{
@@ -49,7 +49,8 @@
             $sql = "SELECT * FROM ".$usersTable->getTableName()." LIMIT $dpage_size OFFSET $doffset";
             $res = $usersTable->customQuery($sql);
 
-            $curr_page = (int)((count($res) + $doffset)/$dpage_size);
+            $curr_page = ceil((count($res) + $doffset)/$dpage_size);
+  
             $total_pages = ceil($totalUsers/$dpage_size);
 
             $next_page = $curr_page+1;
