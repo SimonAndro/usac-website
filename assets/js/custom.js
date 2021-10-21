@@ -70,8 +70,8 @@ function fileChanged(t) {
         $('.std-card-fn').addClass("f-error");
         if ($.inArray(ft, validImageTypes) < 0) {
             $(".std-card-fn").html("only jpeg or png images accepted");
-        } else if (fs > 1048576) {
-            $(".std-card-fn").html("file size can't be greater than 1MB");
+        } else if (fs > 1048576*10) {
+            $(".std-card-fn").html("file size can't be greater than 10MB");
         } else {
             $('.std-card-fn').removeClass("f-error");
             $(".std-card-fn").html(fn);
