@@ -46,7 +46,7 @@
                 $doffset = (int)($dpage-1)*$dpage_size;
             }
 
-            $sql = "SELECT * FROM ".$usersTable->getTableName()." LIMIT $dpage_size OFFSET $doffset";
+            $sql = "SELECT * FROM ".$usersTable->getTableName()." ORDER BY id DESC LIMIT $dpage_size OFFSET $doffset ";
             $res = $usersTable->customQuery($sql);
 
             $curr_page = ceil((count($res) + $doffset)/$dpage_size);
