@@ -50,7 +50,7 @@
             $res = $usersTable->customQuery($sql);
 
             $curr_page = (int)((count($res) + $doffset)/$dpage_size);
-            $total_pages = (int)($totalUsers/$dpage_size);
+            $total_pages = ceil($totalUsers/$dpage_size);
 
             $next_page = $curr_page+1;
             if($next_page <= $total_pages)
