@@ -32,7 +32,7 @@
         }
         else{
 
-            if(!empty($_GET['dir_page']) and is_numeric($_GET['dir_page']))
+            if(!empty($_GET['dir_page']) and is_numeric($_GET['dir_page']) and $dpage>0) //check for valide page
             {
                 $dpage = (int)$_GET['dir_page'];
             }else{
@@ -43,7 +43,7 @@
             if($dpage == 1){
                 $doffset = 0;
             }else{
-                $doffset = (int)$dpage*$dpage_size;
+                $doffset = (int)($dpage-1)*$dpage_size;
             }
 
             $sql = "SELECT * FROM ".$usersTable->getTableName()." LIMIT $dpage_size OFFSET $doffset";
