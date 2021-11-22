@@ -66,7 +66,7 @@
                 <div class="col-lg-10 m-auto">
                     <article class="single-blog-content-wrap">
                         <header class="article-head">
-                            <div class="single-blog-thumb">
+                            <div class="single-blog-thumb text-center">
                                 <img src="<cms:show blog_image />" class="img-fluid" alt="Blog">
                             </div>
                             <div class="single-blog-meta">
