@@ -248,13 +248,13 @@ if(!$authentication->isLoggedIn())
                     //and a hashed password
                     $savedUser = $usersTable->save($newUser);
                     //print_r($savedUser);
-                    if($savedUser->getUserId())
+                    if($saverUserId = $savedUser->getUserId())
                     {
                         // register on social platform
                         $ossn_salt = ossn_generateSalt();
 						$ossn_password = ossn_generate_password($val["password"], $ossn_salt);
                         $ossn_fields["type"] = "normal";
-                        $ossn_fields["username"] = explode(" ",$savedUser->getName())[0];
+                        $ossn_fields["username"] = (explode(" ",$savedUser->getName())[0])."_".str_replace(["+","/","="],["-",".","_"], base64_encode($saverUserId)); //ensure usernames are unique
                         $ossn_fields["email"] = $savedUser->getEmail();
                         $ossn_fields["password"] = $ossn_password;
                         $ossn_fields["salt"] = $ossn_salt;
