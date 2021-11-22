@@ -14,6 +14,7 @@ if(ossn_isLoggedin()) {
 }
 $username = input('username');
 $password = input('password');
+$email = null;
 
 if(empty($username) || empty($password)) {
 		ossn_trigger_message(ossn_print('login:error') , 'error');
@@ -25,6 +26,7 @@ $user = ossn_user_by_username($username);
 if(strpos($username, '@') !== false) {
 		$user     = ossn_user_by_email($username);
 		$username = $user->username;
+		$email = $user->email;
 }
 
 if($user && !$user->isUserVALIDATED()) {
@@ -38,6 +40,7 @@ $vars = array(
 ossn_trigger_callback('user', 'before:login', $vars);
 
 $login           = new OssnUser;
+$login->email = $email;
 $login->username = $username;
 $login->password = $password;
 if($login->Login()) {
