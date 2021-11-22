@@ -5,10 +5,18 @@
     $CTX->set( 'user_logged_in', 1, 'global' );
     }
 
+    /*
     $sql = "SELECT total_users FROM ".$core_config_table->getTableName()." LIMIT 1";;
     $res = $core_config_table->customQuery($sql);
+    $res = $usersTable->customQuery($sql);
     $res= (array)$res[0];
     $totalUsers = $res['total_users'];
+    */
+
+    $sql = "SELECT COUNT(id) FROM ".$usersTable->getTableName()." WHERE email_ok=1";
+    $res = $usersTable->customQuery($sql);
+    $totalUsers = $res[0]->{'COUNT(id)'};
+    //dump_to_file($totalUsers);
     $CTX->set( 'usac_total_user', $totalUsers, 'global' );
 
     if($CTX->get('u_sub_page') == "directory")
@@ -46,7 +54,7 @@
                 $doffset = (int)($dpage-1)*$dpage_size;
             }
 
-            $sql = "SELECT * FROM ".$usersTable->getTableName()." ORDER BY id DESC LIMIT $dpage_size OFFSET $doffset WHERE email_ok=1";
+            $sql = "SELECT * FROM ".$usersTable->getTableName()." WHERE email_ok=1 ORDER BY id DESC LIMIT $dpage_size OFFSET $doffset ";
             $res = $usersTable->customQuery($sql);
 
             $curr_page = ceil((count($res) + $doffset)/$dpage_size);
