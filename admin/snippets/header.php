@@ -25,7 +25,7 @@
                 $key_word = htmlentities(trim($val['key_word']));
                 $CTX->set( 'u_s_key_word', $key_word, 'global' );
 
-                $sql = "SELECT * FROM ".$usersTable->getTableName()." WHERE (name LIKE '%$key_word%' ) OR (name_last LIKE '%$key_word%' ) OR (university LIKE '%$key_word%' ) LIMIT $dpage_size";
+                $sql = "SELECT * FROM ".$usersTable->getTableName()." WHERE (name LIKE '%$key_word%' ) OR (name_last LIKE '%$key_word%' ) OR (university LIKE '%$key_word%' ) AND email_ok=1 LIMIT $dpage_size";
                 $res = $usersTable->customQuery($sql);
                 $CTX->set('u_user_data',$res,'global');
             }
@@ -46,7 +46,7 @@
                 $doffset = (int)($dpage-1)*$dpage_size;
             }
 
-            $sql = "SELECT * FROM ".$usersTable->getTableName()." ORDER BY id DESC LIMIT $dpage_size OFFSET $doffset ";
+            $sql = "SELECT * FROM ".$usersTable->getTableName()." ORDER BY id DESC LIMIT $dpage_size OFFSET $doffset WHERE email_ok=1";
             $res = $usersTable->customQuery($sql);
 
             $curr_page = ceil((count($res) + $doffset)/$dpage_size);
