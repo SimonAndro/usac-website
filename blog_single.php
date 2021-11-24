@@ -10,7 +10,7 @@
 <!--== Header Area End ==-->
 
 
-<cms:template title='Blog' clonable='1'  order='7'>
+<cms:template title='Blog' clonable='1' order='7'>
     <cms:editable name='blog_title' label='blog title' desc='Enter blog title here' type='text'>
         Awesome Article for Memory of Our Campus Life
     </cms:editable>
@@ -80,41 +80,50 @@
                             </div>
                         </header>
                         <section class="blog-details">
-                            <cms:editable name='blog_details' type='richtext'>
-                                <p>Lorem ipsum condimentum ligula. Fusce fringilla magna non sapien dictum, eget
-                                    faucibus
-                                    dui maximus. Donec fringilla vel mi consequat tempor. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat.
-                                    Duvelit
-                                    lecspoe a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices
-                                    interdum, leo luctfiiius sem, vel vulputate diam ipsum sed lorem. Donec tempor arcu
-                                    nisl, et molestie massa hhisque ut. Nunc at rutrum leo. Mauris metus mauris, tridd.
-                                </p>
-                                <p>Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum. Aliquam nonh
-                                    edunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat.
-                                    Praesent vdd warius ultricemassa at faucibus. Aenean dignissim, orci sed faucibus
-                                    pharetra, dui mi dir ssim tortor, sit amet ntum mi ligula sit amet augue.
-                                    Pellentesqs
-                                    placerat. </p>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <h5>The Guest Series</h5>
-                                        <p> Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.
-                                            Aliquam
-                                            non tidunt urna. Integer tincidunt nec nisl vitae Proin sed ultrices erat.
-                                        </p>
+                            <cms:do_shortcodes>
+                                <cms:editable name='blog_details' type='richtext'>
+                                    <p>Lorem ipsum condimentum ligula. Fusce fringilla magna non sapien dictum, eget
+                                        faucibus
+                                        dui maximus. Donec fringilla vel mi consequat tempor. </p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis diam erat.
+                                        Duvelit
+                                        lecspoe a blandit sit amet, tempor at lorem. Donec ultricies, lorem sed ultrices
+                                        interdum, leo luctfiiius sem, vel vulputate diam ipsum sed lorem. Donec tempor
+                                        arcu
+                                        nisl, et molestie massa hhisque ut. Nunc at rutrum leo. Mauris metus mauris,
+                                        tridd.
+                                    </p>
+                                    <p>Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum. Aliquam
+                                        nonh
+                                        edunt urna. Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices
+                                        erat.
+                                        Praesent vdd warius ultricemassa at faucibus. Aenean dignissim, orci sed
+                                        faucibus
+                                        pharetra, dui mi dir ssim tortor, sit amet ntum mi ligula sit amet augue.
+                                        Pellentesqs
+                                        placerat. </p>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <h5>The Guest Series</h5>
+                                            <p> Mauris tempus erat laoreet turpis lobortis, eu tincidunt erat fermentum.
+                                                Aliquam
+                                                non tidunt urna. Integer tincidunt nec nisl vitae Proin sed ultrices
+                                                erat.
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h5>How and why</h5>
+                                            <p>Aenean dignissim, orci sed faucibus nissim tortor, sit amet condimentum
+                                                mi
+                                                ligula sit amet augue. </p>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <h5>How and why</h5>
-                                        <p>Aenean dignissim, orci sed faucibus nissim tortor, sit amet condimentum mi
-                                            ligula sit amet augue. </p>
-                                    </div>
-                                </div>
-                                <blockquote class="blockquote">
-                                    Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent
-                                    varius ultrices massa at faucibus.
-                                </blockquote>
-                            </cms:editable>
+                                    <blockquote class="blockquote">
+                                        Integer tincidunt nec nisl vitae ullamcorper. Proin sed ultrices erat. Praesent
+                                        varius ultrices massa at faucibus.
+                                    </blockquote>
+                                </cms:editable>
+                            </cms:do_shortcodes>
                         </section>
 
                         <footer class="post-share">
