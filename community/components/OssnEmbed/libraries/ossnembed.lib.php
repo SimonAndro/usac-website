@@ -59,7 +59,10 @@ function ossn_embed_create_embed_object($url, $guid, $videowidth=0) {
 		return ossn_embed_dm_handler($url, $guid, $videowidth);
 	} else if (strpos($url, 'hulu.com') != false) {
 		return ossn_embed_hulu_handler($url, $guid, $videowidth);
-	} else {
+	} else if(strpos($url,'bilibili.com') != false)	{
+		return ossn_embed_bilibili_handler($url, $guid, $videowidth);
+	}
+	else {
 		return false;
 	}
 }
@@ -114,6 +117,9 @@ function ossn_embed_add_object($type, $url, $guid, $width, $height) {
 			break;
 		case 'hulu':
 			$videodiv .= "<object class='embed-responsive-item' width=\"{$width}\" height=\"{$height}\"><param name=\"movie\" value=\"http://www.hulu.com/embed/{$url}\"></param><param name=\"allowFullScreen\" value=\"true\"></param><embed src=\"http://www.hulu.com/embed/{$url}\" type=\"application/x-shockwave-flash\" allowFullScreen=\"true\"  width=\"{$width}\" height=\"{$height}\"></embed></object>";
+			break;
+		case 'bilibili':
+			$videodiv .= $url;
 			break;
 	}
 
@@ -432,12 +438,51 @@ function ossn_embed_hulu_parse_url($url) {
 		return 1;
 	}
 
-	if (!preg_match('/(value="https?:\/\/www\.hulu\.com\/embed\/)([a-zA-Z0-9_-]*)"(.*)/', $url, $matches)) {
-		//echo "malformed blip.tv url";
-		return 2;
+	if (!preg_match('/(https?:\/\/)([a-zA-Z]{2,3}\.)(bililili\.com\/)(.*)/', $url, $matches)) {
+		//echo "malformed bililili url";
+		return;
 	}
 
 	$hash = $matches[2];
+
+	//echo $hash;
+
+	return $hash;
+}
+
+
+/**
+ * main bilibili interface
+ *
+ * @param string $url
+ * @param integer $guid unique identifier of the widget
+ * @param integer $videowidth  optional override of admin set width
+ * @return string css style, video div, and flash <object>
+ */
+function ossn_embed_bilibili_handler($url, $guid, $videowidth) {
+	// this extracts the core part of the url needed for embeding
+	$videourl = ossn_embed_bilibili_parse_url($url);
+	if (is_numeric($videourl)) {
+		return false;
+	}
+
+	ossn_embed_calc_size($videowidth, $videoheight, 512/296, 0);
+
+	$embed_object = ossn_embed_add_css($guid, $videowidth, $videoheight);
+
+	$embed_object .= ossn_embed_add_object('bilibili', $videourl, $guid, $videowidth, $videoheight);
+
+	return $embed_object;
+}
+
+/**
+ * parse hulu url
+ *
+ * @param string $url
+ * @return string hash
+ */
+function ossn_embed_bilibili_parse_url($url) {
+	$hash = $url;
 
 	//echo $hash;
 

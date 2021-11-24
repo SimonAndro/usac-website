@@ -39,13 +39,23 @@ function ossn_embed_init() {
  * @access private
  */
 function ossn_embed_wall_template_item($hook, $type, $return){
+
+	// //temporary special treatment for bilibili videos
+	$temp_text = htmlspecialchars_decode($return['text']);
+	if(preg_match( '/<iframe(.*)\/iframe>/is',$temp_text,$matched)) // has iframe
+	{
+		if (strpos($matched[0], 'player.bilibili.com')) { //search for player url
+			$return['text'] = str_replace(htmlspecialchars($matched[0]), ossn_embed_create_embed_object($matched[0], uniqid('videos_embed_'), 500), $return['text']);
+		}				
+	}
+
 	$patterns = array(	'#(((https?://)?)|(^./))(((www.)?)|(^./))youtube\.com/watch[?]v=([^\[\]()<.,\s\n\t\r]+)#i',
 						'#(((https?://)?)|(^./))(((www.)?)|(^./))youtu\.be/([^\[\]()<.,\s\n\t\r]+)#i',
 						'/(https?:\/\/)(www\.)?(vimeo\.com\/groups)(.*)(\/videos\/)([0-9]*)/',
 						'/(https?:\/\/)(www\.)?(vimeo.com\/)([0-9]*)/',
 						'/(https?:\/\/)(player\.)?(vimeo.com\/video\/)([0-9]*)/',
 						'/(https?:\/\/)(www\.)?(metacafe\.com\/watch\/)([0-9a-zA-Z_-]*)(\/[0-9a-zA-Z_-]*)(\/)/',
-						'/(https?:\/\/www\.dailymotion\.com\/.*\/)([0-9a-z]*)/',
+						'/(https?:\/\/www\.dailymotion\.com\/.*\/)([0-9a-z]*)/',						
 						);
 	$regex = "/<a[\s]+[^>]*?href[\s]?=[\s\"\']+"."(.*?)[\"\']+.*?>"."([^<]+|.*?)?<\/a>/";
 	
@@ -59,6 +69,7 @@ function ossn_embed_wall_template_item($hook, $type, $return){
 			}
 		}
 	}
+
 	return $return;
 }
 /**
