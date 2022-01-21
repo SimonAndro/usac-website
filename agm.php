@@ -1,19 +1,51 @@
-<?php require_once 'admin/cms.php';?>
-
+<?php require_once( 'admin/cms.php' ); ?>
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "agm", 'global' );
+    $CTX->set( 'u_page', "about", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
+<cms:template title='Page About Us Intro'>
+    <cms:editable name='page_intro' label='Intro' desc='Enter page intro info here' type='text'>
+        Usac Needs enables you to harness the power of your Usac network. Whatever may be the
+        need
+    </cms:editable>
+    <cms:editable name='page_cta' label='Call to action' desc='Enter call to action here' type='text'>
+        Let&apos;s See
+    </cms:editable>
+
+    <cms:editable name='intro_image' label='page intro image' desc='Upload page intro Image here' crop='1' width='1918'
+        height='789' type='image' />
+</cms:template>
+
+<!--== Page Title Area Start ==-->
+<section id="page-title-area" style="background-image: url('<cms:show intro_image />');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto text-center">
+                <div class="page-title-content">
+                    <h1 class="h2">About Us</h1>
+                    <p>
+                        <cms:show page_intro />
+                    </p>
+                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">
+                        <cms:show page_cta /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--== Page Title Area End ==-->
+
+<!--== Committee Page Content Start ==-->
 <section id="page-content-wrap">
-    <div class="about-page-content-wrap">
-        <div class="container">
-            <div class="st1">
+    <div class="about-page-content-wrap section-padding">
+    <div class="st1">
                 <div style=" padding: 20px;">
                     <div>
                         <div class="row">
@@ -265,18 +297,16 @@
                             </table>
 
                             <div style="margin: 20px;">NB: The agenda set is to be followed precisely</div>
-
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </section>
-
+<!--== Committee Page Content End ==-->
 
 <!--== Footer Area Start ==-->
 <cms:embed 'footer.php' />
 <!--== Footer Area End ==-->
 
-<?php COUCH::invoke();?>
+<?php COUCH::invoke(); ?>
