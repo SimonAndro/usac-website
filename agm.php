@@ -9,15 +9,15 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<section id="page-title-area" >
+<section id="page-title-area">
     <div class="container">
-        <div class="row">    
+        <div class="row">
         </div>
     </div>
 </section>
 
 <!--== Committee Page Content Start ==-->
-<section id="page-content-wrap">
+<div id="page-content-wrap">
     <div class="about-page-content-wrap section-padding">
         <div class="st1">
             <div style=" padding: 20px;">
@@ -276,7 +276,7 @@
             </div>
         </div>
     </div>
-</section>
+</div>
 <!--== Committee Page Content End ==-->
 
 <!--== Footer Area Start ==-->
