@@ -1,4 +1,4 @@
-<?php require_once '../admin/cms.php';?>
+<?php require_once 'admin/cms.php';?>
 
 
 <cms:php>
