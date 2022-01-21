@@ -142,7 +142,7 @@
                 <h4>Sponsored By:</h4>
                 <div class="row">
                     <div class="float-left mr-5">
-                        <div style="text-align:center; width: 150px;">
+                        <div style="text-align:center; width: 200px;">
                             <div>TRADE HIVE</div>
 
                             <img style="width: 100%;" src="./sponsors/tradehive.jpg" alt="">
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class="float-left mr-5">
-                        <div style="text-align:center; width: 150px;">
+                        <div style="text-align:center; width: 200px;">
                             <div>MIMA TECHNOLOGIES LTD</div>
 
                             <img style="width: 100%;" src="./sponsors/mimatech.jpg" alt="">
