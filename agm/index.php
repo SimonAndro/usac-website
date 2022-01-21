@@ -1,4 +1,4 @@
-<?php require_once 'admin/cms.php';?>
+<?php require_once '../admin/cms.php';?>
 
 
 <cms:php>
@@ -9,11 +9,6 @@
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
-
-<!--== Page Title Area End ==-->
-
-<!--== Contact Page Content Start ==-->
-<section id="page-content-wrap">
 
     <style>
         * {
@@ -347,8 +342,7 @@
             </div>
         </div>
     </div>
-</section>
-<!--== Contact Page Content End ==-->
+
 
 
 <!--== Footer Area Start ==-->
