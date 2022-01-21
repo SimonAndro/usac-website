@@ -87,6 +87,7 @@
         }
     </style>
 
+<section>
     <div class="st1">
         <div style=" padding: 20px;">
             <div>
@@ -342,7 +343,7 @@
             </div>
         </div>
     </div>
-
+</section>
 
 
 <!--== Footer Area Start ==-->
