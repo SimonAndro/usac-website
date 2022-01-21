@@ -151,6 +151,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div style="text-align:center; width: 150px;">
+                            <div>MIMA TECHNOLOGIES LTD</div>
+
+                            <img style="width: 100%;" src="./sponsors/mimatech.jpg" alt="">
+
+                            <div style="text-align:left;">Installation, Management, Networking, Servicing
+                            </div>
+                        </div>
+                    </div>
+                    
                     <!-- <div style="float:left; width: 150px; text-align: center; margin: 10px;">
                         <div>TRADE HIVE</div>
                         <div style="width: 150px;">
