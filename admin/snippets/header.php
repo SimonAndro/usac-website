@@ -58,7 +58,7 @@
             $res = $usersTable->customQuery($sql);
 
             $curr_page = ceil((count($res) + $doffset)/$dpage_size);
-  
+
             $total_pages = ceil($totalUsers/$dpage_size);
 
             $next_page = $curr_page+1;
@@ -178,6 +178,55 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4913481205042140"
      crossorigin="anonymous"></script>
+
+     <style>
+     .st0 {
+            background: -moz-linear-gradient(0% 50% 0deg, rgba(255, 193, 0, 1) 0%, rgba(255, 173, 0, 1) 27.77%, rgba(255, 151, 0, 1) 53.45%);
+            background: -webkit-linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(255, 173, 0, 1) 27.77%, rgba(255, 151, 0, 1) 53.45%);
+            background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0, rgba(255, 193, 0, 1)), color-stop(0.2777, rgba(255, 173, 0, 1)), color-stop(0.5345, rgba(255, 151, 0, 1)));
+            background: -o-linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(255, 173, 0, 1) 27.77%, rgba(255, 151, 0, 1) 53.45%);
+            background: -ms-linear-gradient(0deg, rgba(255, 193, 0, 1) 0%, rgba(255, 173, 0, 1) 27.77%, rgba(255, 151, 0, 1) 53.45%);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFC100', endColorstr='#FF9700' ,GradientType=0)";
+            background: linear-gradient(90deg, rgba(255, 193, 0, 1) 0%, rgba(255, 173, 0, 1) 27.77%, rgba(255, 151, 0, 1) 53.45%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFC100', endColorstr='#FF9700', GradientType=1);
+            height: 5px;
+            margin-top: 5px;
+        }
+        .st1 {
+            background: -moz-linear-gradient(0% 50% 0deg, rgba(56, 56, 58, 1) 0%, rgba(38, 38, 38, 1) 84.66%, rgba(34, 34, 34, 1) 100%);
+            background: -webkit-linear-gradient(0deg, rgba(56, 56, 58, 1) 0%, rgba(38, 38, 38, 1) 84.66%, rgba(34, 34, 34, 1) 100%);
+            background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0, rgba(56, 56, 58, 1)), color-stop(0.8466, rgba(38, 38, 38, 1)), color-stop(1, rgba(34, 34, 34, 1)));
+            background: -o-linear-gradient(0deg, rgba(56, 56, 58, 1) 0%, rgba(38, 38, 38, 1) 84.66%, rgba(34, 34, 34, 1) 100%);
+            background: -ms-linear-gradient(0deg, rgba(56, 56, 58, 1) 0%, rgba(38, 38, 38, 1) 84.66%, rgba(34, 34, 34, 1) 100%);
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#38383A', endColorstr='#222222' ,GradientType=0)";
+            background: linear-gradient(90deg, rgba(56, 56, 58, 1) 0%, rgba(38, 38, 38, 1) 84.66%, rgba(34, 34, 34, 1) 100%);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#38383A', endColorstr='#222222', GradientType=1);
+            width: 100%;
+            color: #FFF;
+            height: auto;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+            color: black;
+        }
+    </style>
 </head>
 
 <body>
