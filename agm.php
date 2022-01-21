@@ -141,7 +141,7 @@
             <div style="margin: 20px 0;">
                 <h4>Sponsored By:</h4>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="float-left mr-5">
                         <div style="text-align:center; width: 150px;">
                             <div>TRADE HIVE</div>
 
@@ -151,7 +151,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="float-left mr-5">
                         <div style="text-align:center; width: 150px;">
                             <div>MIMA TECHNOLOGIES LTD</div>
 
