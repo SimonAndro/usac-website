@@ -9,6 +9,13 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
+<section id="page-title-area" >
+    <div class="container">
+        <div class="row">    
+        </div>
+    </div>
+</section>
+
 <!--== Committee Page Content Start ==-->
 <section id="page-content-wrap">
     <div class="about-page-content-wrap section-padding">
