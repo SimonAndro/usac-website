@@ -52,6 +52,7 @@
     tr:nth-child(even) {
         background-color: #dddddd;
         color: black;
+        border: 1px solid black;
     }
 </style>
 
