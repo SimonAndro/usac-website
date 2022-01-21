@@ -48,6 +48,12 @@
         text-align: left;
         padding: 8px;
     }
+
+    tr:nth-child(even)>th,
+    tr:nth-child(even)>td {
+        border: 1px solid black;
+    }
+
     tr:nth-child(even) {
         background-color: #dddddd;
         color: black;
@@ -161,7 +167,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- <div style="float:left; width: 150px; text-align: center; margin: 10px;">
                         <div>TRADE HIVE</div>
                         <div style="width: 150px;">
