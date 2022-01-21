@@ -2,7 +2,7 @@
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "member", 'global' );
+    $CTX->set( 'u_page', "2022 AGM", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
