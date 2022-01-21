@@ -175,10 +175,12 @@
                         </div>
                         <div style="text-align:left;">e-commerce platform, air cargo, money transfers</div>
                     </div> -->
-                    <div class="col-md-8">
-                        <h3 style="margin: 50px;">
-                            ADVERTISE HERE
-                        </h3>
+                    <div class="float-left mr-5">
+                        <div style="text-align:center; width: 200px;">
+                            <h3 style="margin: 50px;">
+                                ADVERTISE HERE
+                            </h3>
+                        </div>
                     </div>
                 </div>
             </div>
