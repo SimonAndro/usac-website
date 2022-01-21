@@ -147,8 +147,8 @@
             <div style="margin: 20px 0;">
                 <h4>Sponsored By:</h4>
                 <div class="row">
-                    <div class="float-left mr-5">
-                        <div style="text-align:center; width: 200px;">
+                    <div class="col-md-3">
+                        <div class="mx-auto" style="text-align:center; width: 200px;">
                             <div>TRADE HIVE</div>
 
                             <img style="width: 100%;" src="./sponsors/tradehive.jpg" alt="">
@@ -157,8 +157,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="float-left mr-5">
-                        <div style="text-align:center; width: 200px;">
+                    <div class="col-md-3">
+                        <div class="mx-auto" style="text-align:center; width: 200px;">
                             <div>MIMA TECHNOLOGIES LTD</div>
 
                             <img style="width: 100%;" src="./sponsors/mimatech.jpg" alt="">
@@ -175,8 +175,8 @@
                         </div>
                         <div style="text-align:left;">e-commerce platform, air cargo, money transfers</div>
                     </div> -->
-                    <div class="float-left mr-5">
-                        <div style="text-align:center; width: 200px;">
+                    <div class="col-md-3">
+                        <div class="mx-auto" style="text-align:center; width: 200px;">
                             <h3 style="margin: 50px;">
                                 ADVERTISE HERE
                             </h3>
