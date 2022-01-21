@@ -10,7 +10,7 @@
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<section>
+<section  id="page-content-wrap">
     <div class="st1">
         <div style=" padding: 20px;">
             <div>
