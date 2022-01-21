@@ -157,7 +157,7 @@
 
                             <img style="width: 100%;" src="./sponsors/mimatech.jpg" alt="">
 
-                            <div style="text-align:left;">Installation, Management, Networking, Servicing
+                            <div style="text-align:left;">for all advanced security systems
                             </div>
                         </div>
                     </div>
