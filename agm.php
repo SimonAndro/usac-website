@@ -2,45 +2,12 @@
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "about", 'global' );
+    $CTX->set( 'u_page', "agm", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
-
-<cms:template title='Page About Us Intro'>
-    <cms:editable name='page_intro' label='Intro' desc='Enter page intro info here' type='text'>
-        Usac Needs enables you to harness the power of your Usac network. Whatever may be the
-        need
-    </cms:editable>
-    <cms:editable name='page_cta' label='Call to action' desc='Enter call to action here' type='text'>
-        Let&apos;s See
-    </cms:editable>
-
-    <cms:editable name='intro_image' label='page intro image' desc='Upload page intro Image here' crop='1' width='1918'
-        height='789' type='image' />
-</cms:template>
-
-<!--== Page Title Area Start ==-->
-<section id="page-title-area" style="background-image: url('<cms:show intro_image />');">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 m-auto text-center">
-                <div class="page-title-content">
-                    <h1 class="h2">About Us</h1>
-                    <p>
-                        <cms:show page_intro />
-                    </p>
-                    <a href="#page-content-wrap" class="btn btn-brand smooth-scroll">
-                        <cms:show page_cta /></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!--== Page Title Area End ==-->
 
 <!--== Committee Page Content Start ==-->
 <section id="page-content-wrap">
