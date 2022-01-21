@@ -169,7 +169,7 @@
                     </div>
                     <div class="col-md-3 mt-3">
                         <div class="mx-auto" style="text-align:center; width: 200px;">
-                            <h3 style="margin: 50px;">
+                            <h3 style="margin: 0px;">
                                 ADVERTISE HERE
                             </h3>
                         </div>
