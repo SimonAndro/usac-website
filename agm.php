@@ -2,22 +2,14 @@
 
 <cms:php>
     global $CTX;
-    $CTX->set( 'u_page', "agm", 'global' );
+    $CTX->set( 'u_page', "2022 AGM", 'global' );
 </cms:php>
 
 <!--== Header Area Start ==-->
 <cms:embed 'header.php' />
 <!--== Header Area End ==-->
 
-<section id="page-title-area">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</section>
-
 <!--== Committee Page Content Start ==-->
-
 <div id="page-content-wrap">
     <div class="blog-page-content-wrap section-padding">
         <div class="container">
