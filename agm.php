@@ -49,6 +49,9 @@
         padding: 8px;
     }
 
+    td:nth-child(even) {
+        border: 1px solid black !important;
+    }
     tr:nth-child(even) {
         background-color: #dddddd;
         color: black;
