@@ -155,6 +155,7 @@
 
                             <div style="text-align:left;">e-commerce platform, air cargo, money transfers
                             </div>
+                            <a class="btn btn-primary" href="https://mimatechnology.com/" target="_blank" rel="noopener noreferrer"></a>
                         </div>
                     </div>
                     <div class="col-md-3 mt-3">
