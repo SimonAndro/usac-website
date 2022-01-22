@@ -155,7 +155,8 @@
 
                             <div style="text-align:left;">e-commerce platform, air cargo, money transfers
                             </div>
-                            <a class="btn btn-block btn-warning" href="https://www.thetradehive.com/" target="_blank" rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
+                            <a class="btn btn-block btn-warning mt-4" href="https://www.thetradehive.com/" target="_blank"
+                                rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
                         </div>
                     </div>
                     <div class="col-md-3 mt-3">
@@ -166,16 +167,19 @@
 
                             <div style="text-align:left;">for all advanced security systems
                             </div>
-                            <a class="btn btn-block btn-warning" href="https://mimatechnology.com/" target="_blank" rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
+                            <a class="btn btn-block btn-warning mt-4" href="https://mimatechnology.com/" target="_blank"
+                                rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
                         </div>
-                        
+
                     </div>
                     <div class="col-md-3 mt-3">
                         <div class="mx-auto" style="text-align:center; width: 200px;">
                             <h3 style="margin: 0px;">
                                 ADVERTISE HERE
                             </h3>
-                            <a class="btn btn-block btn-warning" href="https://usac-students.com/contact.php" target="_blank" rel="noopener noreferrer"><span style="font-size:12px;">Contact Us</span></a>
+                            <a class="btn btn-block btn-warning" href="https://usac-students.com/contact.php"
+                                target="_blank" rel="noopener noreferrer"><span style="font-size:12px;">Contact
+                                    Us</span></a>
                         </div>
                     </div>
                 </div>
