@@ -166,8 +166,9 @@
 
                             <div style="text-align:left;">for all advanced security systems
                             </div>
+                            <a class="btn btn-block btn-warning" href="https://mimatechnology.com/" target="_blank" rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
                         </div>
-                        <a class="btn btn-block btn-warning" href="https://mimatechnology.com/" target="_blank" rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
+                        
                     </div>
                     <div class="col-md-3 mt-3">
                         <div class="mx-auto" style="text-align:center; width: 200px;">
