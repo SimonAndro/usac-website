@@ -174,6 +174,19 @@
                     </div>
                     <div class="col-md-3 mt-3">
                         <div class="mx-auto" style="text-align:center; width: 200px;">
+                            <div>2times180</div>
+
+                            <img style="width: 100%;" src="./sponsors/mimatech.jpg" alt="">
+
+                            <div style="text-align:left;">websites, mobile, desktop applications
+                            </div>
+                            <a class="btn btn-block btn-warning mt-4" href="https://http://2times180.com/" target="_blank"
+                                rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 mt-3">
+                        <div class="mx-auto" style="text-align:center; width: 200px;">
                             <h3 style="margin: 0px;">
                                 ADVERTISE HERE
                             </h3>
