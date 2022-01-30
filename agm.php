@@ -174,7 +174,7 @@
                     </div>
                     <div class="col-md-3 mt-3">
                         <div class="mx-auto" style="text-align:center; width: 200px;">
-                            <div>2times180</div>
+                            <div>2times180 Tech Group</div>
 
                             <img style="width: 100%;" src="./sponsors/2times180.png" alt="">
 
