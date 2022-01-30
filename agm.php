@@ -180,7 +180,7 @@
 
                             <div style="text-align:left;">websites, mobile, desktop applications
                             </div>
-                            <a class="btn btn-block btn-warning mt-4" href="http://2times180.com/" target="_blank"
+                            <a class="btn btn-block btn-warning mt-4" href="https://2times180.com/" target="_blank"
                                 rel="noopener noreferrer"><span style="font-size:12px;">Visit Website</span></a>
                         </div>
 
