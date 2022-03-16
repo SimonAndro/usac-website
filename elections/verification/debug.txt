@@ -264,3 +264,21 @@ Array
 
 )
 
+Array
+(
+    [0] => Array
+        (
+            [province] => Liaoning
+            [name] => NAKASENDWA RACHEAL
+            [university] => SHENYANG INSTITUTE OF TECHNOLOGY (SIT)
+            [id] => 146
+            [vi] => 
+            [vp] => 
+            [china] => NULL
+            [grad] => 2022
+            [contact] => NULL
+            [email] => 
+        )
+
+)
+
