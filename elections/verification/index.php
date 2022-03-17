@@ -35,10 +35,15 @@
 </head>
 
 <body style="overflow-x: hidden; overflow-y: scroll;">
-
     <!-- main content -->
     <div>
-        <blockquote class="blockquote">
+        <div class="text-center mt-2" style="position:fixed; top:0px; width:100%; z-index:10;">
+            <div class="progress" style="display:none; height:50px;">
+                <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated bg-info"
+                    role="progressbar" style="width: 10%; height:50px;">10%</div>
+            </div>
+        </div>
+        <blockquote class="blockquote" style="margin-top:60px;">
             <p class="mb-0">Every Election is determined by those who show up.</p>
         </blockquote>
         <div class="container-fluid p-3">
@@ -50,12 +55,8 @@
                 </h1>
             </div>
             <div class="row justify-content-md-center">
-                <div class="col-md-6">
-
-
-
-
-                    <form class="mt-3" method="post" action="" id="general-form" onsubmit="return false">
+                <div class="col-md-12">
+                    <form class="mt-3 general-form" method="post" action="" onsubmit="return false">
                         <input type="hidden" name="action" value="get_voter">
                         <div class="row">
                             <div class="col-md-4">
@@ -99,20 +100,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center">
-                            <div class="progress" style="display:none">
-                                <div id="progress"
-                                    class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
-                                    role="progressbar" style="width: 10%;">10%</div>
-                            </div>
-                        </div>
                         <div class="mt-4 text-center">
                             <button type="submit" style="font-size: 20px;" class="btn btn-primary btn-block">Retrieve
                                 Info</button>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="table-responsive" id="retrived-studs">
                         <div class="text-center h3 p-2 mt-4">Retrived Info</div>
                         <table class="table table-striped">
@@ -128,7 +122,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="6">No Info Retrieved, select your province and enter your name to retrieve info.
+                                    <td colspan="6">No Info Retrieved, select your province and enter your name to
+                                        retrieve info.
                                     </td>
                                 </tr>
                             </tbody>
@@ -175,7 +170,7 @@
 
     <footer class="text-right p-3">
         <small class="text-muted ">
-          <a target="_blank" href="https://2times180.com/index.php">Powered by 2times180</a>
+            <a target="_blank" href="https://2times180.com/index.php">Powered by 2times180</a>
         </small>
     </footer>
 

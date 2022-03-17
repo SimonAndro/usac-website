@@ -21,8 +21,13 @@ return array(
 
     'site_reply_mail'=>'usac@noreply.com',
 
-    'secret' => 'YjuPKnBfghfEeNqAuL'
+    'secret' => 'YjuPKnBfghfEeNqAuL',
 
+    'site_mailpass'=>'$Evr&7B48NOU',
+
+    'mail_server'=>'127.0.0.1',
+    
+    'stmp_port'=>25
 
 );
 

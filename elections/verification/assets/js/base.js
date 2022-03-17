@@ -1,13 +1,17 @@
 $(function () {
-    $("form#general-form").submit(function (event) {
+    initFormSubmition();
+});
+
+function initFormSubmition()
+{
+    $("form.general-form").submit(function (event) {
         event.preventDefault();
 
         var f = $(this);
         submitForm(f);
 
     });
-
-});
+}
 
 
 var myinterval = "";
@@ -28,7 +32,7 @@ function submitForm(f) {
     $("#id-downloadticket-modal").modal("hide");
 
     $.ajax({
-        url: "./voter_registration.php",
+        url: "./verify.php",
         type: "POST",
         data: f.serialize(),
         success: function (res) {
@@ -60,19 +64,11 @@ function submitForm(f) {
                     $("#retrived-studs").show();
                     res.value.forEach(function (v, i) {
                         $("#retrived-studs tbody").append(
-                            `<tr>
-                            <form action="">
-                            <th scope="row">1</th>
-                            <td>` + v.name + `</td>
-                            <td>` + v.province + `</td>
-                            <td>` + v.university + `</td>
-                            <td> <input type="email" name="email" placeholder="email" required></td>
-                            <input type="hidden" name="action" value="get_voter">
-                            <td><button type="submit" style="font-size: 20px;" class="btn btn-sm btn-primary btn-block">Verify</button></td>
-                            </form>
-                            </tr>`
+                         v
                         );
                     });
+
+                    initFormSubmition();
 
                     //set progress bar to 100%
                     clearInterval(myinterval);

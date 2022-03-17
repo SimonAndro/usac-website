@@ -235,16 +235,16 @@ function howOld($created_at)
 }
 
   
-function dump_to_file($things) //debuging
-{ 
+// function dump_to_file($things) //debuging
+// { 
   
-    if(file_exists("debug!.txt"))
-    {
-        file_put_contents("debug!.txt",
-        date("H:i:s")."->".print_r($things,true)."\n",FILE_APPEND | LOCK_EX);
-    }
+//     if(file_exists("debug!.txt"))
+//     {
+//         file_put_contents("debug!.txt",
+//         date("H:i:s")."->".print_r($things,true)."\n",FILE_APPEND | LOCK_EX);
+//     }
     
-}
+// }
 
 /**
  * Validation
@@ -275,20 +275,21 @@ function validate_email()
 function sendMail($mail_to,$subject,$body)
 {
     //include the php emailer library
-    require './../php/phpmailer/PHPMailerAutoload.php';
+    require __DIR__.'/../php/phpmailer/PHPMailerAutoload.php';
 
     $mail = new PHPMailer();
 
     //debugging phpmailer
-    //$mail->SMTPDebug = 3;
-    //$mail->Debugoutput = "echo";
+    // $mail->SMTPDebug = 3;
+    // $mail->Debugoutput = "echo";
 
     //email setup
-    $mail->IsSMTP();
-    $mail->SMTPAuth = False;
-    $mail->SMTPSecure = 'ssl';
+    // $mail->IsSMTP();
+    // $mail->SMTPAuth = False;
+    // $mail->SMTPSecure = 'ssl';
+    
     $mail->Host = getAppConfig("mail_server");
-    $mail->Port = getAppConfig("stmp_port");;
+    $mail->Port = getAppConfig("stmp_port");
 
     $mail->Username = getAppConfig("site_email");
     $mail->Password = getAppConfig("site_mailpass");
@@ -300,6 +301,8 @@ function sendMail($mail_to,$subject,$body)
     $mail->Body = $body;
   
     $mail->From = $mail->Username;
+
+    dump_to_file($mail);
 
     return $mail->Send();
 }

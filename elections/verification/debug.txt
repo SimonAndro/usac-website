@@ -1,284 +1,31 @@
 Array
 (
-    [233] => Array
-        (
-            [0] => Sichuan
-            [1] => Nakibinge Simon
-            [2] => University Of Electronic Science and Technology of China
-            [3] => 233
-            [4] => 
-            [5] => 
-            [6] => YES
-            [7] => 2022
-            [8] => 13258281883
-            [9] => 
-        )
-
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => oY2iuAOwzqgXc9s
+    [vp] => zWRTjCKY
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => slemonla13@gmail.com
+    [verified] => 
 )
 
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Sichuan
-            [name] => Nakibinge Simon
-            [university] => University Of Electronic Science and Technology of China
-            [id] => 233
-            [vi] => 
-            [vp] => 
-            [china] => YES
-            [grad] => 2022
-            [contact] => 13258281883
-            [email] => 
-        )
-
-)
-
-Array
-(
-    [0] => Array
-        (
-            [province] => Liaoning
-            [name] => NAKASENDWA RACHEAL
-            [university] => SHENYANG INSTITUTE OF TECHNOLOGY (SIT)
-            [id] => 146
-            [vi] => 
-            [vp] => 
-            [china] => NULL
-            [grad] => 2022
-            [contact] => NULL
-            [email] => 
-        )
-
-)
-
+created query
+created query
+before require
+before require
+before require
+after require
+voter write success
+before require
+after require
+voter write success
+before require
+after require
+voter write success
+voter write success
+voter write success
+voter write success
