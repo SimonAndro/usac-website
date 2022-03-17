@@ -600,3 +600,115 @@ PHPMailer Object
     [exceptions:protected] => 
 )
 
+PHPMailer Object
+(
+    [Version] => 5.2.9
+    [Priority] => 3
+    [CharSet] => iso-8859-1
+    [ContentType] => text/html
+    [Encoding] => 8bit
+    [ErrorInfo] => 
+    [From] => 
+    [FromName] => USAC website
+    [Sender] => 
+    [ReturnPath] => 
+    [Subject] => USAC 2022 Elections Voter Verification
+    [Body] => <div><h4>USAC Decides</h4></div><br /><div>Hello Nakibinge Simon!</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=eLC1zcQbGVDMO2t&vp=QeVxxevP&si=233'>http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=eLC1zcQbGVDMO2t&vp=QeVxxevP&si=233</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> " Every Election is determined by those who show up."
+    [AltBody] => 
+    [Ical] => 
+    [MIMEBody:protected] => 
+    [MIMEHeader:protected] => 
+    [mailHeader:protected] => 
+    [WordWrap] => 0
+    [Mailer] => mail
+    [Sendmail] => /usr/sbin/sendmail
+    [UseSendmailOptions] => 1
+    [PluginDir] => 
+    [ConfirmReadingTo] => 
+    [Hostname] => 
+    [MessageID] => 
+    [MessageDate] => 
+    [Host] => 127.0.0.1
+    [Port] => 25
+    [Helo] => 
+    [SMTPSecure] => 
+    [SMTPAuth] => 
+    [Username] => 
+    [Password] => $Evr&7B48NOU
+    [AuthType] => 
+    [Realm] => 
+    [Workstation] => 
+    [Timeout] => 300
+    [SMTPDebug] => 0
+    [Debugoutput] => echo
+    [SMTPKeepAlive] => 
+    [SingleTo] => 
+    [SingleToArray] => Array
+        (
+        )
+
+    [do_verp] => 
+    [AllowEmpty] => 
+    [LE] => 
+
+    [DKIM_selector] => 
+    [DKIM_identity] => 
+    [DKIM_passphrase] => 
+    [DKIM_domain] => 
+    [DKIM_private] => 
+    [action_function] => 
+    [XMailer] => 
+    [smtp:protected] => 
+    [to:protected] => Array
+        (
+            [0] => Array
+                (
+                    [0] => slemonla13@gmail.com
+                    [1] => 
+                )
+
+        )
+
+    [cc:protected] => Array
+        (
+        )
+
+    [bcc:protected] => Array
+        (
+        )
+
+    [ReplyTo:protected] => Array
+        (
+        )
+
+    [all_recipients:protected] => Array
+        (
+            [slemonla13@gmail.com] => 1
+        )
+
+    [attachment:protected] => Array
+        (
+        )
+
+    [CustomHeader:protected] => Array
+        (
+        )
+
+    [lastMessageID:protected] => 
+    [message_type:protected] => 
+    [boundary:protected] => Array
+        (
+        )
+
+    [language:protected] => Array
+        (
+        )
+
+    [error_count:protected] => 0
+    [sign_cert_file:protected] => 
+    [sign_key_file:protected] => 
+    [sign_extracerts_file:protected] => 
+    [sign_key_pass:protected] => 
+    [exceptions:protected] => 
+)
+
