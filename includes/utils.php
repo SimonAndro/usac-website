@@ -280,13 +280,13 @@ function sendMail($mail_to,$subject,$body)
     $mail = new PHPMailer();
 
     //debugging phpmailer
-    $mail->SMTPDebug = 3;
+    $mail->SMTPDebug = 4;
     $mail->Debugoutput = "echo";
 
     //email setup
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
-    $mail->SMTPSecure = 'tls';
+    $mail->SMTPSecure = 'ssl';
     
     $mail->Host = getAppConfig("mail_server");
     $mail->Port = getAppConfig("stmp_port");
