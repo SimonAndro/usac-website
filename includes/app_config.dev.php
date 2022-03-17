@@ -23,11 +23,15 @@ return array(
 
     'secret' => 'YjuPKnBfghfEeNqAuL',
 
+    'site_reply_mail'=>'usac@noreply.com',
+
+    'site_email'=>'info@usac-students.com',
+
     'site_mailpass'=>'$Evr&7B48NOU',
 
-    'mail_server'=>'127.0.0.1',
+    'mail_server'=>'mail.usac-students.com',
     
-    'stmp_port'=>25
+    'stmp_port'=>465,
 
 );
 

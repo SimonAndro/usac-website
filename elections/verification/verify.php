@@ -63,9 +63,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
                 $voter_pass = randomPassword();
 
                 if (writeProtect()) {
-                    writeVoterData($studID, $voter_id, $voter_pass, $email);
-                    writeUnprotect();
-
+                                      
                     $subject = "USAC 2022 Elections Voter Verification";
 
                     $verifURL = getAppConfig('base-url') . "elections/verification/verify.php?route=verify&vi=$voter_id&vp=$voter_pass&si=$studID";
@@ -76,9 +74,13 @@ if (isset($_POST) and !empty($_POST['action'])) {
                         $error_bag[] = "sending voter credentials failed, contact admin";
                         $res["value"] = $error_bag;
                     } else {
+
+                        writeVoterData($studID, $voter_id, $voter_pass, $email);                       
+
                         $res["type"] = "success";
                         $res["value"] = "email_ok";
                     }
+                    writeUnprotect();
 
                 } else {
                     $res["value"] = $error_bag;
