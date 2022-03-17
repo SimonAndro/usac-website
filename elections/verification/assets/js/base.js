@@ -41,9 +41,11 @@ function submitForm(f) {
             try {
                 var res = JSON.parse(res);
                 if (res.type == "success") {
-                    $("#studnum-placeholder").attr("href", res.value);
-                    $("#studnum-placeholder-img").attr("src", res.value);
-                    $("#id-downloadticket-modal").modal("show");
+
+                    if(res.value == "email_ok")
+                    {
+                        window.location.assign("./success.html");
+                    }
 
                     //set progress bar to 100%
                     clearInterval(myinterval);

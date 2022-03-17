@@ -1,31 +1,602 @@
 Array
 (
-    [province] => Sichuan
-    [name] => Nakibinge Simon
-    [university] => University Of Electronic Science and Technology of China
-    [id] => 233
-    [vi] => oY2iuAOwzqgXc9s
-    [vp] => zWRTjCKY
-    [china] => YES
-    [grad] => 2022
-    [contact] => 13258281883
-    [email] => slemonla13@gmail.com
-    [verified] => 
 )
 
-created query
-created query
-before require
-before require
-before require
-after require
-voter write success
-before require
-after require
-voter write success
-before require
-after require
-voter write success
-voter write success
-voter write success
-voter write success
+Array
+(
+    [214] => Array
+        (
+            [0] => Shanghai
+            [1] => MUSIMENTA ELVIS
+            [2] => EAST CHINA UNIVERSITY OF SCIENCE AND TECHNOLOGY
+            [3] => 214
+            [4] => 
+            [5] => 
+            [6] => NULL
+            [7] => 2023
+            [8] => NULL
+            [9] => 
+            [10] => 
+        )
+
+)
+
+Array
+(
+    [214] => Array
+        (
+            [0] => Shanghai
+            [1] => MUSIMENTA ELVIS
+            [2] => EAST CHINA UNIVERSITY OF SCIENCE AND TECHNOLOGY
+            [3] => 214
+            [4] => 
+            [5] => 
+            [6] => NULL
+            [7] => 2023
+            [8] => NULL
+            [9] => 
+            [10] => 
+        )
+
+)
+
+PHPMailer Object
+(
+    [Version] => 5.2.9
+    [Priority] => 3
+    [CharSet] => iso-8859-1
+    [ContentType] => text/html
+    [Encoding] => 8bit
+    [ErrorInfo] => 
+    [From] => 
+    [FromName] => USAC website
+    [Sender] => 
+    [ReturnPath] => 
+    [Subject] => USAC 2022 Elections Voter Verification
+    [Body] => <div><h4>USAC Decides</h4></div><br /><div>Hello MUSIMENTA ELVIS!,</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=jo9t8u6TBW1E7pP&vp=QUr4Oyik&si=214'>http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=jo9t8u6TBW1E7pP&vp=QUr4Oyik&si=214</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> " Every Election is determined by those who show up."
+    [AltBody] => 
+    [Ical] => 
+    [MIMEBody:protected] => 
+    [MIMEHeader:protected] => 
+    [mailHeader:protected] => 
+    [WordWrap] => 0
+    [Mailer] => mail
+    [Sendmail] => /usr/sbin/sendmail
+    [UseSendmailOptions] => 1
+    [PluginDir] => 
+    [ConfirmReadingTo] => 
+    [Hostname] => 
+    [MessageID] => 
+    [MessageDate] => 
+    [Host] => 127.0.0.1
+    [Port] => 25
+    [Helo] => 
+    [SMTPSecure] => 
+    [SMTPAuth] => 
+    [Username] => 
+    [Password] => $Evr&7B48NOU
+    [AuthType] => 
+    [Realm] => 
+    [Workstation] => 
+    [Timeout] => 300
+    [SMTPDebug] => 0
+    [Debugoutput] => echo
+    [SMTPKeepAlive] => 
+    [SingleTo] => 
+    [SingleToArray] => Array
+        (
+        )
+
+    [do_verp] => 
+    [AllowEmpty] => 
+    [LE] => 
+
+    [DKIM_selector] => 
+    [DKIM_identity] => 
+    [DKIM_passphrase] => 
+    [DKIM_domain] => 
+    [DKIM_private] => 
+    [action_function] => 
+    [XMailer] => 
+    [smtp:protected] => 
+    [to:protected] => Array
+        (
+            [0] => Array
+                (
+                    [0] => simonnakibinge@hotmail.com
+                    [1] => 
+                )
+
+        )
+
+    [cc:protected] => Array
+        (
+        )
+
+    [bcc:protected] => Array
+        (
+        )
+
+    [ReplyTo:protected] => Array
+        (
+        )
+
+    [all_recipients:protected] => Array
+        (
+            [simonnakibinge@hotmail.com] => 1
+        )
+
+    [attachment:protected] => Array
+        (
+        )
+
+    [CustomHeader:protected] => Array
+        (
+        )
+
+    [lastMessageID:protected] => 
+    [message_type:protected] => 
+    [boundary:protected] => Array
+        (
+        )
+
+    [language:protected] => Array
+        (
+        )
+
+    [error_count:protected] => 0
+    [sign_cert_file:protected] => 
+    [sign_key_file:protected] => 
+    [sign_extracerts_file:protected] => 
+    [sign_key_pass:protected] => 
+    [exceptions:protected] => 
+)
+
+PHPMailer Object
+(
+    [Version] => 5.2.9
+    [Priority] => 3
+    [CharSet] => iso-8859-1
+    [ContentType] => text/html
+    [Encoding] => 8bit
+    [ErrorInfo] => 
+    [From] => 
+    [FromName] => USAC website
+    [Sender] => 
+    [ReturnPath] => 
+    [Subject] => USAC 2022 Elections Voter Verification
+    [Body] => <div><h4>USAC Decides</h4></div><br /><div>Hello MUSIMENTA ELVIS!</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=z75vLBbK8hqlZjy&vp=vHXQ80ZF&si=214'>http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=z75vLBbK8hqlZjy&vp=vHXQ80ZF&si=214</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> " Every Election is determined by those who show up."
+    [AltBody] => 
+    [Ical] => 
+    [MIMEBody:protected] => 
+    [MIMEHeader:protected] => 
+    [mailHeader:protected] => 
+    [WordWrap] => 0
+    [Mailer] => mail
+    [Sendmail] => /usr/sbin/sendmail
+    [UseSendmailOptions] => 1
+    [PluginDir] => 
+    [ConfirmReadingTo] => 
+    [Hostname] => 
+    [MessageID] => 
+    [MessageDate] => 
+    [Host] => 127.0.0.1
+    [Port] => 25
+    [Helo] => 
+    [SMTPSecure] => 
+    [SMTPAuth] => 
+    [Username] => 
+    [Password] => $Evr&7B48NOU
+    [AuthType] => 
+    [Realm] => 
+    [Workstation] => 
+    [Timeout] => 300
+    [SMTPDebug] => 0
+    [Debugoutput] => echo
+    [SMTPKeepAlive] => 
+    [SingleTo] => 
+    [SingleToArray] => Array
+        (
+        )
+
+    [do_verp] => 
+    [AllowEmpty] => 
+    [LE] => 
+
+    [DKIM_selector] => 
+    [DKIM_identity] => 
+    [DKIM_passphrase] => 
+    [DKIM_domain] => 
+    [DKIM_private] => 
+    [action_function] => 
+    [XMailer] => 
+    [smtp:protected] => 
+    [to:protected] => Array
+        (
+            [0] => Array
+                (
+                    [0] => slemonla13@gmail.com
+                    [1] => 
+                )
+
+        )
+
+    [cc:protected] => Array
+        (
+        )
+
+    [bcc:protected] => Array
+        (
+        )
+
+    [ReplyTo:protected] => Array
+        (
+        )
+
+    [all_recipients:protected] => Array
+        (
+            [slemonla13@gmail.com] => 1
+        )
+
+    [attachment:protected] => Array
+        (
+        )
+
+    [CustomHeader:protected] => Array
+        (
+        )
+
+    [lastMessageID:protected] => 
+    [message_type:protected] => 
+    [boundary:protected] => Array
+        (
+        )
+
+    [language:protected] => Array
+        (
+        )
+
+    [error_count:protected] => 0
+    [sign_cert_file:protected] => 
+    [sign_key_file:protected] => 
+    [sign_extracerts_file:protected] => 
+    [sign_key_pass:protected] => 
+    [exceptions:protected] => 
+)
+
+PHPMailer Object
+(
+    [Version] => 5.2.9
+    [Priority] => 3
+    [CharSet] => iso-8859-1
+    [ContentType] => text/html
+    [Encoding] => 8bit
+    [ErrorInfo] => 
+    [From] => 
+    [FromName] => USAC website
+    [Sender] => 
+    [ReturnPath] => 
+    [Subject] => USAC 2022 Elections Voter Verification
+    [Body] => <div><h4>USAC Decides</h4></div><br /><div>Hello Nakibinge Simon!</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=jQpWmyIL2hN9iBD&vp=0nPXJjzM&si=233'>http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=jQpWmyIL2hN9iBD&vp=0nPXJjzM&si=233</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> " Every Election is determined by those who show up."
+    [AltBody] => 
+    [Ical] => 
+    [MIMEBody:protected] => 
+    [MIMEHeader:protected] => 
+    [mailHeader:protected] => 
+    [WordWrap] => 0
+    [Mailer] => mail
+    [Sendmail] => /usr/sbin/sendmail
+    [UseSendmailOptions] => 1
+    [PluginDir] => 
+    [ConfirmReadingTo] => 
+    [Hostname] => 
+    [MessageID] => 
+    [MessageDate] => 
+    [Host] => 127.0.0.1
+    [Port] => 25
+    [Helo] => 
+    [SMTPSecure] => 
+    [SMTPAuth] => 
+    [Username] => 
+    [Password] => $Evr&7B48NOU
+    [AuthType] => 
+    [Realm] => 
+    [Workstation] => 
+    [Timeout] => 300
+    [SMTPDebug] => 0
+    [Debugoutput] => echo
+    [SMTPKeepAlive] => 
+    [SingleTo] => 
+    [SingleToArray] => Array
+        (
+        )
+
+    [do_verp] => 
+    [AllowEmpty] => 
+    [LE] => 
+
+    [DKIM_selector] => 
+    [DKIM_identity] => 
+    [DKIM_passphrase] => 
+    [DKIM_domain] => 
+    [DKIM_private] => 
+    [action_function] => 
+    [XMailer] => 
+    [smtp:protected] => 
+    [to:protected] => Array
+        (
+            [0] => Array
+                (
+                    [0] => simonnakibinge@hotmail.com
+                    [1] => 
+                )
+
+        )
+
+    [cc:protected] => Array
+        (
+        )
+
+    [bcc:protected] => Array
+        (
+        )
+
+    [ReplyTo:protected] => Array
+        (
+        )
+
+    [all_recipients:protected] => Array
+        (
+            [simonnakibinge@hotmail.com] => 1
+        )
+
+    [attachment:protected] => Array
+        (
+        )
+
+    [CustomHeader:protected] => Array
+        (
+        )
+
+    [lastMessageID:protected] => 
+    [message_type:protected] => 
+    [boundary:protected] => Array
+        (
+        )
+
+    [language:protected] => Array
+        (
+        )
+
+    [error_count:protected] => 0
+    [sign_cert_file:protected] => 
+    [sign_key_file:protected] => 
+    [sign_extracerts_file:protected] => 
+    [sign_key_pass:protected] => 
+    [exceptions:protected] => 
+)
+
+PHPMailer Object
+(
+    [Version] => 5.2.9
+    [Priority] => 3
+    [CharSet] => iso-8859-1
+    [ContentType] => text/html
+    [Encoding] => 8bit
+    [ErrorInfo] => 
+    [From] => 
+    [FromName] => USAC website
+    [Sender] => 
+    [ReturnPath] => 
+    [Subject] => USAC 2022 Elections Voter Verification
+    [Body] => <div><h4>USAC Decides</h4></div><br /><div>Hello Nakibinge Simon!</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=6zMwRHj4pQS1fOP&vp=t2plLMLW&si=233'>http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=6zMwRHj4pQS1fOP&vp=t2plLMLW&si=233</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> " Every Election is determined by those who show up."
+    [AltBody] => 
+    [Ical] => 
+    [MIMEBody:protected] => 
+    [MIMEHeader:protected] => 
+    [mailHeader:protected] => 
+    [WordWrap] => 0
+    [Mailer] => mail
+    [Sendmail] => /usr/sbin/sendmail
+    [UseSendmailOptions] => 1
+    [PluginDir] => 
+    [ConfirmReadingTo] => 
+    [Hostname] => 
+    [MessageID] => 
+    [MessageDate] => 
+    [Host] => 127.0.0.1
+    [Port] => 25
+    [Helo] => 
+    [SMTPSecure] => 
+    [SMTPAuth] => 
+    [Username] => 
+    [Password] => $Evr&7B48NOU
+    [AuthType] => 
+    [Realm] => 
+    [Workstation] => 
+    [Timeout] => 300
+    [SMTPDebug] => 0
+    [Debugoutput] => echo
+    [SMTPKeepAlive] => 
+    [SingleTo] => 
+    [SingleToArray] => Array
+        (
+        )
+
+    [do_verp] => 
+    [AllowEmpty] => 
+    [LE] => 
+
+    [DKIM_selector] => 
+    [DKIM_identity] => 
+    [DKIM_passphrase] => 
+    [DKIM_domain] => 
+    [DKIM_private] => 
+    [action_function] => 
+    [XMailer] => 
+    [smtp:protected] => 
+    [to:protected] => Array
+        (
+            [0] => Array
+                (
+                    [0] => slemonla13@gmail.com
+                    [1] => 
+                )
+
+        )
+
+    [cc:protected] => Array
+        (
+        )
+
+    [bcc:protected] => Array
+        (
+        )
+
+    [ReplyTo:protected] => Array
+        (
+        )
+
+    [all_recipients:protected] => Array
+        (
+            [slemonla13@gmail.com] => 1
+        )
+
+    [attachment:protected] => Array
+        (
+        )
+
+    [CustomHeader:protected] => Array
+        (
+        )
+
+    [lastMessageID:protected] => 
+    [message_type:protected] => 
+    [boundary:protected] => Array
+        (
+        )
+
+    [language:protected] => Array
+        (
+        )
+
+    [error_count:protected] => 0
+    [sign_cert_file:protected] => 
+    [sign_key_file:protected] => 
+    [sign_extracerts_file:protected] => 
+    [sign_key_pass:protected] => 
+    [exceptions:protected] => 
+)
+
+PHPMailer Object
+(
+    [Version] => 5.2.9
+    [Priority] => 3
+    [CharSet] => iso-8859-1
+    [ContentType] => text/html
+    [Encoding] => 8bit
+    [ErrorInfo] => 
+    [From] => 
+    [FromName] => USAC website
+    [Sender] => 
+    [ReturnPath] => 
+    [Subject] => USAC 2022 Elections Voter Verification
+    [Body] => <div><h4>USAC Decides</h4></div><br /><div>Hello Nakibinge Simon!</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=u9Kif7rhEZb1RHY&vp=T5wSKezl&si=233'>http://localhost/usac-website/elections/verification/verify.php?route=verify&vi=u9Kif7rhEZb1RHY&vp=T5wSKezl&si=233</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> " Every Election is determined by those who show up."
+    [AltBody] => 
+    [Ical] => 
+    [MIMEBody:protected] => 
+    [MIMEHeader:protected] => 
+    [mailHeader:protected] => 
+    [WordWrap] => 0
+    [Mailer] => mail
+    [Sendmail] => /usr/sbin/sendmail
+    [UseSendmailOptions] => 1
+    [PluginDir] => 
+    [ConfirmReadingTo] => 
+    [Hostname] => 
+    [MessageID] => 
+    [MessageDate] => 
+    [Host] => 127.0.0.1
+    [Port] => 25
+    [Helo] => 
+    [SMTPSecure] => 
+    [SMTPAuth] => 
+    [Username] => 
+    [Password] => $Evr&7B48NOU
+    [AuthType] => 
+    [Realm] => 
+    [Workstation] => 
+    [Timeout] => 300
+    [SMTPDebug] => 0
+    [Debugoutput] => echo
+    [SMTPKeepAlive] => 
+    [SingleTo] => 
+    [SingleToArray] => Array
+        (
+        )
+
+    [do_verp] => 
+    [AllowEmpty] => 
+    [LE] => 
+
+    [DKIM_selector] => 
+    [DKIM_identity] => 
+    [DKIM_passphrase] => 
+    [DKIM_domain] => 
+    [DKIM_private] => 
+    [action_function] => 
+    [XMailer] => 
+    [smtp:protected] => 
+    [to:protected] => Array
+        (
+            [0] => Array
+                (
+                    [0] => slemonla13@gmail.com
+                    [1] => 
+                )
+
+        )
+
+    [cc:protected] => Array
+        (
+        )
+
+    [bcc:protected] => Array
+        (
+        )
+
+    [ReplyTo:protected] => Array
+        (
+        )
+
+    [all_recipients:protected] => Array
+        (
+            [slemonla13@gmail.com] => 1
+        )
+
+    [attachment:protected] => Array
+        (
+        )
+
+    [CustomHeader:protected] => Array
+        (
+        )
+
+    [lastMessageID:protected] => 
+    [message_type:protected] => 
+    [boundary:protected] => Array
+        (
+        )
+
+    [language:protected] => Array
+        (
+        )
+
+    [error_count:protected] => 0
+    [sign_cert_file:protected] => 
+    [sign_key_file:protected] => 
+    [sign_extracerts_file:protected] => 
+    [sign_key_pass:protected] => 
+    [exceptions:protected] => 
+)
+

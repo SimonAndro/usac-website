@@ -117,7 +117,7 @@
                                     <th scope="col">Province</th>
                                     <th scope="col">University</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             <tbody>

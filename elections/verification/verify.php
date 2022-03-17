@@ -32,7 +32,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
 
             $studname_sir = empty($_POST["studname_sir"]) ? "" : trim(strval($_POST["studname_sir"]));
 
-            $studname_other .= empty($_POST["studname_other"]) ? "" : trim(strval($_POST["studname_other"]));
+            $studname_other = empty($_POST["studname_other"]) ? "" : trim(strval($_POST["studname_other"]));
 
             if ($studdata = get_student($province, $studname_sir, $studname_other, $workSheet)) {
                 $res["type"] = "student_data";
@@ -70,14 +70,14 @@ if (isset($_POST) and !empty($_POST['action'])) {
 
                     $verifURL = getAppConfig('base-url') . "elections/verification/verify.php?route=verify&vi=$voter_id&vp=$voter_pass&si=$studID";
 
-                    $bodys = "<div><h4>USAC Decides</h4></div><br /><div>Hello $studname!,</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='$verifURL'>$verifURL</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> \" Every Election is determined by those who show up.\"";
+                    $bodys = "<div><h4>USAC Decides</h4></div><br /><div>Hello $studname!</div><br /><div>Note: Don't share this link with anyone or else someone can use it to vote on your behalf.</div><br /><div>Click the link below to verify your voter information. This is the link you will also use for voting. (if clicking it doesn't work, you may need to manually copy it to a new browser window)</div><br /><div><a href='$verifURL'>$verifURL</a></div><br /><br /><div>Regards, USAC 2022 EC</div><br /><br /> \" Every Election is determined by those who show up.\"";
 
                     if (!sendMail($email, $subject, $bodys)) {
                         $error_bag[] = "sending voter credentials failed, contact admin";
                         $res["value"] = $error_bag;
                     } else {
                         $res["type"] = "success";
-                        $res["value"] = "voter credentials sent successfully to email";
+                        $res["value"] = "email_ok";
                     }
 
                 } else {
@@ -117,7 +117,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
 
             if (($student["vi"] == ($voterId)) and (($student["vp"]) == ($voterPass)) ) { // expects one record
 
-                if(strlen($student["verified"])>0)
+                if(!empty($student["verified"]))
                 {
                     //redirect to voting
                     header("Location: ../voting/login.php?verified_login=true&voter=$voterId&password=$voterPass");
@@ -125,7 +125,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
                 
                 }
 
-                require_once __DIR__ . '/../voting/includes/session.php';
+                require_once __DIR__ . '/../voting/includes/conn.php';
             
                 //setup voter in voting system
                 $name_explode = explode(" ", $student["name"]);
@@ -143,7 +143,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
                             
                 if ($conn->query($sql)) {
 
-                    dump_to_file("voter write success");
+                    //dump_to_file("voter write success");
 
                     if (writeProtect()) {
                         markVerified($studID);
@@ -178,12 +178,13 @@ function verify_student($province, $studname, $university, $studID, $email, $wor
     if (strlen($province) && strlen($studname) && strlen($university) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $workSheet_array = $workSheet->toArray();
 
-        $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname, $university, $studID) {
 
-            return (strtolower(trim($val[0])) == strtolower($province)) and (strtolower(trim($val[1])) == strtolower($studname)) and (strtolower(trim($val[2])) == strtolower($university)) and (strtolower(trim(strval($val[3]))) == strtolower($studID));
+        $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname, $university, $studID, $email) {
+
+            return ($email != $val[9]) and (strtolower(trim($val[0])) == strtolower($province)) and (strtolower(trim($val[1])) == strtolower($studname)) and (strtolower(trim($val[2])) == strtolower($university)) and (strtolower(trim(strval($val[3]))) == strtolower($studID));
         });
 
-        // dump_to_file($filtered_array);
+        //dump_to_file($filtered_array);
 
         if (count($filtered_array) == 1) { // expects one record
 
@@ -201,7 +202,7 @@ function verify_student($province, $studname, $university, $studID, $email, $wor
 
     }
 
-    $error_bag[] = "error in student info fields";
+    $error_bag[] = "error in student info fields, probably email already registered";
 
     return false;
 }
@@ -215,6 +216,8 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
         $workSheet_array = $workSheet->toArray();
 
         $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname_sir, $studname_other) {
+
+            //dump_to_file($val[7]);
 
             return (strtolower(trim($val[0])) == strtolower($province) and (strpos(strtolower(trim($val[1])), strtolower($studname_sir)) !== false || (strlen($studname_other) and strpos(strtolower(trim($val[1])), strtolower($studname_other)) !== false)));
         });
@@ -238,7 +241,11 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
             } elseif ($student["vi"] != "") {
                 $student["email"] = "hidden";
                 $student["status"] = "Pending Email Verification";
-            } else {
+            } elseif (intval($student["grad"]) < 2022) {
+                $student["email"] = "N/A";
+                $student["status"] = "Graduated";
+            }
+            else {
                 $student["email"] = "not submitted";
                 $student["status"] = <<<STATUS
                 <form action="" method="post" class="form-inline general-form" onsubmit="return false;">
