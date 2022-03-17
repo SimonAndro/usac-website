@@ -286,7 +286,7 @@ function sendMail($mail_to,$subject,$body)
     //email setup
     $mail->IsSMTP();
     $mail->SMTPAuth = true;
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = 'tls';
     
     $mail->Host = getAppConfig("mail_server");
     $mail->Port = getAppConfig("stmp_port");
