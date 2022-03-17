@@ -285,7 +285,7 @@ function sendMail($mail_to,$subject,$body)
 
     //email setup
     $mail->IsSMTP();
-    $mail->SMTPAuth = False;
+    $mail->SMTPAuth = true;
     $mail->SMTPSecure = 'ssl';
     
     $mail->Host = getAppConfig("mail_server");
