@@ -125,9 +125,8 @@ if (isset($_POST) and !empty($_POST['action'])) {
                 
                 }
 
-                require_once __DIR__ . '/../voting/admin/includes/session.php';
+                require_once __DIR__ . '/../voting/includes/session.php';
             
-
                 //setup voter in voting system
                 $name_explode = explode(" ", $student["name"]);
                 $firstname = $name_explode[0];

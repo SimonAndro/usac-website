@@ -169,9 +169,11 @@
     </div>
 
     <footer class="text-right p-3">
-        <small class="text-muted ">
-            <a target="_blank" href="https://2times180.com/index.php">Powered by 2times180</a>
-        </small>
+        <strong>
+            <small class="text-muted ">
+                <a target="_blank" href="https://2times180.com/index.php">Powered by 2times180</a>
+            </small>
+        </strong>
     </footer>
 
     <script src="./assets/js/jquery-3.2.1.min.js"></script>
