@@ -280,8 +280,8 @@ function sendMail($mail_to,$subject,$body)
     $mail = new PHPMailer();
 
     //debugging phpmailer
-    $mail->SMTPDebug = 4;
-    $mail->Debugoutput = "echo";
+    // $mail->SMTPDebug = 4;
+    // $mail->Debugoutput = "echo";
 
     //email setup
     $mail->IsSMTP();
