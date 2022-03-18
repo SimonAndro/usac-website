@@ -240,10 +240,12 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
                 $student["email"] = "hidden";
                 $student["status"] = "Verified";
 
-            } elseif ($student["vi"] != "") {
-                $student["email"] = "hidden";
-                $student["status"] = "Pending Email Verification";
-            } elseif (intval($student["grad"]) < 2022) {
+            } 
+            // elseif ($student["vi"] != "") {
+            //     $student["email"] = "hidden";
+            //     $student["status"] = "Pending Email Verification";
+            // }
+             elseif (intval($student["grad"]) < 2022) {
                 $student["email"] = "N/A";
                 $student["status"] = "Graduated";
             }
