@@ -51,8 +51,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
             $email = empty($_POST["email"]) ? "" : trim(strval($_POST["email"]));
 
             $studID = empty($_POST["studID"]) ? "" : trim(strval($_POST["studID"]));
-
-            // dump_to_file_($_POST);
+           
 
             if ($student = verify_student($province, $studname, $university, $studID, $email, $workSheet)) {
 

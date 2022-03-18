@@ -81,6 +81,7 @@
                                         <option>Sichuan</option>
                                         <option>Tianjin</option>
                                         <option>Zheijiang</option>
+                                        <option>New Student</option>
                                     </select>
                                 </div>
                             </div>
