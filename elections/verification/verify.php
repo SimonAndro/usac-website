@@ -51,7 +51,6 @@ if (isset($_POST) and !empty($_POST['action'])) {
             $email = empty($_POST["email"]) ? "" : trim(strval($_POST["email"]));
 
             $studID = empty($_POST["studID"]) ? "" : trim(strval($_POST["studID"]));
-           
 
             if ($student = verify_student($province, $studname, $university, $studID, $email, $workSheet)) {
 
@@ -62,7 +61,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
                 $voter_pass = randomPassword();
 
                 if (writeProtect()) {
-                                      
+
                     $subject = "USAC 2022 Elections Voter Verification";
 
                     $verifURL = getAppConfig('base-url') . "elections/verification/verify.php?route=verify&vi=$voter_id&vp=$voter_pass&si=$studID";
@@ -74,7 +73,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
                         $res["value"] = $error_bag;
                     } else {
 
-                        writeVoterData($studID, $voter_id, $voter_pass, $email);                       
+                        writeVoterData($studID, $voter_id, $voter_pass, $email);
 
                         $res["type"] = "success";
                         $res["value"] = "email_ok";
@@ -101,67 +100,67 @@ if (isset($_POST) and !empty($_POST['action'])) {
 } else {
 
     if ("verify" == @$_GET["route"] and $voterId = @$_GET["vi"] and $voterPass = @$_GET["vp"] and $studID = @$_GET["si"]) {
-        
-        $voterId = empty($voterId)?"":trim($voterId);
-        $voterPass = empty($voterPass)?"":trim($voterPass);
-        $studID = empty($studID)?"":trim($studID);
-        
+
+        $voterId = empty($voterId) ? "" : trim($voterId);
+        $voterPass = empty($voterPass) ? "" : trim($voterPass);
+        $studID = empty($studID) ? "" : trim($studID);
+
         //mark as verified voter
         $workSheet_array = $workSheet->toArray();
         if (strlen($voterId) && strlen($voterPass) && (count($workSheet_array) > intval($studID))) {
             $workSheet_array = $workSheet->toArray();
 
-            $val = $workSheet_array[$studID];
+            foreach ($workSheet_array as $val) {
 
-            $student = array('province' => $val[0], 'name' => $val[1], 'university' => $val[2], 'id' => $val[3], 'vi' => $val[4], 'vp' => $val[5], 'china' => $val[6], 'grad' => $val[7], 'contact' => $val[8], 'email' => $val[9], 'verified' => $val[10]);
-            
+                $student = array('province' => $val[0], 'name' => $val[1], 'university' => $val[2], 'id' => $val[3], 'vi' => $val[4], 'vp' => $val[5], 'china' => $val[6], 'grad' => $val[7], 'contact' => $val[8], 'email' => $val[9], 'verified' => $val[10]);
 
-            if (($student["vi"] == ($voterId)) and (($student["vp"]) == ($voterPass)) ) { // expects one record
+                if (($student["vi"] == ($voterId)) and (($student["vp"]) == ($voterPass))) { // expects one record
 
-                if(!empty($student["verified"]))
-                {
-                    //redirect to voting
-                    header("Location: ../voting/login.php?verified_login=true&voter=$voterId&password=$voterPass");
-                    exit();
-                
-                }
+                    if (!empty($student["verified"])) {
+                        //redirect to voting
+                        header("Location: ../voting/login.php?verified_login=true&voter=$voterId&password=$voterPass");
+                        exit();
 
-                require_once __DIR__ . '/../voting/includes/conn.php';
-            
-                //setup voter in voting system
-                $name_explode = explode(" ", $student["name"]);
-                $firstname = $name_explode[0];
+                    }
 
-                if(count($name_explode)>1) {//remove first name
-                    unset($name_explode[0]);
-                }
+                    require_once __DIR__ . '/../voting/includes/conn.php';
 
-                $lastname = implode(" ", $name_explode);
-                $password = password_hash($student["vp"], PASSWORD_DEFAULT);
-                $voter = $student["vi"];
+                    //setup voter in voting system
+                    $name_explode = explode(" ", $student["name"]);
+                    $firstname = $name_explode[0];
 
-                if (writeProtect()) {
-                    markVerified($studID);
-                    writeUnprotect();
-                } else {
-                    exit("Server Busy, reload page to try again");
-                }
+                    if (count($name_explode) > 1) { //remove first name
+                        unset($name_explode[0]);
+                    }
 
-                $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$voter', '$password', '$firstname', '$lastname', '')";
-                            
-                if ($conn->query($sql)) {
+                    $lastname = implode(" ", $name_explode);
+                    $password = password_hash($student["vp"], PASSWORD_DEFAULT);
+                    $voter = $student["vi"];
 
-                    echo "redirecting";
+                    if (writeProtect()) {
+                        markVerified($studID);
+                        writeUnprotect();
+                    } else {
+                        exit("Server Busy, reload page to try again");
+                    }
 
-                    //redirect to voting
-                    header("Location: ../voting/login.php?verified_login=true&voter=$voterId&password=$voterPass");                  
+                    $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$voter', '$password', '$firstname', '$lastname', '')";
 
-                } else {
-                    exit("An error occurred, contact admin with error code 706");
-                }
-            } else {
-                exit("Looks like a Suspicious Activity, but if it is not contact admin with error code 904");
-            }
+                    if ($conn->query($sql)) {
+
+                        echo "redirecting";
+
+                        //redirect to voting
+                        header("Location: ../voting/login.php?verified_login=true&voter=$voterId&password=$voterPass");
+
+                    } else {
+                        exit("An error occurred, contact admin with error code 706");
+                    }
+
+                } 
+
+            }         
+            exit("Looks like a Suspicious Activity, but if it is not contact admin with error code 904");            
         }
         exit("Looks like a Suspicious activity, but if it is not contact admin with error code 905");
     }
@@ -211,7 +210,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
 {
     global $error_bag;
 
-    if (strlen($province)>3 and strlen($studname_sir)>=3) {
+    if (strlen($province) > 3 and strlen($studname_sir) >= 3) {
         $workSheet_array = $workSheet->toArray();
 
         $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname_sir, $studname_other) {
@@ -237,16 +236,15 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
                 $student["email"] = "hidden";
                 $student["status"] = "Verified";
 
-            } 
+            }
             // elseif ($student["vi"] != "") {
             //     $student["email"] = "hidden";
             //     $student["status"] = "Pending Email Verification";
             // }
-             elseif (intval($student["grad"]) < 2022) {
+            elseif (intval($student["grad"]) < 2022) {
                 $student["email"] = "N/A";
                 $student["status"] = "Graduated";
-            }
-            else {
+            } else {
                 $student["email"] = "not verified";
                 $student["status"] = <<<STATUS
                 <form action="" method="post" class="form-inline general-form" onsubmit="return false;">
