@@ -232,7 +232,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
         }
 
         $keys = array('province', 'name', 'university', 'id', 'vi', 'vp', 'china', 'grad', 'contact', 'email', 'verified');
-        $count = 0;
+        $count = 1;
         $stud_data = [];
         foreach ($filtered_array as $val) {
             $student = array_combine($keys, $val);
@@ -264,7 +264,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
 
             $row = <<<EACHSTUDENT
                 <tr>
-                <th scope="row">1</th>
+                <th scope="row">$count</th>
                 <td>{$student['name']}</td>
                 <td>{$student['province']}</td>
                 <td>{$student['university']}</td>
@@ -274,6 +274,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
             EACHSTUDENT;
 
             $stud_data[] = $row;
+            $count++;
         }
 
         //dump_to_file($stud_data);
