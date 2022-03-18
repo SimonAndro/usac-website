@@ -140,23 +140,21 @@ if (isset($_POST) and !empty($_POST['action'])) {
                 $password = password_hash($student["vp"], PASSWORD_DEFAULT);
                 $voter = $student["vi"];
 
+                if (writeProtect()) {
+                    markVerified($studID);
+                    writeUnprotect();
+                } else {
+                    exit("Server Busy, reload page to try again");
+                }
+
                 $sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$voter', '$password', '$firstname', '$lastname', '')";
                             
                 if ($conn->query($sql)) {
 
-                    //dump_to_file_("voter write success");
+                    echo "redirecting";
 
-                    if (writeProtect()) {
-                        markVerified($studID);
-                        writeUnprotect();
-
-                        echo "redirecting";
-
-                        //redirect to voting
-                        header("Location: ../voting/login.php?verified_login=true&voter=$voterId&password=$voterPass");
-                    } else {
-                        exit("Server Busy, reload page to try again");
-                    }
+                    //redirect to voting
+                    header("Location: ../voting/login.php?verified_login=true&voter=$voterId&password=$voterPass");                  
 
                 } else {
                     exit("An error occurred, contact admin with error code 706");
