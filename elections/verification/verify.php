@@ -248,7 +248,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
                 $student["status"] = "Graduated";
             }
             else {
-                $student["email"] = "not submitted";
+                $student["email"] = "not verified";
                 $student["status"] = <<<STATUS
                 <form action="" method="post" class="form-inline general-form" onsubmit="return false;">
                     <input type="hidden" name="action" value="send_voter_credentials">
