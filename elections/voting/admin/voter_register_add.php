@@ -8,7 +8,6 @@
 
     $locking_file = getConfig("locking_file_name"); //name of locking file            
 
-
 	if(isset($_POST['add'])){
         // Read excel file
         $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($inputFileName);
@@ -17,7 +16,7 @@
 
         $workSheet_array = $workSheet->toArray();
 
-        $studID = count($workSheet_array);
+        $studID = count($workSheet_array)+1;
 
         $edit_province = $_POST['province'];
         $edit_name = $_POST['name'];

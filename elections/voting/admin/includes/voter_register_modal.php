@@ -34,9 +34,9 @@
             <label for="china" class="col-sm-3 control-label">china</label>
             <div class="col-sm-9">
               <select name="china" id="china">
-                <option value="none">NULL</option>
-                <option value="none">YES</option>
-                <option value="none">NO</option>
+                <option value="NULL">NULL</option>
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
               </select>
             </div>
           </div>
