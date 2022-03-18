@@ -214,7 +214,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
 {
     global $error_bag;
 
-    if (strlen($province) && strlen($studname_sir)) {
+    if (strlen($province)<3 or strlen($studname_sir)<3) {
         $workSheet_array = $workSheet->toArray();
 
         $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname_sir, $studname_other) {
@@ -283,7 +283,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
 
     }
 
-    $error_bag[] = "some fields are missing";
+    $error_bag[] = "some fields are missing or input too short";
 
     return false;
 }
