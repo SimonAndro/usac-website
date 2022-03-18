@@ -30,7 +30,7 @@
         $workSheet->getCell("A" . $studID)->setValue($edit_province);
         $workSheet->getCell("B" . $studID)->setValue($edit_name);
         $workSheet->getCell("C" . $studID)->setValue($edit_university);
-        $workSheet->getCell("D" . $studID)->setValue($studID);
+        $workSheet->getCell("D" . $studID)->setValue($studID-1);
         $workSheet->getCell("G" . $studID)->setValue($edit_china);
         $workSheet->getCell("H" . $studID)->setValue($edit_grad);
         $workSheet->getCell("I" . $studID)->setValue($edit_contact);

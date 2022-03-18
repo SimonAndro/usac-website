@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-//error_reporting(0);
+error_reporting(0);
 
 require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -265,7 +265,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
 
             $row = <<<EACHSTUDENT
                 <tr>
-                <th scope="row">$count</th>
+                <th scope="row">{$count}</th>
                 <td>{$student['name']}</td>
                 <td>{$student['province']}</td>
                 <td>{$student['university']}</td>
