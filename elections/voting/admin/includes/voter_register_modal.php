@@ -11,32 +11,25 @@
         <form class="form-horizontal" method="POST" action="voter_register_add.php">
           <div class="form-group">
             <label for="province" class="col-sm-3 control-label">Province</label>
-
             <div class="col-sm-9">
               <input type="text" class="form-control" id="province" name="province" required>
             </div>
           </div>
+
           <div class="form-group">
             <label for="name" class="col-sm-3 control-label">name</label>
-
             <div class="col-sm-9">
               <input type="text" class="form-control" id="name" name="name" required>
             </div>
           </div>
-          <div class="form-group">
-            <label for="vi" class="col-sm-3 control-label">vi</label>
 
+          <div class="form-group">
+            <label for="university" class="col-sm-3 control-label">University</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="vi" name="vi" required>
+              <input type="text" class="form-control" id="university" name="university" required>
             </div>
           </div>
-          <div class="form-group">
-            <label for="vp" class="col-sm-3 control-label">vp</label>
 
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="vp" name="vp" required>
-            </div>
-          </div>
           <div class="form-group">
             <label for="china" class="col-sm-3 control-label">china</label>
             <div class="col-sm-9">
@@ -47,24 +40,21 @@
               </select>
             </div>
           </div>
+
           <div class="form-group">
             <label for="grad" class="col-sm-3 control-label">grad</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="grad" name="grad" required>
             </div>
           </div>
+
           <div class="form-group">
             <label for="contact" class="col-sm-3 control-label">contact</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="contact" name="contact">
             </div>
           </div>
-          <div class="form-group">
-            <label for="email" class="col-sm-3 control-label">email</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="contact" name="email">
-            </div>
-          </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i
                 class="fa fa-close"></i> Close</button>
@@ -73,6 +63,8 @@
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
 
 <!-- Edit -->
@@ -86,60 +78,48 @@
       </div>
       <div class="modal-body">
         <form class="form-horizontal" method="POST" action="voter_register_edit.php">
+          <input type="hidden" class="id" name="id">
           <div class="form-group">
             <label for="province" class="col-sm-3 control-label">Province</label>
 
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="province" name="province" required>
+              <input type="text" class="form-control" id="edit_province" name="province" required>
             </div>
           </div>
           <div class="form-group">
             <label for="name" class="col-sm-3 control-label">name</label>
 
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="name" name="name" required>
+              <input type="text" class="form-control" id="edit_name" name="name" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="vi" class="col-sm-3 control-label">vi</label>
+            <label for="name" class="col-sm-3 control-label">Univeristy</label>
 
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="vi" name="vi" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="vp" class="col-sm-3 control-label">vp</label>
-
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="vp" name="vp" required>
+              <input type="text" class="form-control" id="edit_university" name="university" required>
             </div>
           </div>
           <div class="form-group">
             <label for="china" class="col-sm-3 control-label">china</label>
             <div class="col-sm-9">
-              <select name="china" id="china">
-                <option value="none">NULL</option>
-                <option value="none">YES</option>
-                <option value="none">NO</option>
+              <select name="china" id="edit_china">
+                <option value="NULL">NULL</option>
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
               </select>
             </div>
           </div>
           <div class="form-group">
             <label for="grad" class="col-sm-3 control-label">grad</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="grad" name="grad" required>
+              <input type="text" class="form-control" id="edit_grad" name="grad" required>
             </div>
           </div>
           <div class="form-group">
             <label for="contact" class="col-sm-3 control-label">contact</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="contact" name="contact">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email" class="col-sm-3 control-label">email</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="contact" name="email">
+              <input type="text" class="form-control" id="edit_contact" name="contact">
             </div>
           </div>
           <div class="modal-footer">
@@ -163,7 +143,7 @@
         <h4 class="modal-title"><b>Deleting...</b></h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="voters_delete.php">
+        <form class="form-horizontal" method="POST" action="voter_register_delete.php">
           <input type="hidden" class="id" name="id">
           <div class="text-center">
             <p>DELETE VOTER</p>
