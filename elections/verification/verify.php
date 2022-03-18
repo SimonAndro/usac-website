@@ -167,6 +167,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
         }
         exit("Looks like a Suspicious activity, but if it is not contact admin with error code 905");
     }
+    exit("Access Denied");
 }
 
 exit();
