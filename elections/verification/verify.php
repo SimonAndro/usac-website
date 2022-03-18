@@ -177,9 +177,8 @@ function verify_student($province, $studname, $university, $studID, $email, $wor
 {
     global $error_bag;
 
-    if (strlen($province) && strlen($studname) && strlen($university) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if (strlen($province) && strlen($studname) && strlen($university) && (false !== filter_var($email, FILTER_VALIDATE_EMAIL))) {
         $workSheet_array = $workSheet->toArray();
-
 
         $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname, $university, $studID, $email) {
 
