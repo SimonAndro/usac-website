@@ -235,16 +235,16 @@ function howOld($created_at)
 }
 
   
-// function dump_to_file($things) //debuging
-// { 
+function dump_to_file($things) //debuging
+{ 
   
-//     if(file_exists("debug!.txt"))
-//     {
-//         file_put_contents("debug!.txt",
-//         date("H:i:s")."->".print_r($things,true)."\n",FILE_APPEND | LOCK_EX);
-//     }
+    if(file_exists("debug!.txt"))
+    {
+        file_put_contents("debug!.txt",
+        date("H:i:s")."->".print_r($things,true)."\n",FILE_APPEND | LOCK_EX);
+    }
     
-// }
+}
 
 /**
  * Validation

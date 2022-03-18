@@ -52,7 +52,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
 
             $studID = empty($_POST["studID"]) ? "" : trim(strval($_POST["studID"]));
 
-            // dump_to_file($_POST);
+            // dump_to_file_($_POST);
 
             if ($student = verify_student($province, $studname, $university, $studID, $email, $workSheet)) {
 
@@ -145,7 +145,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
                             
                 if ($conn->query($sql)) {
 
-                    //dump_to_file("voter write success");
+                    //dump_to_file_("voter write success");
 
                     if (writeProtect()) {
                         markVerified($studID);
@@ -186,7 +186,7 @@ function verify_student($province, $studname, $university, $studID, $email, $wor
             return ($email != $val[9]) and (strtolower(trim($val[0])) == strtolower($province)) and (strtolower(trim($val[1])) == strtolower($studname)) and (strtolower(trim($val[2])) == strtolower($university)) and (strtolower(trim(strval($val[3]))) == strtolower($studID));
         });
 
-        //dump_to_file($filtered_array);
+        //dump_to_file_($filtered_array);
 
         if (count($filtered_array) == 1) { // expects one record
 
@@ -219,7 +219,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
 
         $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname_sir, $studname_other) {
 
-            //dump_to_file($val[7]);
+            //dump_to_file_($val[7]);
 
             return (strtolower(trim($val[0])) == strtolower($province) and (strpos(strtolower(trim($val[1])), strtolower($studname_sir)) !== false || (strlen($studname_other) and strpos(strtolower(trim($val[1])), strtolower($studname_other)) !== false)));
         });
@@ -277,7 +277,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
             $count++;
         }
 
-        //dump_to_file($stud_data);
+        //dump_to_file_($stud_data);
 
         return $stud_data;
 
@@ -372,7 +372,7 @@ function getConfig($key)
 }
 
 //debugging purposes
-function dump_to_file($data)
+function dump_to_file_($data)
 {
     file_put_contents("./debug.txt", print_r($data, true) . "\n", FILE_APPEND);
 }
