@@ -86,15 +86,15 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="student-num" class="text-dark" style="font-size: 20px;">Sir Name</label>
+                                    <label for="student-num" class="text-dark" style="font-size: 20px;">Surname</label>
                                     <input name="studname_sir" type="text" class="form-control" id="name_1"
-                                        placeholder="Sir Name" required>
+                                        placeholder="Surname" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="student-num" class="text-dark" style="font-size: 20px;">Other
-                                        Name(s)</label>
+                                        name(s)</label>
                                     <input name="studname_other" type="text" class="form-control" id="name_2"
                                         placeholder="Other name(s)">
                                 </div>
