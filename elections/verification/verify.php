@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-error_reporting(0);
+//error_reporting(0);
 
 require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
