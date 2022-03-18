@@ -1,17 +1,152 @@
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: Liaoning
-province is: New Students
+Array
+(
+    [email] => N/A
+    [status] => Graduated
+)
+
+Array
+(
+    [email] => N/A
+    [status] => Graduated
+)
+
+Array
+(
+    [email] => N/A
+    [status] => Graduated
+)
+
+Array
+(
+    [email] => N/A
+    [status] => Graduated
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
+Array
+(
+    [province] => Sichuan
+    [name] => Nakibinge Simon
+    [university] => University Of Electronic Science and Technology of China
+    [id] => 233
+    [vi] => yz4Ym3M8KRHrcvW
+    [vp] => gDaAHF0Q
+    [china] => YES
+    [grad] => 2022
+    [contact] => 13258281883
+    [email] => hidden
+    [verified] => 2022/03/17 12:46:07
+    [status] => Verified
+)
+
