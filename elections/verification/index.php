@@ -61,7 +61,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="province" class="text-dark" style="font-size: 20px;">Province</label>
+                                    <label for="province" class="text-dark" style="font-size: 20px;">Province/City</label>
                                     <select name="studprovince" class="form-control" id="province">
                                         <option>Anhui</option>
                                         <option>Beijing</option>
