@@ -108,7 +108,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="table-responsive" id="retrived-studs">
-                        <div class="text-center h3 p-2 mt-4">Retrived Info</div>
+                        <div class="text-center h3 p-2 mt-4">Retrieved Info</div>
                         <table class="table table-striped">
                             <thead>
                                 <tr>
