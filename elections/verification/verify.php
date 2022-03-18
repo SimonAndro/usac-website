@@ -214,7 +214,7 @@ function get_student($province, $studname_sir, $studname_other, $workSheet)
 {
     global $error_bag;
 
-    if (strlen($province)<3 or strlen($studname_sir)<3) {
+    if (strlen($province)>3 or strlen($studname_sir)>=3) {
         $workSheet_array = $workSheet->toArray();
 
         $filtered_array = array_filter($workSheet_array, function ($val) use ($province, $studname_sir, $studname_other) {
