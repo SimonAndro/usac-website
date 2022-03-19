@@ -44,7 +44,7 @@
             $writer->save($inputFileName);
             unlink($locking_file); //remove locking file
     
-            $_SESSION['success'] = 'Voter register updated successfully: '.$studID-1;
+            $_SESSION['success'] = 'Voter register updated successfully: '.strval($studID-1);
         }
 
 	}
