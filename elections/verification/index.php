@@ -67,6 +67,7 @@
                                         <option>Beijing</option>
                                         <option>Chongqing</option>
                                         <option>Fujian</option>
+                                        <option>Guangdong</option>
                                         <option>Hainan</option>
                                         <option>Heilongjiang</option>
                                         <option>Henan</option>
