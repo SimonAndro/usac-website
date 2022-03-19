@@ -138,7 +138,7 @@ if (isset($_POST) and !empty($_POST['action'])) {
                     $voter = $student["vi"];
 
                     if (writeProtect()) {
-                        markVerified($studID);
+                        markVerified($student['id']);
                         writeUnprotect();
                     } else {
                         exit("Server Busy, reload page to try again");
