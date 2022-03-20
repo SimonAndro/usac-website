@@ -80,6 +80,8 @@ if (isset($_POST) and !empty($_POST['action'])) {
                     }
                     writeUnprotect();
 
+                    dump_to_file_([$studID, $voter_id, $voter_pass, $email]); //raw keep a copy
+
                 } else {
                     $res["value"] = $error_bag;
                 }
