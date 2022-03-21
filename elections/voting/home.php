@@ -66,6 +66,25 @@
 							<?php include 'admin/includes/slugify.php'; ?>
 							<section class="content">
 								<div class="row">
+									<div class="col-md-6">
+										<!-- small box -->
+										<div class="small-box bg-yellow">
+											<div class="inner">
+											<?php
+												$sql = "SELECT * FROM voters";
+												$query = $conn->query($sql);
+
+												echo "<h3>".$query->num_rows."</h3>";
+											?>
+											
+											<p>Total Voters</p>
+											</div>
+											<div class="icon">
+											<i class="fa fa-users"></i> 
+											</div>
+											<div class="small-box-footer">Verified <i class="fa fa-certificate" aria-hidden="true"></i></div>
+										</div>
+									</div>
 									<div class="col-md-12">
 										<div class="p-4">
 
