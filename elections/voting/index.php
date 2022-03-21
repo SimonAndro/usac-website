@@ -45,8 +45,8 @@
   		// 	";
   		// 	unset($_SESSION['error']);
   		// }
-  	?>
-	</div> -->
+  	?>-->
+	</div> 
 
 	<?php include 'admin/includes/slugify.php'; ?>
 	<?php include 'includes/conn.php' ?>
@@ -187,6 +187,7 @@
 	   <?php
   }
 ?>
+	<?php include 'includes/footer.php'; ?>
 </body>
 
 </html>
