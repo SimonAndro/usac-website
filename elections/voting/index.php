@@ -16,7 +16,7 @@
 			<b>Voting System</b>
 		</div>
 
-		<div class="login-box-body">
+		<!-- <div class="login-box-body">
 			<p class="login-box-msg">Sign in to start your session</p>
 
 			<form action="login.php" method="POST">
@@ -37,16 +37,16 @@
 			</form>
 		</div>
 		<?php
-  		if(isset($_SESSION['error'])){
-  			echo "
-  				<div class='callout callout-danger text-center mt20'>
-			  		<p>".$_SESSION['error']."</p> 
-			  	</div>
-  			";
-  			unset($_SESSION['error']);
-  		}
+  		// if(isset($_SESSION['error'])){
+  		// 	echo "
+  		// 		<div class='callout callout-danger text-center mt20'>
+		// 	  		<p>".$_SESSION['error']."</p> 
+		// 	  	</div>
+  		// 	";
+  		// 	unset($_SESSION['error']);
+  		// }
   	?>
-	</div>
+	</div> -->
 
 	<?php include 'admin/includes/slugify.php'; ?>
 	<?php include 'includes/conn.php' ?>
