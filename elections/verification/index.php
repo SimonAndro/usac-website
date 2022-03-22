@@ -81,6 +81,7 @@
                                         <option>Shanghai</option>
                                         <option>Sichuan</option>
                                         <option>Tianjin</option>
+                                        <option>Xian</option>
                                         <option>Zheijiang</option>
                                         <option>New Student</option>
                                     </select>
