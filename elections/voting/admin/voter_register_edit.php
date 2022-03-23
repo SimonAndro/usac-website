@@ -23,6 +23,7 @@
         $edit_china = $_POST['china'];
         $edit_grad = $_POST['grad'];
         $edit_contact = $_POST['contact'];
+        $edit_email = $_POST['email'];
 
         // set verified
         $workSheet->getCell("A" . ($studID + 1))->setValue($edit_province);
@@ -31,6 +32,7 @@
         $workSheet->getCell("G" . ($studID + 1))->setValue($edit_china);
         $workSheet->getCell("H" . ($studID + 1))->setValue($edit_grad);
         $workSheet->getCell("I" . ($studID + 1))->setValue($edit_contact);
+        $workSheet->getCell("J" . ($studID + 1))->setValue($edit_email);
   
         //writing changes directly using loaded spreadsheet data
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
