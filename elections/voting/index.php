@@ -1,5 +1,11 @@
 <?php
   	session_start();
+
+	if(date("Y-m-d H:i:s") < "2022-03-26 00:00:00") //time to start elections
+	{
+		header('location: gettingready.php');
+	}
+
   	if(isset($_SESSION['admin'])){
     	header('location: admin/home.php');
   	}
@@ -7,6 +13,7 @@
     if(isset($_SESSION['voter'])){
       header('location: home.php');
     }
+
 ?>
 <?php include 'includes/header.php'; ?>
 
