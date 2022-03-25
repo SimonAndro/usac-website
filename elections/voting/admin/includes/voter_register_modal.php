@@ -128,6 +128,12 @@
               <input type="text" class="form-control" id="edit_email" name="email">
             </div>
           </div>
+          <div class="form-group">
+            <label for="contact" class="col-sm-3 control-label">Verify</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="edit_verify" name="verify">
+            </div>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i
                 class="fa fa-close"></i> Close</button>
