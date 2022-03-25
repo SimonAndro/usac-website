@@ -164,7 +164,7 @@
                     $('#edit_grad').val(response.grad);
                     $('#edit_contact').val(response.contact);
                     $('#edit_email').val(response.email);
-                    $('#edit_verify').val(response.email);
+                    $('#edit_verify').val(response.verified);
 
                 }
             });
