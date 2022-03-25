@@ -1,10 +1,10 @@
 <?php
   	session_start();
 
-	if(date("Y-m-d H:i:s") < "2022-03-26 00:00:00") //time to start elections
-	{
-		header('location: gettingready.php');
-	}
+	// if(date("Y-m-d H:i:s") < "2022-03-26 00:00:00") //time to start elections
+	// {
+	// 	header('location: gettingready.php');
+	// }
 
   	if(isset($_SESSION['admin'])){
     	header('location: admin/home.php');
@@ -59,8 +59,7 @@
 	<?php include 'includes/conn.php' ?>
 	<section class="content">
 		<div class="row">
-			<div class="col-lg-4 col-xs-8">
-				<!-- small box -->
+			<!-- <div class="col-lg-4 col-xs-8">
 				<div class="small-box bg-yellow">
 					<div class="inner">
 					<?php
@@ -77,7 +76,7 @@
 					</div>
 					<div class="small-box-footer">Verified <i class="fa fa-certificate" aria-hidden="true"></i></div>
 				</div>
-			</div>
+			</div> -->
 			<div class="col-md-12">
 				<div class="p-4">
 
