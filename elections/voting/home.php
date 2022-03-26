@@ -99,7 +99,7 @@
 											<div class="icon">
 											<i class="fa fa-edit"></i>
 											</div>
-											<a href="votes.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+											<div class="small-box-footer">Voted ✔</div>
 										</div>
 									</div>
 									<div class="col-md-12">
