@@ -122,7 +122,7 @@
                 mm = String(today.getMonth() + 1).padStart(2, "0"),
                 yyyy = today.getFullYear(),
                 nextYear = yyyy,
-                dayMonth = "03/30/",
+                dayMonth = "03/31/",
                 birthday = dayMonth + yyyy;
 
             today = mm + "/" + dd + "/" + yyyy;
@@ -131,7 +131,7 @@
             }
             //end
 
-            const countDown = new Date("03/30/2022").getTime(),
+            const countDown = new Date("03/31/2022").getTime(),
                 x = setInterval(function () {
 
                     const now = new Date().getTime(),
