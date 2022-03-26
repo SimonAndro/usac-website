@@ -111,7 +111,7 @@
 					<div class="icon">
 					<i class="fa fa-edit"></i>
 					</div>
-					<div class="small-box-footer">Voted <i class="fa fa-arrow-circle-right"></i></div>
+					<div class="small-box-footer">Voted ✔</div>
 				</div>
 			</div>
 			<div class="col-md-12">
