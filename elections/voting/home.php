@@ -34,7 +34,6 @@
 					        </div>
 				        	<?php
 				         	unset($_SESSION['error']);
-
 				        }
 				        if(isset($_SESSION['success'])){
 				          	echo "
@@ -83,6 +82,24 @@
 											<i class="fa fa-users"></i> 
 											</div>
 											<div class="small-box-footer">Verified <i class="fa fa-certificate" aria-hidden="true"></i></div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="small-box bg-red">
+											<div class="inner">
+											<?php
+												$sql = "SELECT * FROM votes GROUP BY voters_id";
+												$query = $conn->query($sql);
+
+												echo "<h3>".$query->num_rows."</h3>";
+											?>
+
+											<p>Voters Voted</p>
+											</div>
+											<div class="icon">
+											<i class="fa fa-edit"></i>
+											</div>
+											<a href="votes.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
 									<div class="col-md-12">
